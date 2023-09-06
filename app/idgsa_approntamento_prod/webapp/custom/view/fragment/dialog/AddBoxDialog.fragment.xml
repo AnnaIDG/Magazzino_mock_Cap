@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:frm="sap.ui.layout.form">
+    <Dialog resizable="false" title="{i18n>selectBox}" contentWidth="5%">
+        <buttons>
+            <Button text="{i18n>cancel}" press="onCancelAddBoxPress" />
+            <Button text="{i18n>confirm}" press="onConfirmAddBoxPress" type="Accept"/>
+        </buttons>
+        <content>
+            <Table  width="100%" items="{path:'boxListModel>/results'}" mode="SingleSelectLeft" selectionChange="" busyIndicatorDelay="0" class="boxTable">
+                <columns>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                         </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{boxListModel>name}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+
+
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

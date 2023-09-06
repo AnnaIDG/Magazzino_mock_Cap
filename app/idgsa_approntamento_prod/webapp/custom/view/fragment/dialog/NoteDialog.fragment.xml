@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog class="filterDialogItem" contentHeight="auto"
+		title="{i18n>noteDialogTitle}">
+		<buttons>
+			<Button text="{i18n>close}" press="onNoteDialogClose"/>
+		</buttons>
+		<content>
+			<Text text="{currentNote>/value}" class="sapUiSmallMargin"></Text>
+		</content> 
+	</Dialog>
+</core:FragmentDefinition>

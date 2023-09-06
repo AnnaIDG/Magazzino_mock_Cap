@@ -1,0 +1,193 @@
+{
+	"sap.app": {
+		"id": "icms.gestionemanutenzioni",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"isMock": true,
+		"i18n": "custom/i18n/i18n.properties",
+		"dataSources": {
+			"SERVER": {
+				"url": "https://fiorisdv.save.eu/sap/opu/odata/SAP/Z_PM_SRV"
+			},
+			"LOGOFF": {
+				"url": "https://fiorisdv.save.eu/sap/public/bc/icf/logoff"
+			}
+		}
+	},
+	"sap.ui5": {
+		"resources": {
+			"css": [
+				{
+					"uri": "css/custom.css"
+				},
+				{
+					"uri": "css/custom_states.css"
+				}
+			],
+			"js": [
+				{
+					"uri": "libs/lodash.min.js"
+				},
+				{
+					"uri": "libs/q.js"
+				},
+				{
+					"uri": "libs/jquery.scannerdetection.js"
+				},
+				{
+					"uri": "libs/jquery.base64.js"
+				}
+			]
+		},
+		"dependencies": {
+			"minUI5Version": "1.71.50",
+			"libs": {
+				"sap.m": {
+					"minVersion": "1.71.50"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.71.50"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "login",
+					"target": "login"
+				},
+				{
+					"pattern": "auth/{token}",
+					"name": "loginAuth",
+					"target": "auth"
+				},
+				{
+					"pattern": "launchpad",
+					"name": "launchpad",
+					"target": "launchpad"
+				},
+				{
+					"pattern": "noticeList",
+					"name": "noticeList",
+					"target": "noticeList"
+				},
+				{
+					"pattern": "noticeDetail/{noticeId}",
+					"name": "noticeDetail",
+					"target": "noticeDetail"
+				},
+				{
+					"pattern": "noticeCreate",
+					"name": "noticeCreate",
+					"target": "noticeCreate"
+				},
+				{
+					"pattern": "rfidLoader",
+					"name": "rfidLoader",
+					"target": "rfidLoader"
+				},
+				{
+					"pattern": "userDetail",
+					"name": "userDetail",
+					"target": "userDetail"
+				},
+				{
+					"pattern": "split",
+					"name": "split",
+					"target": "split",
+					"subroutes": [
+						{
+							"pattern": "noticeMobileList",
+							"name": "noticeMobileList",
+							"target": [
+								"noticeMasterDetail",
+								"noticeMasterList"
+							]
+						},
+						{
+							"pattern": "noticeMasterDetail/{noticeId}",
+							"name": "noticeMasterDetail",
+							"target": [
+								"noticeMasterList",
+								"noticeMasterDetail"
+							]
+						}
+					]
+				}
+			],
+			"targets": {
+				"login": {
+					"viewName": "Login",
+					"viewId": "loginViewId"
+				},
+				"auth": {
+					"viewName": "Auth",
+					"viewId": "authViewId",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"launchpad": {
+					"viewName": "Launchpad",
+					"viewId": "launchpadViewId"
+				},
+				"noticeList": {
+					"viewName": "NoticeList",
+					"viewId": "noticeListViewId"
+				},
+				"noticeDetail": {
+					"viewName": "NoticeDetail",
+					"viewId": "NoticeDetailViewId"
+				},
+				"noticeCreate": {
+					"viewName": "NoticeCreate",
+					"viewId": "noticeCreateViewId"
+				},
+				"rfidLoader": {
+					"viewName": "RfidLoader",
+					"viewId": "RfidLoaderId"
+				},
+				"userDetail": {
+					"viewName": "UserDetail",
+					"viewId": "UserDetailId"
+				},
+				"split": {
+					"viewName": "SplitApp",
+					"viewId": "splitApp",
+					"controlId": "app",
+					"viewType": "JS",
+					"controlAggregation": "pages"
+				},
+				"noticeMasterList": {
+					"viewName": "NoticeMasterList",
+					"viewLevel": 1,
+					"viewId": "noticeMasterListId",
+					"controlId": "splitApp",
+					"controlAggregation": "masterPages"
+				},
+				"noticeMasterDetail": {
+					"viewName": "NoticeDetail",
+					"viewLevel": 2,
+					"viewId": "NoticeDetailViewId",
+					"controlId": "splitApp",
+					"controlAggregation": "detailPages"
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		}
+	}
+}

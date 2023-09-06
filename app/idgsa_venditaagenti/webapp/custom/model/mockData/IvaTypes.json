@@ -1,0 +1,17 @@
+{
+  "items":
+  [
+    {
+      "id":"IVA01",
+      "name":"I.V.A. piena"
+    },
+    {
+      "id":"IVA02",
+      "name":"I.V.A. 10%"
+    },
+    {
+      "id":"IVA03",
+      "name":"I.V.A. 15%"
+    }
+  ]
+}

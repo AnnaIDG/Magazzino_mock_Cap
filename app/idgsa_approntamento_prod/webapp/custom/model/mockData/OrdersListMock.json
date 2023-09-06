@@ -1,0 +1,54 @@
+[
+    {
+        "packingId": "00001231",
+        "supplierId": "12000",
+        "supplier": "Francesco Cardellini",
+        "packingStatus": "In Lavorazione",
+        "packingStatusId": "C",
+        "hasBox":"X",
+        "validDateList": "2015-11-15T22:00:00.000Z",
+        "shippmentDate": "2015-11-16T22:00:00.000Z"
+
+
+  },
+
+    {
+        "packingId": "00001232",
+        "supplierId": "12000",
+        "supplier": "Francesco Cardellini",
+        "packingStatus": "Da confermare",
+        "packingStatusId": "A",
+        "hasBox":"",
+        "validDateList": "2015-11-16T22:00:00.000Z",
+        "shippmentDate": "2015-11-16T22:00:00.000Z"
+
+
+  },
+
+   
+    {
+        "packingId": "00001234",
+        "supplierId": "12001",
+        "supplier": "Nunzio Della Ragione",
+        "packingStatus": "In Lavorazione",
+        "packingStatusId": "C",
+        "hasBox":"X",
+        "validDateList": "2015-11-18T22:00:00.000Z",
+        "shippmentDate": "2015-11-25T22:00:00.000Z"
+       
+
+  },
+    {
+        "packingId": "00001235",
+        "supplierId": "12001",
+        "supplier": "Nunzio Della Ragione",
+        "packingStatus": "Da confermare",
+        "packingStatusId": "A",
+        "hasBox":"X",
+        "validDateList": "2015-11-19T22:00:00.000Z",
+        "shippmentDate": "2015-11-19T22:00:00.000Z"
+
+
+  }
+ 
+]

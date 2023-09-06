@@ -1,0 +1,17 @@
+{
+  "items":
+  [
+    {
+      "id":"ZOI",
+      "name":"Ordine Italia"
+    },
+    {
+      "id":"ZKV1",
+      "name":"Invio in conto visione"
+    },
+    {
+      "id":"ZKV3",
+      "name":"Vendita da conto visione"
+    }
+  ]
+}

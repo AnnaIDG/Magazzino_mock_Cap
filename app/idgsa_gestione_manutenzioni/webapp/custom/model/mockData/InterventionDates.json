@@ -1,0 +1,26 @@
+[
+    {
+        "key": "2",
+        "priorityDescr": "Urgenza",
+        "startInterventionDate": "2016-11-15T22:00:00.000Z",
+        "endInterventionDate": "2016-11-16T22:00:00.000Z"
+    },
+    {
+        "key": "3",
+        "priorityDescr" :"Urgenza segn. tel.",
+        "startInterventionDate": "2016-11-15T22:00:00.000Z",
+        "endInterventionDate": "2016-11-17T22:00:00.000Z"
+    },
+    {
+        "key": "4",
+        "priorityDescr" :"Normale",
+        "startInterventionDate": "2016-11-17T22:00:00.000Z",
+        "endInterventionDate": "2016-11-20T22:00:00.000Z"
+    },
+    {
+        "key": "5",
+        "priorityDescr" :"Programm./nuova att.",
+        "startInterventionDate": "2016-11-20T22:00:00.000Z",
+        "endInterventionDate": "2016-11-25T22:00:00.000Z"
+    }
+]

@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:frm="sap.ui.layout.form">
+  <Dialog title="{i18n>filterOnDateTitle}" afterClose="onAfterCloseDialogDataFilter">
+    <content>
+
+
+      <frm:SimpleForm>
+
+        <Label text="{i18n>fromDate}" design="Bold"></Label>
+        <DatePicker dateValue="{fo>/fromDate}" valueFormat="yyyy-MM-dd" displayFormat="long" class="sapUiSmallMarginBottom" />
+
+        <Label text="{i18n>toDate}" design="Bold"></Label>
+        <DatePicker dateValue="{fo>/toDate}" valueFormat="yyyy-MM-dd" displayFormat="long" class="sapUiSmallMarginBottom" />
+
+
+      </frm:SimpleForm>
+
+    </content>
+    <buttons>
+      <Button text="{i18n>reset}" press="onRemoveODataFilter" />
+      <Button text="{i18n>cancel}" press="onODataFilterCancelPress"></Button>
+      <Button text="{i18n>Ok}" press="onODataFilterOKPress" />
+    </buttons>
+
+  </Dialog>
+</core:FragmentDefinition>

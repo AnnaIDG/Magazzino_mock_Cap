@@ -1,0 +1,51 @@
+[
+    {
+		"productId": "00001",
+		"description": "BUFALA",
+		"distrCh": "RI",
+		"division": "DO",
+		"salesOrg": "SA20",
+        "level":1
+		
+	},
+    {
+		"productId": "00002",
+		"description": "CAPRA",
+		"distrCh": "DO",
+		"division": "RI",
+		"salesOrg": "SA20",
+        "level":1
+	},
+    {
+		"productId": "00003",
+		"description": "MISTA",
+		"distrCh": "DO",
+		"division": "RI",
+		"salesOrg": "SA20",
+        "level":1
+	},
+    {
+		"productId": "00004",
+		"description": "PECORA",
+		"distrCh": "DO",
+		"division": "RI",
+		"salesOrg": "SA20",
+        "level":1
+	},
+    {
+		"productId": "00005",
+		"description": "VACCA",
+		"distrCh": "DO",
+		"division": "RI",
+		"salesOrg": "SA20",
+        "level":1
+	},
+    {
+		"productId": "00006",
+		"description": "COMMERCIALIZZATI",
+		"distrCh": "DO",
+		"division": "RI",
+		"salesOrg": "SA20",
+        "level":1
+	}   
+]

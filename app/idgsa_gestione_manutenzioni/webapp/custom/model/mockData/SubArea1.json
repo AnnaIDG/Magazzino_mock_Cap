@@ -1,0 +1,141 @@
+{
+    "results": [
+        {
+            "id": "PZE"
+            , "Padre": "Z_01"
+            , "description": "Pista - Zona EST"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+        , {
+            "id": "PZO"
+            , "Padre": "Z_01"
+            , "description": "Pista - Zona Ovest"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+        , {
+            "id": "PZN"
+            , "Padre": "Z_01"
+            , "description": "Pista - Zona Nord"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "PZS"
+            , "Padre": "Z_01"
+            , "description": "Pista - Zona Sud"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+        , {
+            "id": "BZE"
+            , "Padre": "Z_02"
+            , "description": "Bagni - Zona EST"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+        , {
+            "id": "BZO"
+            , "Padre": "Z_02"
+            , "description": "Bagni - Zona Ovest"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+        , {
+            "id": "BZN"
+            , "Padre": "Z_02"
+            , "description": "Bagni - Zona Nord"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "BZS"
+            , "Padre": "Z_02"
+            , "description": "Bagni - Zona Sud"
+            , "ultimo": "X"
+            , "liv": "2"
+    },
+
+        {
+            "id": "UZE"
+            , "Padre": "Z_03"
+            , "description": "Uffici - Zona EST"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+        , {
+            "id": "UZO"
+            , "Padre": "Z_03"
+            , "description": "Uffici - Zona Ovest"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+        , {
+            "id": "UZN"
+            , "Padre": "Z_03"
+            , "description": "Uffici - Zona Nord"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "UZS"
+            , "Padre": "Z_03"
+            , "description": "Uffici - Zona Sud"
+            , "ultimo": "X"
+            , "liv": "2"
+    },
+
+
+
+
+
+      {
+            "id": "ET1"
+            , "Padre": "E_01"
+            , "description": "Estintore - Zona Est"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "ET2"
+            , "Padre": "E_01"
+            , "description": "Estintore - Zona Ovest"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "ET3"
+            , "Padre": "E_01"
+            , "description": "Estintore - Zona Nord"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "ET4"
+            , "Padre": "E_01"
+            , "description": "Estintore - Zona Sud"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "CA1"
+            , "Padre": "E_02"
+            , "description": "Carrello - Zona Est"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "CA2"
+            , "Padre": "E_02"
+            , "description": "Carrello - Zona Ovest"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "CA3"
+            , "Padre": "E_02"
+            , "description": "Carrello - Zona Nord"
+            , "ultimo": "X"
+            , "liv": "2"
+    }, {
+            "id": "CA4"
+            , "Padre": "E_02"
+            , "description": "Carrello - Zona Sud"
+            , "ultimo": "X"
+            , "liv": "2"
+    }
+
+  ]
+}

@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:frm="sap.ui.layout.form">
+	<Dialog resizable= "true"  contentHeight="80%" title="{i18n>discount}">
+		<buttons>
+			
+			<Button text="{i18n>ok}" press="onDiscountDialogOK"/>
+		</buttons>
+		<content>
+      <Table
+             items="{d>/discounts}">
+          <columns>
+            <Column hAlign="Center">
+              <Text text="{i18n>conditionName}" />
+            </Column>
+            
+            <Column hAlign="Center">
+              <Text text="{i18n>amount}" />
+            </Column>
+            
+            <Column hAlign="Center">
+              <Text text="{i18n>scale}" />
+            </Column>
+            
+            <Column hAlign="Center">
+              <Text text="{i18n>currency}" />
+            </Column>
+
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{d>name}"/>
+                <Text text="{d>unitVal}"/>
+               	<Text text="{d>scale}"/>
+                <Text text="{d>currency}"/>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

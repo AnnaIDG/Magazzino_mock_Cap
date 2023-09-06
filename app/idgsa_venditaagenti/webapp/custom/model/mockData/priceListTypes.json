@@ -1,0 +1,29 @@
+{
+	"items":
+	[
+		{
+			"key":"pl01",
+			"name":"Mock/Tipo Listino 1"
+		},
+		{
+			"key":"pl02",
+			"name":"Mock/Tipo Listino 2"
+		},
+		{
+			"key":"pl03",
+			"name":"Mock/Tipo Listino 3"
+		},
+		{
+			"key":"pl04",
+			"name":"Mock/Tipo Listino 4"
+		},
+		{
+			"key":"pl05",
+			"name":"Mock/Tipo Listino 5"
+		},
+		{	
+			"key":"pl06",
+			"name":"Mock/Tipo Listino 5"
+		}
+	]
+}

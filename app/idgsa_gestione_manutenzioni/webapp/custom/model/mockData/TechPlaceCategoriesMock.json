@@ -1,0 +1,14 @@
+[
+	{	
+		"id":"C1",
+		"description":"category_1"
+	},
+	{
+		"id":"C2",
+		"description":"category_2"
+	},
+	{
+		"id":"C3",
+		"description":"category_3"
+	}
+]

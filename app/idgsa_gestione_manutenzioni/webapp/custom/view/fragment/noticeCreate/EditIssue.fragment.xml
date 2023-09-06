@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog resizable="true" contentHeight="100%" title="{i18n>editIssue}">
+		<buttons>
+			<Button text="{i18n>ok}" press="onEditIssueOkPress"/>
+			<Button text="{i18n>cancel}" press="onEditIssueCancelPress"/>
+		</buttons>
+		<content>
+			<Panel expandable="false" expanded="true" headerText="{i18n>selectFailureObject}" width="auto">
+				<Input editable="false" value="{currentIssue>/object}" width="100%" textAlign="Center"/>
+			</Panel>
+			<Panel expandable="false" expanded="true" headerText="{i18n>selectIssueType}" width="auto">
+				<ComboBox items="{path: 'issueTypes>/results', sorter: {path: 'description'}}" width="100%"
+					selectionFinish="handleSelectionFinish" textAlign="Center" selectedKey="{currentIssue>/typeId}">
+					<core:Item key="{issueTypes>codeErr}" text="{issueTypes>codeErrDescr}"/>
+				</ComboBox>
+			</Panel>
+			<Panel expandable="false" expanded="true" headerText="{i18n>issueDescription}" width="auto">
+				<TextArea value="{currentIssue>/description}" visible="true" rows="8" width="100%"/>
+			</Panel>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

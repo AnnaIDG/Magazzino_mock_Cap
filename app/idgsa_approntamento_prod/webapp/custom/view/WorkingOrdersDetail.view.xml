@@ -1,0 +1,55 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.WorkingOrdersDetail" xmlns="sap.m" xmlns:core="sap.ui.core"
+          xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:ui="sap.ui.unified" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"> 
+    <Page id="workingOrderDetailPageId" busyIndicatorDelay="0">
+        <headerContent>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        </headerContent>
+        <subHeader class="sapUiSizeCompact">
+            <Toolbar>
+                <!--<Button icon="sap-icon://employee-lookup" press="onAdvancedFilterPress" tooltip="{i18n>advancedRequestFilter}" />-->
+                <SearchField search="onFilterOrderList" width="100%" value="{ui>/searchValue}" placeholder="{i18n>cercaPerUbicazione}" visible="{= !(${ui>/controlledMode}) }"/>
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table id="workingOrderDetailTable" width="100%"
+                   items="{path:'workingOrderDetailModel>/results', sorter: {path:'componentId', descending:false}}"
+                   growing="true" growingThreshold="100"
+                   busyIndicatorDelay="0"
+                   class="sortableTable">
+                <columns>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle">
+                        <Text text="{i18n>componentName}"/>
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle">
+                        <Text text="{i18n>siteName}"/>
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle">
+                        <Text text="{i18n>checked}"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text text="{workingOrderDetailModel>componentName}"/>
+                            <Text text="{workingOrderDetailModel>siteName}"/>
+                            <CheckBox valueState="Warning"  enabled="{= !(${ui>/controlledMode}) }" selected="{workingOrderDetailModel>checked}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar>
+                <Text id="currentStateText" text="{ui>/currentWorkingOrderState}" class="stateTextCommonClass"></Text>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://customer-order-entry" tooltip="{i18n>greenSheet}" press="openGreenSheet" visible="{ui>/controlledMode}"></Button>
+<!--                <Button icon="sap-icon://add-photo" tooltip="{i18n>fhotocamera}" press="openPhotocamera" visible="{ui>/controlledMode}"></Button>-->
+                <ui:FileUploader buttonOnly="true" iconOnly="true" icon="sap-icon://add-photo" tooltip="{i18n>photocamera}" name="myFileUpload" change="onUploadChange" useMultipart="false" uploadComplete="onUploadComplete" fileSizeExceed="onExcessiveSize" class="sapUiTinyMarginTop" />
+                
+                <Button icon="sap-icon://survey" tooltip="{i18n>survey}" press="openSurveyDialog" visible="{ui>/controlledMode}"></Button>
+                <Button id="changeStateButton" icon="sap-icon://open-command-field" type="Accept" text="{i18n>nextStatus}" press="changeState"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

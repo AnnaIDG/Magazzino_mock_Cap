@@ -1,0 +1,17 @@
+{
+  "results":
+  [
+    {
+      "id":"1",
+      "description":"Guasto Tipo 1"
+    },
+    {
+      "id":"2",
+      "description":"Guasto Tipo 2"
+    },
+    {
+      "id":"3",
+      "description":"Guasto Tipo 3"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+    "items": [
+        {
+            "id": "ZM01",
+            "description": " '  ' - Commento generico"
+        }, {
+            "id": "ZM02",
+            "description": "ç - Commento generico"
+        }, {
+            "id": "ZM03",
+            "description": "V - Comm. All doc"
+        }, {
+            "id": "ZM04",
+            "description": "C - Comm. Conferma d'ordine"
+        }, {
+            "id": "ZM05",
+            "description": "B - Bolla-Fatt. Acco.-Lista"
+        }, {
+            "id": "ZM06",
+            "description": "F - Fattura, Prev. Ordine"
+        }, {
+            "id": "ZM07",
+            "description": "c - Bolla-Fatt.Acc.-Fattur"
+        }, {
+            "id": "ZM08",
+            "description": "b - Fattura, conf. ordine"
+        }, {
+            "id": "ZM09",
+            "description": "f - Conferma ordine - Bolla"
+        }, {
+            "id": "ZM10",
+            "description": "Contenuto offerta"
+        }, {
+            "id": "ZM11",
+            "description": "Riferimento contratto"
+        }, {
+            "id": "ZM12",
+            "description": "Altre note offerta"
+        }, {
+            "id": "ZM13",
+            "description": "Intestazione documento"
+        }
+]
+
+}

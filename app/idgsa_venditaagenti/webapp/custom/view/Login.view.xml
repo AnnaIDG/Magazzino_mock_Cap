@@ -1,0 +1,33 @@
+<!DOCTYPE xml>
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" controllerName="controller.Login">
+    <Page enableScrolling="false" showHeader="false" id="loginPageId">
+        <content>
+        	<FlexBox height="100%" alignItems="Center" justifyContent="Center">
+                <items>
+                    <f:SimpleForm editable="true" layout="ResponsiveGridLayout" width="325px" busyIndicatorDelay="1" 
+                    			id="loginForm" class="formClass">
+                        <f:content>
+							<Label text="{i18n>usernameLabel}" />
+                            <Input placeholder="{i18n>usernamePlaceholder}" value="{appModel>/username}" 
+                            		id="usernameInput" liveChange="onLiveChange"/>
+                            <Label text="{i18n>passwordLabel}" />
+                            <Input placeholder="{i18n>passwordPlaceholder}" type="Password" 
+                            		value="{appModel>/password}" id="passwordInput" liveChange="onLiveChange"/>
+                        	<Button text="{i18n>loginButton}" press="onLoginPress" class="loginButton" id="loginButtonId"/>
+                            <Switch 
+                                state = "false"
+                                customTextOn = "EN"
+                                customTextOff = "IT"
+                                visible = "true"
+                                change = "onSwitchLanguage">
+                            </Switch>
+                        </f:content>
+                    </f:SimpleForm>
+                </items>
+            </FlexBox>
+            <FlexBox width="100%" alignItems="Start" justifyContent="End" class="sapMPageFooter cssVersionText">
+                <Text text="{i18n>versionLabel} {versionModel>/version}"/>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

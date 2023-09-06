@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:frm="sap.ui.layout.form">
+    <Dialog resizable="false" title="{i18n>printLabelConfirmTitle}" contentWidth="10%">
+        <buttons>
+            <Button text="{i18n>cancel}" press="onCancelPrintLabelPress" />
+            <Button text="{i18n>confirmPrint}" press="onConfirmPrintLabelPress" type="Accept"/>
+        </buttons>
+        <content>
+
+            <FlexBox justifyContent="Center" >
+                <Label text="{i18n>printLabelConfirm}" class="sapUiLargeMarginTop"></Label>
+                <Image id="idImageCaptcha0" src="./custom/images/moveOrderDetail/barcode.jpg" widht="60%"/>
+            </FlexBox>
+
+
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

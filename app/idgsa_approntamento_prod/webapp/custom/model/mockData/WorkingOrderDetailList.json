@@ -1,0 +1,29 @@
+[
+  {
+    "orderId": "00001231",
+    "operatorId": "12011",
+    "componentId": "00001",
+    "componentName": "Component 1",
+    "site": "00001",
+    "siteName": "Plant 1",
+    "checked": false
+  },
+  {
+    "orderId": "00001231",
+    "operatorId": "12011",
+    "componentId": "00002",
+    "componentName": "Component 2",
+    "site": "00001",
+    "siteName": "Plant 1",
+    "checked": false
+  },
+  {
+    "orderId": "00001231",
+    "operatorId": "12011",
+    "componentId": "00003",
+    "componentName": "Component 3",
+    "site": "00002",
+    "siteName": "Plant 2",
+    "checked": false
+  }
+]

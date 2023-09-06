@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SAVE</title>
+    <link rel="shortcut icon" href="custom/images/favicon.ico" type="image/x-icon">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="custom/images/save_launch.png">
+    <!-- INDEX NO CACHE -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+  	<meta http-equiv="expires" content="Sat, 31 Oct 2014 00:00:00 GMT">
+  	<meta http-equiv="pragma" content="no-cache">
+
+    <script src="https://sapui5.hana.ondemand.com/1.108.0/resources/sap-ui-core.js" id="sap-ui-bootstrap"
+    		data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-libs="sap.m"
+    		data-sap-ui-theme="sap_belize"
+    		data-sap-ui-preload="sync"
+    		data-sap-ui-compatVersion="edge"
+    		data-sap-ui-resourceroots='{
+      			"icms" : "./custom/"
+               }'>
+    </script>
+
+
+    <script>
+        sap.ui.getCore().attachInit(function() {
+            new sap.m.Shell({
+                backgroundColor: "#EEEEEE",
+                app: new sap.ui.core.ComponentContainer({
+                    height: "100%",
+                    name: "icms"
+                })
+            }).placeAt("content");
+        });
+
+    </script>
+
+</head>
+
+<body class="sapUiBody">
+    <div id="content"></div>
+</body>
+
+</html>

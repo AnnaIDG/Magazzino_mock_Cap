@@ -1,0 +1,665 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+* :not(.sapUiIcon, .sapMTC, .sapMTCScroller, .sapMTCInner) {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+}
+
+
+/* gestione testo version footerPage */
+
+.cssVersionText {
+    margin-bottom: 10px !important;
+}
+
+.cssVersionText span {
+    margin-right: 15px;
+    color: #0F3D7B;
+    font-weight: bold;
+}
+
+.flexDettaglio>div {
+    width: 100%;
+}
+
+
+/* OVERWRITE SAP CSS RULES */
+
+html.sap-desktop .sapContrast .sapMIBar.sapMFooter-CTX,
+html.sap-desktop .sapContrast.sapMIBar.sapMFooter-CTX {
+    background-color: rgba(47, 60, 72, 0.79);
+}
+
+.sapMBtnContent:focus {
+    outline: none !important;
+}
+
+.sapMSplitContainerMaster:after {}
+
+.sapMIBar.sapMHeader-CTX,
+.headerBar {
+    background-color: #73ecb5 !important;
+    color: white !important;
+}
+
+.sapUiGlobalBackgroundColor,
+.sapMGlobalBackgroundColor {
+    background-color: #FFFFFF;
+    background-image: none;
+}
+
+
+/*icona su master*/
+
+.lista>ul>li>div>div>div>span {
+    color: red
+}
+
+
+/*
+.sapMBar {
+    background-color: #f2f2f2 !important;
+}
+*/
+
+.formProductDetail {
+    margin-top: -2em !important;
+}
+
+
+/* dimensione text area */
+
+.sapMTextArea .sapMInputDivWrapper {
+    height: auto !important;
+}
+
+.sapMLabel {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+}
+
+.sapMTC .sapMTCPager SPAN.sapMTCActive {
+    background-color: #73ecb5;
+}
+
+.sapMRbSel .sapMRbBInn {
+    background-color: #006ca7;
+}
+
+.sapMITBSelected .sapMITBFilterDefault {
+    background: #73ecb5;
+}
+
+.sapMITBSelected .sapMITBFilterIcon {
+    border: 1px solid #73ecb5;
+}
+
+.sapMITBSelected>.sapMITBContentArrow {
+    border-bottom-color: #73ecb5;
+}
+
+.sapMITBSelected .sapMITBText {
+    color: #73ecb5 !important;
+}
+
+.sapMITBFilterDefault {
+    color: gray !important;
+}
+
+
+/* dettaglio cliente */
+
+
+/*sfondo icon tab*/
+
+.sapMITH {
+    box-shadow: inset 0 -0.25rem 0 -0.125rem #73ecb5;
+    background-color: transparent !important;
+    border-bottom: 0.125rem solid #eff4f9;
+}
+
+.sapMITBFilter:not(.sapMITBDisabled) .sapMITBFilterIcon {
+    outline: none !important;
+}
+
+
+/*
+.customIconTabBar>div
+{
+    background-color:transparent !important
+}
+*/
+
+.sapMITBFilterIcon {
+    border: 1px solid gray !important;
+}
+
+.sapMITBFilterIcon::before {
+    color: gray !important;
+}
+
+.sapMITBFilter .sapMITBText {
+    color: gray !important;
+}
+
+.sapUiIcon:focus {
+    outline: none;
+}
+
+
+/*
+.sapUiIcon:before
+{
+    color:white;
+}
+*/
+
+li[id*='destinationComboBox'] .sapMSelectListLastCell {
+    font-size: 0.6rem;
+    color: #666666;
+}
+
+
+/*bottone filtro*/
+
+.filterButton .sapMBtnIcon {
+    color: #fafafa;
+    background-color: #eb008b;
+}
+
+
+/*end master */
+
+
+/* END OVERWRITE SAP CSS RULES */
+
+div[data-packingStatusColor="A"] {
+    background-color: #73ecb5 !important;
+    color: white !important;
+}
+
+div[data-packingStatusColor="B"] {
+    background-color: #009900 !important;
+    color: white !important;
+}
+
+div[data-packingStatusColor="C"] {
+    background-color: #0066ff !important;
+    color: white !important;
+}
+
+
+/******* LOGIN   */
+
+.sapMShellBrandingBar {
+    background-color: #EFECE7;
+    display: none;
+}
+
+.imagePaginaIniziale {
+    margin-top: -2.5em !important;
+    border: 0.7px solid #EFECE7 !important;
+    border-radius: 0px 0px 5px 5px !important;
+    -moz-box-shadow: 1px 1px 1px #EFECE7, 2px 2px 1px bLACK;
+    -webkit-box-shadow: 1px 1px 1px #EFECE7, 2px 2px 1px bLACK;
+    box-shadow: 1px 1px 1px #EFECE7, 2px 2px 1px bLACK;
+    width: 100px;
+}
+
+.loginPageSfondo {
+    /* IE10 Consumer Preview */
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+    /* Opera */
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1011, color-stop(0.6, #FFFFFF), color-stop(1, #C9C7C3));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background-image: radial-gradient(ellipse farthest-corner at left top, #FFFFFF 60%, #C9C7C3 100%);
+    /*    background: url("../images/footer.png") no-repeat ;*/
+}
+
+.loginImageBackGround {
+    margin-top: 4em;
+    background: url("../images/sapBackgroundImage.jpeg") center;
+    background-size: cover;
+}
+
+.loginFormCustomer {
+    margin: 6% 10% 5% 0;
+    padding: 10px;
+    background: rgba(180, 180, 180, 0.5);
+    /*    background-image: url(../images/05.jpg);*/
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    border: 1.5px solid rgba(50, 50, 50, 0.7);
+    /*box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 1), 0 16px 10px -8px rgba(0, 0, 0, 0.6);*/
+}
+
+.loginFormCustomer label {
+    color: #333333;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #000000;
+    text-indent: 10px;
+    font-weight: 700;
+}
+
+.loginFormCustomer input[type=text],
+.loginFormCustomer input[type=password] {
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: rgba(50, 50, 50, 0.7);
+}
+
+.loginFormCustomer input[type=text]:hover,
+.loginFormCustomer input[type=password]:hover {
+    color: #000000;
+    background-color: #EFECE7 !important;
+    border: 1px solid #ffffff !important;
+}
+
+.sapMInputDivWrapper:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner):hover {
+    border-radius: 3px;
+}
+
+
+/**************************************/
+
+.inputValidateError input {
+    border-width: 2px !important;
+    border-style: Solid !important;
+    border-color: #CC0000 !important;
+    background-color: #FFDDD9 !important;
+}
+
+
+
+
+/*
+
+.agentTypeClass,
+.customerTypeClass {
+    z-index: 1000;
+    padding: 0.55rem 0.1rem;
+}
+
+.agentTypeClass>span,
+.customerTypeClass>span {
+    border: 1.5px solid rgba(50, 50, 50, 0.7) !important;
+    border-bottom: none !important;
+    border-radius: 5px 20px 0px 0px !important;
+}
+*/
+
+.bottomFlexbox {
+    margin-top: -80px !important;
+}
+
+
+/* bottoni come schede */
+
+.typeTabClass>div>ul>li {
+    border: 1.5px solid rgba(50, 50, 50, 0.7) !important;
+    border-bottom: none !important;
+    border-radius: 5px 20px 0px 0px !important;
+}
+
+[id*=loginTypeCustomer].sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel,
+[id*=loginTypeCustomer].sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel:hover,
+[id*=loginTypeCustomer].sapMSegBBtn {
+    background-color: rgba(50, 50, 50, 0.7) !important;
+    color: white !important
+}
+
+[id*=loginTypeAgent].sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel,
+[id*=loginTypeAgent].sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel:hover,
+[id*=loginTypeAgent].sapMSegBBtn {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    color: rgba(50, 50, 50, 0.7) !important;
+    margin-left: 1px !important;
+}
+
+[id*=loginTypeAgent].sapMSegBBtn:hover,
+[id*=loginTypeCustomer].sapMSegBBtn:hover {
+    font-style: italic;
+}
+
+
+/* coloro il bottone di login come sul sito */
+
+.loginButton>span {
+    border: 1px solid;
+}
+
+.createCustomerPageButton>span,
+.createCustomerPageButton>span:hover,
+.loginButton>span,
+.loginButton>span>span,
+.loginButton>span:hover {
+    background-color: #73ecb5 !important;
+    /*    background-image: url(../images_skin/bg_butt1.gif);*/
+    background-repeat: repeat-x;
+    color: #704301;
+}
+
+.loginButton>span>span:hover,
+.loginButton>span:hover,
+.createCustomerPageButton>span:hover {
+    color: #704301c2;
+}
+
+.createCustomerPageButton:active .loginButton>span:active {
+    background-color: #ff8b10 !important;
+    border: 1px solid #c27501 !important;
+    box-shadow: 1px 1px 5px #ffb40078;
+}
+
+html.sap-desktop .sapMBtn:focus>.sapMFocusable {
+    outline: none !important;
+}
+
+
+/* tolgo il quadrettino quando si seleziona un bottone */
+
+html.sap-desktop .sapMSegBBtnFocusable:focus,
+html.sap-desktop .sapMSegBBtnFocusable.sapMSegBBtnSel:focus {
+    outline: none !important;
+}
+
+
+/* creazione nuovo cliente */
+
+.moveLeft {
+    margin-right: 1rem;
+}
+
+.moveRight {
+    margin-left: 1rem;
+}
+
+.headerBarClass,
+.headerBarClass .sapUiIcon {
+    background-color: #73ecb5;
+    color: white;
+}
+
+.registerDataFlexBoxClass {
+    /*    margin-top: -80px !important;*/
+}
+
+.sapMInputBaseInner,
+.sapMComboBox,
+.sapMSlt {
+    border-radius: 5px;
+}
+
+[id*=radioButton] {
+    width: -webkit-fill-available;
+    outline: none !important;
+}
+
+[id*=radioButton-2] {
+    line-height: 1.2em !important
+}
+
+.radioButtonGroupClass {
+    height: 5em;
+}
+
+
+/* via l'outline */
+
+.sapMRb:focus:before {
+    border: none !important;
+}
+
+html.sap-desktop .sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):focus {
+    outline: none !important;
+}
+
+
+/*login flag*/
+
+.flexBoxFlag>div>button>span {
+    border: none !important;
+    background: transparent;
+}
+
+.flexBoxFlag>div>button>span:hover {
+    border: none !important;
+    background: transparent !important;
+    border-radius: 5px;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/*tiles*/
+
+.sapMStdTileNum {
+    color: #eb008b;
+}
+
+.launchpadTiles {
+    border: 2px solid #73ecb5;
+    border-radius: 20px;
+}
+
+.launchpadTiles:hover {
+    /*    background-color: rgba(34, 225, 34, 0.2);*/
+    box-shadow: 5px 5px 5px #73ecb5;
+}
+
+.launchpadTiles>div:active {
+    background-color: #73ecb5;
+    border-radius: 15px;
+}
+
+.sapMStdTileIconDiv {
+    color: #73ecb5;
+}
+
+.sapMStdTileTitle {
+    font-weight: bold;
+    color: #00adef;
+}
+
+.tileContainerClass {
+    /*    margin-top: -12em !important;*/
+}
+
+.sapMTile:focus {
+    outline: none !important;
+}
+
+.paddingBottomSimpleform {
+    padding-bottom: 40px;
+}
+
+.supplementaryActiveState:active {
+    background-color: #cbe2fb;
+    -moz-box-shadow: 0 0 10px #73ecb5;
+    -webkit-box-shadow: 0 0 10px #73ecb5;
+    box-shadow: 0 0 10px #73ecb5;
+}
+
+div[data-statusColor="03"] {
+    background-color: lightgreen !important;
+    color: white !important;
+}
+
+div[data-statusColor="04"] {
+    background-color: green !important;
+    color: white !important;
+}
+
+div[data-statusColor="01"] {
+    background-color: red !important;
+    color: white !important;
+}
+
+div[data-statusColor="02"] {
+    background-color: orange !important;
+    color: white !important;
+}
+
+.statusCell {
+    min-height: 1.6rem;
+}
+
+.statusCell>div>a {
+    line-height: 1.8rem;
+    color: white !important;
+}
+
+
+/*workingOrders state buttons*/
+
+.readyToPickStatusButton>span.sapMBtnInner {
+    background: red;
+    background-image: -webkit-linear-gradient(top, red, red);
+    background-image: -moz-linear-gradient(top, red, red);
+    background-image: -ms-linear-gradient(top, red, red);
+    background-image: -o-linear-gradient(top, red, red);
+    background-image: linear-gradient(to bottom, red, red);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    color: #ffffff;
+}
+
+.readyToPickStatusButton>span.sapMBtnInner:hover {
+    background: red;
+    background-image: -webkit-linear-gradient(top, red, red);
+    background-image: -moz-linear-gradient(top, red, red);
+    background-image: -ms-linear-gradient(top, red, red);
+    background-image: -o-linear-gradient(top, red, red);
+    background-image: linear-gradient(to bottom, red, red);
+}
+
+.pickingStatusButton>span.sapMBtnInner {
+    background: orange;
+    background-image: -webkit-linear-gradient(top, orange, orange);
+    background-image: -moz-linear-gradient(top, orange, orange);
+    background-image: -ms-linear-gradient(top, orange, orange);
+    background-image: -o-linear-gradient(top, orange, orange);
+    background-image: linear-gradient(to bottom, orange, orange);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    color: #ffffff;
+}
+
+.pickingStatusButton>span.sapMBtnInner:hover {
+    background: orange;
+    background-image: -webkit-linear-gradient(top, orange, orange);
+    background-image: -moz-linear-gradient(top, orange, orange);
+    background-image: -ms-linear-gradient(top, orange, orange);
+    background-image: -o-linear-gradient(top, orange, orange);
+    background-image: linear-gradient(to bottom, orange, orange);
+}
+
+.underControllStatusButton>span.sapMBtnInner {
+    background: lightgreen;
+    background-image: -webkit-linear-gradient(top, lightgreen, lightgreen);
+    background-image: -moz-linear-gradient(top, lightgreen, lightgreen);
+    background-image: -ms-linear-gradient(top, lightgreen, lightgreen);
+    background-image: -o-linear-gradient(top, lightgreen, lightgreen);
+    background-image: linear-gradient(to bottom, lightgreen, lightgreen);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    color: #ffffff;
+}
+
+.underControllStatusButton>span.sapMBtnInner:hover {
+    background: lightgreen;
+    background-image: -webkit-linear-gradient(top, lightgreen, lightgreen);
+    background-image: -moz-linear-gradient(top, lightgreen, lightgreen);
+    background-image: -ms-linear-gradient(top, lightgreen, lightgreen);
+    background-image: -o-linear-gradient(top, lightgreen, lightgreen);
+    background-image: linear-gradient(to bottom, lightgreen, lightgreen);
+}
+
+.controlledStatusButton>span.sapMBtnInner {
+    background: green;
+    background-image: -webkit-linear-gradient(top, green, green);
+    background-image: -moz-linear-gradient(top, green, green);
+    background-image: -ms-linear-gradient(top, green, green);
+    background-image: -o-linear-gradient(top, green, green);
+    background-image: linear-gradient(to bottom, green, green);
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    color: #ffffff;
+}
+
+.controlledStatusButton>span.sapMBtnInner:hover {
+    background: green;
+    background-image: -webkit-linear-gradient(top, green, green);
+    background-image: -moz-linear-gradient(top, green, green);
+    background-image: -ms-linear-gradient(top, green, green);
+    background-image: -o-linear-gradient(top, green, green);
+    background-image: linear-gradient(to bottom, green, green);
+}
+
+
+/*workingOrders state buttons*/
+
+.statusLinks.sapMLnkDsbl {
+    opacity: 1;
+}
+
+.stateTextCommonClass{
+    font-weight: bolder;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: white !important;
+    height: 100%;
+    margin-left: 0 !important;
+    text-shadow: none;
+    line-height: 3rem;
+}
+
+.currentWorkingOrderStatePicking {
+    color: orange !important;
+}
+
+.currentWorkingOrderStateUnderControl {
+    color: lightgreen !important;
+}
+
+.currentWorkingOrderStateControlled {
+    color: green !important;
+}
+
+.currentWorkingOrderStateReadyToClose {
+    background-color: #73ecb5 !important;
+    color: green !important;
+}
+
+

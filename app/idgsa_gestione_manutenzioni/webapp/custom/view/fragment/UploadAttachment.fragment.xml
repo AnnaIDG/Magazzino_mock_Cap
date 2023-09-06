@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified">
+	<Dialog resizable="false" title="{i18n>uploadTitle}">
+		<content>
+			<FlexBox alignItems="Start" justifyContent="Center">
+				<items>
+					<Image src=""/>
+					<u:FileUploader id="myImage" name="myFileUpload" uploadUrl="{serverModel>/link}/DDMFileSet" change="onUploadChange"	useMultipart="false" uploadComplete="onUploadComplete" fileSizeExceed="onFileSizeExceed" maximumFileSize="8000" />
+<!--                    fileType="jpg,txt" typeMissmatch="onChoseTypeMissmatch" fileSizeExceed=""  maximumFileSize="3000" -->
+				</items>
+			</FlexBox>
+		</content>
+		<buttons>
+			<Button text="{i18n>cancelButton}" press="onCancelUploadPress" type="Reject"/>
+			<Button text="{i18n>confirmButton}" press="onConfirmUploadPress" type="Accept"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

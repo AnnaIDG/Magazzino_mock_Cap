@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog resizable="false" title="{i18n>manageTaskTitle}" afterClose="cancelChangeTask">
+		<buttons>
+		</buttons>
+		<content>
+			<l:VerticalLayout class="sapUiSmallMarginTop sapUiSmallMarginBottom center-message" width="100%">
+				<Text text="{manageTaskModel>/message}" />
+			</l:VerticalLayout>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

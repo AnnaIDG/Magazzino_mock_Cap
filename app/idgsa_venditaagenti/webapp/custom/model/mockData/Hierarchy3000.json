@@ -1,0 +1,19 @@
+[
+    {
+		"productId": "2EASY",
+		"description": "2EASY",
+		"distrCh": "10",
+		"division": "10",
+		"salesOrg": "3000",
+        "level":1
+		
+	},
+    {
+		"productId": "2PA",
+		"description": "2PA",
+		"distrCh": "10",
+		"division": "10",
+		"salesOrg": "3000",
+        "level":1
+	}  
+]

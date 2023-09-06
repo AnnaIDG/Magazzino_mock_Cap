@@ -1,0 +1,322 @@
+{
+    "_version": "1.42.0",
+    "sap.app": {
+        "id": "tileproject.tileproject",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.8.3",
+            "toolsId": "409e33dd-bf46-4dd0-b696-3a89857016f2"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "tile_project-display": {
+                    "semanticObject": "MFC_Admin",
+                    "action": "display",
+                    "title": "{{flpTitle}}",
+                    "icon": "sap-icon://manager",
+                    "subTitle": "{{flpSubtitle}}",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
+            }
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/CatalogService/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            },
+            "flussiModel": {
+                "uri": "model/flussi.json",
+                "type": "JSON"
+            },
+            "UtentiModel": {
+                "uri": "model/Utenti.json",
+                "type": "JSON"
+            },
+            "ErroriModel": {
+                "uri": "model/errori.json",
+                "type": "JSON"
+            },
+            "associazioniModel": {
+                "uri": "model/associazioni.json",
+                "type": "JSON"
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.platform.cf": {
+        "ui5VersionNumber": "1.108.0"
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.108.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "tileproject.tileproject.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "type": "sap.ui.model.odata.v4.ODataModel",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true,
+                    "groupId": "$auto"
+                }
+            },
+            "flussiModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "flussiModel"
+            },
+            "UtentiModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "UtentiModel"
+            },
+            "ErroriModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "ErroriModel"
+            },
+            "associazioniModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "associazioniModel"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "tileproject.tileproject.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "Routetile",
+                    "pattern": ":?query:",
+                    "target": [
+                        "Targettile"
+                    ]
+                },
+                {
+                    "name": "Routedettaglio",
+                    "pattern": "dettaglio/{selectedobj}",
+                    "target": [
+                        "Targetdettaglio"
+                    ]
+                },
+                {
+                    "name": "RouteDnD",
+                    "pattern": "DnD",
+                    "target": [
+                        "TargetDnD"
+                    ]
+                },
+                {
+                    "name": "RouteUtentiSelezionati",
+                    "pattern": "UtentiSelezionati/{selectedobj}",
+                    "target": [
+                        "TargetUtentiSelezionati"
+                    ]
+                },
+                {
+                    "name": "RouteUtenti",
+                    "pattern": "Utenti",
+                    "target": [
+                        "TargetUtenti"
+                    ]
+                },
+                {
+                    "name": "RouteAnagUtenti",
+                    "pattern": "AnagUtenti",
+                    "target": [
+                        "TargetAnagUtenti"
+                    ]
+                },
+                {
+                    "name": "RouteAnagFlussi",
+                    "pattern": "AnagFlussi",
+                    "target": [
+                        "TargetAnagFlussi"
+                    ]
+                },
+                {
+                    "name": "RouteAddFlusso",
+                    "pattern": "AddFlusso",
+                    "target": [
+                        "TargetAddFlusso"
+                    ]
+                },
+                {
+                    "name": "RouteAddUtente",
+                    "pattern": "AddUtente",
+                    "target": [
+                        "TargetAddUtente"
+                    ]
+                },
+                {
+                    "name": "RouteTabellaGestione",
+                    "pattern": "TabellaGestione",
+                    "target": [
+                        "TargetTabellaGestione"
+                    ]
+                },
+                {
+                    "name": "RouteUtentiFlussi",
+                    "pattern": "UtentiFlussi",
+                    "target": [
+                        "TargetUtentiFlussi"
+                    ]
+                }
+            ],
+            "targets": {
+                "Targettile": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "tile",
+                    "viewName": "tile"
+                },
+                "Targetdettaglio": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "dettaglio",
+                    "viewName": "dettaglio"
+                },
+                "TargetDnD": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "DnD",
+                    "viewName": "DnD"
+                },
+                "TargetUtentiSelezionati": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "UtentiSelezionati",
+                    "viewName": "UtentiSelezionati"
+                },
+                "TargetUtenti": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Utenti",
+                    "viewName": "Utenti"
+                },
+                "TargetAnagUtenti": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "AnagUtenti",
+                    "viewName": "AnagUtenti"
+                },
+                "TargetAnagFlussi": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "AnagFlussi",
+                    "viewName": "AnagFlussi"
+                },
+                "TargetAddFlusso": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "AddFlusso",
+                    "viewName": "AddFlusso"
+                },
+                "TargetAddUtente": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "AddUtente",
+                    "viewName": "AddUtente"
+                },
+                "TargetTabellaGestione": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "TabellaGestione",
+                    "viewName": "TabellaGestione"
+                },
+                "TargetUtentiFlussi": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "UtentiFlussi",
+                    "viewName": "UtentiFlussi"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "tileproject.tileproject.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "hana.app"
+    }
+}

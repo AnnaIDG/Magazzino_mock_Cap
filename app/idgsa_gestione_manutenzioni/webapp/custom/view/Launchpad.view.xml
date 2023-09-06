@@ -1,0 +1,15 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.Launchpad" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page enableScrolling="false" showNavButton="false" showHeader="false">
+		<content>
+			<core:Fragment fragmentName="view.fragment.Header" type="XML"/>
+			<TileContainer id="tileContainer" tiles="{tiles>/}">
+				<StandardTile icon="sap-icon://{tiles>icon}" title="{tiles>title}" app:tileUrl="{tiles>url}"
+					press="onTilePress" visible="{tiles>visible}" info="{tiles>noPriorityNotices}" infoState="Warning"/>
+			</TileContainer>
+		</content>
+	</Page>
+</mvc:View>
+

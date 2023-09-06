@@ -1,0 +1,14 @@
+{
+  "items":
+  [
+    {
+      "id":"P",
+      "name":"Persona"
+    },
+    {
+      "id":"S",
+      "name":"Società"
+    }
+
+  ]
+}

@@ -1,0 +1,19 @@
+{
+    "results": 
+  [
+    {
+      "id":"Z_01",
+      "description":"Pista"
+    },
+    {
+      "id":"Z_02",
+      "description":"Bagno"
+    },
+    {
+      "id":"Z_03",
+      "description":"Uffici"
+      
+    }
+  ]
+
+}

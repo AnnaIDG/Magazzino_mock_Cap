@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+						<List id="filterList"
+							items="{filter>/selected/values}"
+							mode="MultiSelect"
+							includeItemInSelection="true">
+                              <StandardListItem
+                                   title="{filter>value}"
+                                   iconDensityAware="false"
+                                   iconInset="false"
+                                   selected= "{filter>isSelected}"/>
+            </List>
+
+</core:FragmentDefinition>

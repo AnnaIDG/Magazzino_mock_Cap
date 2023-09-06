@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog resizable="true" confirm="handleFilterConfirm" afterOpen="afterOpenFilter" class="filterDialogItem" contentHeight="100%" title="{i18n>complexFilter}">
+        <buttons>
+            <Button text="{i18n>back}" press="onBackFilterPress" visible="{path:'filter>/selected', formatter:'utils.Formatter.isSelected'}" />
+            <Button text="{i18n>reset}" press="onResetFilterPress" />
+            <Button text="{i18n>close}" press="onFilterDialogClose" />
+            <Button text="{i18n>ok}" press="onFilterDialogOK" />
+        </buttons>
+        <content>
+            <NavContainer id="navCon">
+                <Page id="parent" showHeader="false">
+                    <content>
+                        <List items="{filter>/items}">
+                            <StandardListItem title="{filter>title}" type="Navigation" iconDensityAware="false" iconInset="false" press="onFilterPropertyPress" />
+                        </List>
+                    </content>
+                </Page>
+                <Page id="children" showHeader="false">
+                    <subHeader>
+                        <Toolbar>
+                            <SearchField liveChange="onSearchFilter" width="100%" />
+                        </Toolbar>
+                    </subHeader>
+                    <content>
+                    </content>
+                </Page>
+            </NavContainer>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,22 @@
+{
+  "items":
+  [
+    {
+      "id":"DT01",
+      "name":"Ubicazione DT01"
+    },
+    {
+      "id":"DT02",
+      "name":"Ubicazione DT02"
+    },
+      {
+      "id":"DT03",
+      "name":"Ubicazione DT03"
+    },
+    {
+      "id":"DT04",
+      "name":"Ubicazione DT04"
+    }
+
+  ]
+}

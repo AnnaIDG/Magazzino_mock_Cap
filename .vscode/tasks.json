@@ -26,6 +26,24 @@
         "--in-memory?"
       ],
       "problemMatcher": []
+    },
+    {
+      "label": "cds-deploy-to-hana-Magazzino_mock-Magazzino_mock-dev",
+      "type": "shell",
+      "command": "cds",
+      "args": [
+        "deploy",
+        "--to",
+        "hana:Magazzino_mock-dev",
+        "--no-save"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        "$cap-hdi-bind-handler"
+      ]
     }
   ]
 }

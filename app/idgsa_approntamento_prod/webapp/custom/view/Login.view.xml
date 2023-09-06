@@ -1,0 +1,38 @@
+<mvc:View controllerName="controller.Login" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+    <Page class="loginPageSfondo" showHeader="false">
+        <content>
+            <FlexBox alignItems="Start" justifyContent="SpaceBetween" class="loginImageBackGround" height="80%" >
+            <FlexBox height="30%" width="100%" alignItems="Start" justifyContent="Start" direction="Column">
+                <FlexBox alignItems="Start" justifyContent="SpaceBetween" class="sapUiLargeMarginBegin" width="90%">
+                    <FlexBox>
+                        <Image src="custom/images/sapCompanyLogo.png" densityAware="true" class="imagePaginaIniziale sapUiTinyMarginTop"  />
+                    </FlexBox>
+                </FlexBox>
+            </FlexBox>
+            <FlexBox alignItems="Center" justifyContent="Center" direction="Column" class="loginFormCustomer" id="flexForm">
+                <items>
+                    <f:SimpleForm editable="true" layout="ResponsiveGridLayout" width="325px" busyIndicatorDelay="1" id="loginForm" class="formClass">
+                        <f:content>
+                            <Label text="{i18n>usernameLabel}" />
+                            <Input placeholder="{i18n>usernamePlaceholder}" value="{appModel>/username}" id="inputUsername" liveChange="onLiveChange" />
+                            <Label text="{i18n>passwordLabel}" />
+                            <Input placeholder="{i18n>passwordPlaceholder}" type="Password" value="{appModel>/password}" id="inputPassword" liveChange="onLiveChange" />
+                            
+                            <Button text="{i18n>loginButton}" press="onLoginPress" class="loginButton" id="loginButtonId" >
+                               
+                            </Button>
+                            
+                        </f:content>
+                    </f:SimpleForm>
+                </items>
+                <FlexBox class="flexBoxFlag">
+                <Button id="italyFlag" icon="./custom/images/languages/Italy.png" press="onSwitchLanguage" tooltip="{i18n>italianLanguage}" class="sapUiTinyMarginEnd" />
+                <Button id="britainFlag" icon="./custom/images/languages/UnitedKingdom.png" press="onSwitchLanguage" tooltip="{i18n>englishLanguage}" />
+            </FlexBox>
+            </FlexBox>
+            
+           </FlexBox>
+
+        </content>
+    </Page>
+</mvc:View>

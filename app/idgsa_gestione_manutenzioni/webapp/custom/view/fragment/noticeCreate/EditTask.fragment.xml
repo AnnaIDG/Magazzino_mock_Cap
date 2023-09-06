@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog resizable="true" contentHeight="100%" title="{i18n>editTask}">
+		<Page showHeader="false">
+			<content>
+				<Panel expandable="false" expanded="true" headerText="{i18n>selectFailureObject}" width="auto">
+					<Input value="{taskModel>/objectDescr}" editable="false" width="100%" textAlign="Center"/>
+					<Input value="{taskModel>/problemDescr}" editable="false" width="100%" textAlign="Center"/>
+				</Panel>
+				<Panel expandable="false" expanded="true" headerText="{i18n>selectTaskType}" width="auto">
+					<Select forceSelection="false" items="{path: 'taskModel>/tasks', sorter: {path: 'description'}}"
+						selectedKey="{taskModel>/task}" textAlign="Center" width="100%">
+						<core:Item key="{taskModel>codeErr}" text="{taskModel>codeErrDescr}"/>
+					</Select>
+				</Panel>
+				<Panel expandable="false" expanded="true" headerText="{i18n>taskDescription}" width="auto">
+					<TextArea value="{taskModel>/description}" visible="true" rows="8" width="100%"/>
+				</Panel>
+
+			</content>
+			<footer>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button text="{i18n>ok}" press="onEditTaskOkPress"/>
+					<Button text="{i18n>cancel}" press="onEditTaskCancelPress"/>
+				</Toolbar>
+			</footer>
+		</Page>
+	</Dialog>
+</core:FragmentDefinition>

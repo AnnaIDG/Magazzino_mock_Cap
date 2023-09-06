@@ -1,0 +1,210 @@
+.inputValidateError input{
+      border-width: 1px;
+      border-style: Solid;
+      border-color: #CC0000;
+      background-color: #FFDDD9;
+}
+/* gestione testo version footerPage */
+.cssVersionText {
+    margin-bottom: 10px !important;
+}
+.cssVersionText span {
+    margin-right: 15px;
+    color: #009de0;
+    font-weight: bold;
+}
+/* NOME UTENTE HEADER */
+.headerUserText {
+    font-weight: bold;
+    color: #007cc0;
+}
+.noticeIdList{
+    font-weight: bold !important;
+    color: #007cc0 !important;
+}
+/* CLASSI PER GESTIRE GLI STATI*/
+span[data-statecolor="INIZ"] {
+	color: #4CAF50 !important;
+	font-weight: bold !important;
+}
+span[data-statecolor="WIPP"] {
+	color: #80DEEA !important;
+	font-weight: bold !important;
+}
+span[data-statecolor="TOCP"] {
+	color: #03A9F4 !important;
+	font-weight: bold !important;
+}
+span[data-statecolor="TRAS"] {
+	color: #E040FB !important;
+	font-weight: bold !important;
+}
+span[data-statecolor="WIPM"] {
+	color: #FF9800 !important;
+	font-weight: bold !important;
+}
+span[data-statecolor="TOCL"] {
+	color: #F44336 !important;
+	font-weight: bold !important;
+}
+
+div[data-statecolor="INIZ"] {
+	color: #4CAF50 !important;
+	font-weight: bold !important;
+}
+div[data-statecolor="WIPP"] {
+	color: #80DEEA !important;
+	font-weight: bold !important;
+}
+div[data-statecolor="TOCP"] {
+	color: #03A9F4 !important;
+	font-weight: bold !important;
+}
+div[data-statecolor="TRAS"] {
+	color: #E040FB !important;
+	font-weight: bold !important;
+}
+div[data-statecolor="WIPM"] {
+	color: #FF9800 !important;
+	font-weight: bold !important;
+}
+div[data-statecolor="TOCL"] {
+	color: #F44336 !important;
+	font-weight: bold !important;
+}
+/* PANNELLO RICERCA SEGNALAZIONI*/
+div[id*='noticeListHorizontalLayout']{
+	width: 97%;
+}
+div[id*='noticeListHorizontalLayout'] div.sapUiHLayoutChildWrapper:last-child{
+	float: right;
+}
+/* CLASSI PER ACTION SHEET */
+.WIPP .sapMBtnInner,
+.WIPP .sapUiIcon {
+    color: #80DEEA !important;
+	font-weight: bold !important;
+}
+.TOCP .sapMBtnInner,
+.TOCP .sapUiIcon {
+    color: #03A9F4 !important;
+	font-weight: bold !important;
+}
+.TRAS .sapMBtnInner,
+.TRAS .sapUiIcon {
+    color: #E040FB !important;
+	font-weight: bold !important;
+}
+.WIPM .sapMBtnInner,
+.WIPM .sapUiIcon {
+    color: #FF9800 !important;
+	font-weight: bold !important;
+}
+.TOCL .sapMBtnInner, 
+.TOCL .sapUiIcon {
+    color: #F44336 !important;
+	font-weight: bold !important;
+}
+/* CLASSE PER AUMENTARE IL FONT DELLE SCRITTE NEL DETTAGLIO DELLA SEGNALAZIONE */
+.hightFontDetailNotice {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+.bordo {
+    border-style:groove !important;
+    border-color: blue !important;
+}
+
+/*Notice Create - General Info Form*/
+.noticeInfoForm {
+	margin-right:10em;
+	margin-left:10em;
+}
+
+.interventionDates{
+    padding-left: 0;
+}
+
+.interventionDatesLabel{
+    font-size: 1.125rem;
+    color: #333333;
+}
+
+.issueListItem>label,
+.issueListItem>textarea,
+.sapMSelectListItem {
+    font-size: 1rem !important;
+}
+
+@media screen and (max-width:1000px) {
+    .issueListItem {
+        min-width: 20rem;
+    }
+}
+
+@media screen and (min-width:1001px) {
+    .issueListItem,issueListItem>label {
+        min-width: 35rem;
+    }
+}
+
+.enlargeButton {
+    width: 15rem;
+    margin-right: 15px !important;
+}
+
+.iconDialogClass
+{
+    background: azure !important;
+}
+
+/*
+#goBackToYourFatherLukeButton
+{
+    position:  : inherit !important;
+    margin-right : 11em !important;
+}
+*/
+
+/*Rfid Associations */
+
+.filterComboClass {
+    margin-right: 1em;
+}
+
+/* Classi per Colori Priorità */
+
+
+span[data-prioritycolor="1"] {
+	color: #FF0000 !important;
+	font-weight: bold !important;
+}
+
+div[data-prioritycolor="1"] {
+	color: #FF0000 !important;
+	font-weight: bold !important;
+}
+
+span[data-prioritycolor="2"] {
+	color: #FFA500 !important;
+	font-weight: bold !important;
+}
+
+div[data-prioritycolor="2"] {
+	color: #FFA500 !important;
+	font-weight: bold !important;
+}
+
+/* span[data-prioritycolor="3"] { */
+/* 	color: #F44336 !important; */
+/* 	font-weight: bold !important; */
+/* } */
+
+/* div[data-prioritycolor="3"] { */
+/* 	color: #4CAF50 !important; */
+/* 	font-weight: bold !important; */
+/* } */
+
+
+
+

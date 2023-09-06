@@ -1,0 +1,13 @@
+{
+  "items":
+  [
+    {
+      "id":"BT01",
+      "name":"Lombardia"
+    },
+    {
+      "id":"BT02",
+      "name":"Veneto"
+    }
+  ]
+}

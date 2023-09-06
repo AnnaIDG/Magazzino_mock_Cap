@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:frm="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:control="control"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Dialog title="{i18n>filterTitleTxt}">
+		<VBox>
+			<HBox>
+				<Input editable="false" value="{i18n>noticeIdLabel}"/>
+				<Input value="{ui>/searchNoticeById}" placeholder="{i18n>searchNoticeByIdLabel}" width="12rem"
+					maxWidth="12rem"/>
+			</HBox>
+			<HBox>
+				<Input editable="false" value="{i18n>noticeStateLabel}"/>
+				<ComboBox items="{ui>/stateSelectList}" selectedKey="{ui>/searchNoticeByState}" width="12rem"
+					placeholder="{i18n>noticeStateLabel}">
+					<core:ListItem key="{ui>sapStatus}" text="{ui>userStatus}-{ui>userStatusDesc}"/>
+				</ComboBox>
+			</HBox>
+			<HBox>
+				<Input editable="false" value="{i18n>priorityLabel}"/>
+				<ComboBox items="{ui>/prioritySelectList}" selectedKey="{ui>/searchNoticeByPriority}"
+					width="12rem" placeholder="{i18n>priorityLabel}">
+					<core:ListItem key="{ui>id}" text="{ui>description}"/>
+				</ComboBox>
+			</HBox>
+			<HBox>
+				<Input editable="false" value="{i18n>noticeDateLabel}"/>
+				<DatePicker width="12rem" dateValue="{ui>/searchNoticeByDateFrom}" placeholder="{i18n>noticeDateFromLabel}"
+					displayFormat="short"/>
+			</HBox>
+			<HBox>
+				<Input editable="false" value="{i18n>noticeDateLabel}"/>
+				<DatePicker width="12rem" dateValue="{ui>/searchNoticeByDateTo}" placeholder="{i18n>noticeDateToLabel}"
+					displayFormat="short"/>
+			</HBox>
+		</VBox>
+		<buttons>
+			<Button text="{i18n>cancel}" press="onCancelFilterDialogPress"/>
+			<Button text="{i18n>reset}" press="onResetFilterDialogPress"/>
+			<Button icon="sap-icon://search" text="{i18n>searchNoticeButtonText}" width="8rem" type="Emphasized"
+				press="onSearchNotice"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

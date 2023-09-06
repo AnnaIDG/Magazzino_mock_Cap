@@ -1,0 +1,758 @@
+[
+    {
+        "noticeId": "1000000001",
+        "priorityId":"2",
+        "priorityDescr": "Urgenza",
+        "noticeDate": "15-09-2016",
+        "requestStart": "15-09-2016",
+        "requestEnd": "16-09-2016",
+        "noticeState": "INIZ",
+        "requestUser": "Mario Rossi",
+        "description": "Righe pista 1",
+        "techPlaceId": "Z_01",
+        "techPlaceDescr": "Pista",
+        "problems": [],
+        "tasks": [],
+        "object": "Riga pista",
+        "failureType": "Colore non presente"
+ },
+    {
+        "noticeId": "1000000002",
+        "priorityId":"3",
+        "priorityDescr": "Urgenza segn. tel.",
+        "noticeDate": "17-09-2016",
+        "requestStart": "18-09-2016",
+        "requestEnd": "20-09-2016",
+        "noticeState": "INIZ",
+        "requestUser": "Giuseppe Russo",
+        "description": "Manutenzione estintore",
+        "techPlaceId": "Z_02",
+        "techPlaceDescr": "Estintore",
+        "problems": [],
+        "tasks": [],
+        "object": "Estintore",
+        "failureType": "Scaduta manutenzione"
+ },
+    {
+        "noticeId": "1000000003",
+        "priorityId": "2",
+        "priorityDescr":"Urgenza",
+        "noticeDate": "14-09-2016",
+        "requestStart": "15-09-2016",
+        "requestEnd": "25-09-2016",
+        "noticeState": "WIPP",
+        "requestUser": "Maria Bruno",
+        "description": "Pulizia condizionatore",
+        "techPlaceId": "Z_03",
+        "techPlaceDescr": "Uffici",
+        "problems": [
+            {
+                "typeId": "2",
+                "type": "Issue di tipo 2",             	
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio e pulizia filtro dell'aria"
+      }
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio condizionatore",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Lavaggio Filtro",
+                "description": "Lavare con acqua e sapone e risciacquare",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "3",
+                "type": "Correction di tipo 3", 
+                "title": "Applicazione Disinfettanti",
+                "description": "Applicare disinfettanti specifici",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Montaggio Filtro",
+                "description": "Riapplicare il filtro e bloccarlo",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    }
+   ],
+        "object": "Filtro",
+        "failureType": "Filtro intasato"
+ },
+    {
+        "noticeId": "1000000004",
+        "priorityId":"5",
+        "priorityDescr": "Programm./nuova att.",
+        "noticeDate": "19-09-2016",
+        "requestStart": "19-09-2016",
+        "requestEnd": "20-09-2016",
+        "noticeState": "WIPP",
+        "requestUser": "Maria Bruno",
+        "description": "Pulizia bagno",
+        "techPlaceId": "Z_04",
+        "techPlaceDescr": "Bagni",
+        "problems": [
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "title": "Pulizia Lavandini",
+                "issuesList":[{
+			        "id": "4",
+			        "objectId":"Z_02",
+			        "description": "Scarichi intasati"
+			        
+				    },
+			    {
+			        "id": "5",
+			        "objectId":"Z_02",
+			        "description": "Specchio rotto"
+			        
+			    }],
+                "description": "Pulizia e disinfettaggio lavandini"
+     },
+            {   
+       			"typeId": "3",
+                "type": "Issue di tipo 3", 
+                "title": "Pulizia Pavimenti",
+                "description": "Pulizia e disinfettaggio pavimenti"
+     },
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "title": "Pulizia WC",
+                "issuesList":[
+                {
+			        "id": "10",
+			        "objectId":"E_02",
+			        "description": "Cestello da sostituire"}
+                ],
+                
+                "description": "Pulizia e disinfettaggio WC"
+     }
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Applicazione Disinfettanti Lavandino",
+                "description": "Applicare disinfettanti specifici",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+     },
+            {
+                "typeId": "3",
+                "type": "Correction di tipo 3", 
+                "title": "Aspirapolvere",
+                "description": "Dare l'aspirapolvere",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+     },
+            {
+                "typeId": "4",
+                "type": "Correction di tipo 4", 
+                "title": "Applicazione Disinfettanti Pavimenti",
+                "description": "Dare lo straccio al pavimento",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+     },
+            {
+                "typeId": "6",
+                "type": "Correction di tipo 6", 
+                "title": "Applicazione Disinfettanti WC",
+                "description": "Applicare Disinfestante",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+     }
+
+   ],
+        "object": "Pavimento",
+        "failureType": "Sporco eccessivo sul pavimento"
+ },
+    {
+        "noticeId": "1000000005",
+        "priorityId":"5",
+        "priorityDescr": "Programm./nuova att.",
+        "noticeDate": "20-09-2016",
+        "requestStart": "20-09-2016",
+        "requestEnd": "22-09-2016",
+        "noticeState": "TOCP",
+        "requestUser": "Mario Rossi",
+        "description": "Sostituzione lavandini",
+        "techPlaceId": "Z_04",
+        "techPlaceDescr": "Bagni",
+        "problems": [
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "issuesList":[
+                ],
+                
+                "title": "Rimozione Lavandini",
+                "description": "Distruggere i lavandini precedenti a martellate"
+     },
+            {   
+       			"typeId": "3",
+                "type": "Issue di tipo 3", 
+                "issuesList":[],
+                "title": "Montaggio Lavandini",
+                "description": "Montare i nuovi lavandini"
+     }
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Distruzione Lavandino",
+                
+                "description": "Ditruggere il lavandino a sprangate",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+     },
+            {
+                "typeId": "3",
+                "type": "Correction di tipo 3", 
+                "title": "Predispozione nuovi agganci a parete",
+                "description": "Forare e applicare il supporto a muro",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+     },
+            {
+                "typeId": "3",
+                "type": "Correction di tipo 3", 
+                "title": "Applicare il nuovo lavandino",
+                "description": "Applicare il lavandino sul supporto",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+     }
+
+   ],
+        "object": "Lavandino",
+        "failureType": "Rottura ceramiche"
+ },
+    {
+        "noticeId": "1000000006",
+        "priorityId":"2",
+        "priorityDescr": "Urgenza",
+        "noticeDate": "22-09-2016",
+        "requestStart": "23-09-2016",
+        "requestEnd": "25-09-2016",
+        "noticeState": "TOCP",
+        "requestUser": "Mario Rossi",
+        "description": "Filtro condizionatore",
+        "techPlaceId": "Z_03",
+        "techPlaceDescr": "Condizionatore",
+        "problems": [
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "issuesList":[],
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio e pulizia filtro dell'aria"
+      }
+
+   ],
+        "tasks": [
+            {
+                "typeId": "6",
+                "type": "Correction di tipo 6", 
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio condizionatore",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "5",
+                "type": "Correction di tipo 5", 
+                "title": "Lavaggio Filtro",
+                "description": "Lavare con acqua e sapone e risciacquare",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "4",
+                "type": "Correction di tipo 4", 
+                "title": "Applicazione Disinfettanti",
+                "description": "Applicare disinfettanti specifici",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    },
+            {
+                "typeId": "3",
+                "type": "Correction di tipo 3", 
+                "title": "Montaggio Filtro",
+                "description": "Riapplicare il filtro e bloccarlo",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    }
+   ],
+        "object": "Filtro",
+        "failureType": "Filtro intasato"
+ },
+    {
+        "noticeId": "1000000007",
+        "priorityId":"4",
+        "priorityDescr": "Normale",
+        "noticeDate": "01-09-2016",
+        "requestStart": "01-09-2016",
+        "requestEnd": "15-09-2016",
+        "noticeState": "TRAS",
+        "requestUser": "Maria Bruno",
+        "description": "Manutenzione estintore",
+        "techPlaceId": "Z_02",
+        "techPlaceDescr": "Estintore",
+        "problems": [
+            {   
+       			"typeId": "4",
+                "type": "Issue di tipo 4", 
+                "issuesList":[],
+                "title": "Accertamenti Tecnici",
+                "description": "Prove Specifiche Tecniche"
+     },
+            {   
+       			"typeId": "5",
+                "type": "Issue di tipo 5", 
+                "issuesList":[],
+                "title": "Collaudo",
+                "description": "Test della funzionalit\u00e0 dell'estintore"
+    }
+
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Analisi Chimica",
+                "description": "Test chimici prodotto",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Analisi Funzionale",
+                "description": "Test meccanici sull'estintore",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Collaudo",
+                "description": "Sperimentazione",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Montaggio Filtro",
+                "description": "Riapplicare il filtro e bloccarlo",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    }
+   ],
+        "object": "Estintore",
+        "failureType": "Scaduta manutenzione"
+ },
+    {
+        "noticeId": "1000000008",
+        "priorityId":"3",
+        "priorityDescr": "Urgenza segn. tel.",
+        "noticeDate": "25-09-2016",
+        "requestStart": "25-09-2016",
+        "requestEnd": "27-09-2016",
+        "noticeState": "TRAS",
+        "requestUser": "Giuseppe Russo",
+        "description": "Filtro condizionatore",
+        "techPlaceId": "Z_03",
+        "techPlaceDescr": "Condizionatore",
+        "problems": [
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "issuesList":[],
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio e pulizia filtro dell'aria"
+      }
+
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio condizionatore",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Lavaggio Filtro",
+                "description": "Lavare con acqua e sapone e risciacquare",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Applicazione Disinfettanti",
+                "description": "Applicare disinfettanti specifici",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    },
+            {
+                "typeId": "5",
+                "type": "Correction di tipo 5", 
+                "title": "Montaggio Filtro",
+                "description": "Riapplicare il filtro e bloccarlo",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    }
+   ],
+        "object": "Filtro",
+        "failureType": "Filtro intasato"
+ },
+    {
+        "noticeId": "1000000009",
+        "priorityId":"2",
+        "priorityDescr": "Urgenza",
+        "noticeDate": "02-09-2016",
+        "requestStart": "03-09-2016",
+        "requestEnd": "17-09-2016",
+        "noticeState": "WIPM",
+        "requestUser": "Maria Bruno",
+        "description": "Filtro condizionatore",
+        "techPlaceId": "Z_03",
+        "techPlaceDescr": "Condizionatore",
+        "problems": [
+            {   
+       			"typeId": "5",
+                "type": "Issue di tipo 5", 
+                "issuesList":[],
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio e pulizia filtro dell'aria"
+      }
+
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Pulizia Filtro Aria",
+                "description": "Smontaggio condizionatore",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Lavaggio Filtro",
+                "description": "Lavare con acqua e sapone e risciacquare",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Applicazione Disinfettanti",
+                "description": "Applicare disinfettanti specifici",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Montaggio Filtro",
+                "description": "Riapplicare il filtro e bloccarlo",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    }
+   ],
+        "object": "Filtro",
+        "failureType": "Filtro intasato"
+ },
+    {
+        "noticeId": "1000000010",
+        "priorityId":"2",
+        "priorityDescr": "Urgenza",
+        "noticeDate": "15-09-2016",
+        "requestStart": "15-09-2016",
+        "requestEnd": "17-09-2016",
+        "noticeState": "WIPM",
+        "requestUser": "Mario Rossi",
+        "description": "Buca pista 3",
+        "techPlaceId": "Z_01",
+        "techPlaceDescr": "Pista",
+        "problems": [
+            {   
+       			"typeId": "4",
+                "type": "Issue di tipo 4", 
+                "issuesList":[],
+                "title": "Scasso del terreno",
+                "description": "Tracciare il percorso e rimuovere terreno"
+    },
+            {   
+       			"typeId": "3",
+                "type": "Issue di tipo 3", 
+                "issuesList":[],
+                "title": "Preparare il fondo",
+                "description": "Realizzare un fondo uniforme e compatto"
+    },
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "issuesList":[],
+                "title": "Asfalto",
+                "description": "Applicare l'asfalto"
+    }
+
+
+   ],
+        "tasks": [
+            {
+                "typeId": "6",
+                "type": "Correction di tipo 6", 
+                "title": "Delimitazione Tracciato",
+                "description": "Tracciare percorso da asfaltare",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Rimozione Terreno",
+                "description": "Rimozione di parte del terrno per circa 12 cm di profondit\u00e0�",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "6",
+                "type": "Correction di tipo 6", 
+                "title": "Preparazione Fondo",
+                "description": "Applicare ghiaia in maniera uniforme e compatta",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    },
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Asfaltatura",
+                "description": "Applicare sacchi di asfalto",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    }
+   ],
+   		"documentation":[
+   			{
+   				"id": "123",
+   				"name": "Planimetria.pdf"
+   			},
+   			{
+   				"id": "124",
+   				"name": "Istruzioni.pdf"
+   			}
+	],
+   		"attachments":[
+   			{
+   				"id": "125",
+   				"name": "DSCN1919822.jpg"
+   			},
+   			{
+   				"id": "126",
+   				"name": "DSCN1919823.jpg"
+   			}
+	],
+        "object": "Buca",
+        "failureType": "Buca su pista"
+ },
+    {
+        "noticeId": "1000000011",
+        "priorityId":"3",
+        "priorityDescr": "Urgenza segn. tel.",
+        "noticeDate": "02-09-2016",
+        "requestStart": "04-09-2016",
+        "requestEnd": "17-09-2016",
+        "noticeState": "TOCL",
+        "requestUser": "Mario Rossi",
+        "description": "Buca pista 2",
+        "techPlaceId": "Z_01",
+        "techPlaceDescr": "Pista",
+        "problems": [
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "issuesList":[],
+                "title": "Scasso del terreno",
+                "description": "Tracciare il percorso e rimuovere terreno"
+    },
+            {   
+       			"typeId": "2",
+                "type": "Issue di tipo 2", 
+                "issuesList":[],
+                "title": "Preparare il fondo",
+                "description": "Realizzare un fondo uniforme e compatto"
+    },
+            {   
+       			"typeId": "3",
+                "type": "Issue di tipo 3", 
+                "issuesList":[],
+                "title": "Asfalto",
+                "description": "Applicare l'asfalto"
+    }
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Delimitazione Tracciato",
+                "description": "Tracciare percorso da asfaltare",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "3",
+                "type": "Correction di tipo 3", 
+                "title": "Rimozione Terreno",
+                "description": "Rimozione di parte del terrno per circa 12 cm di profondit\u00e0",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "3",
+                "type": "Correction di tipo 3", 
+                "title": "Preparazione Fondo",
+                "description": "Applicare ghiaia in maniera uniforme e compatta",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    },
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Asfaltatura",
+                "description": "Applicare sacchi di asfalto",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    }
+   ],
+   		"documentation":[
+   			{
+   				"id": "123",
+   				"name": "Planimetria.pdf"
+   			},
+   			{
+   				"id": "124",
+   				"name": "Istruzioni.pdf"
+   			}
+	],
+   		"attachments":[
+   			{
+   				"id": "125",
+   				"name": "DSCN1919822.jpg"
+   			},
+   			{
+   				"id": "126",
+   				"name": "DSCN1919823.jpg"
+   			}
+	],
+        "object": "Buca",
+        "failureType": "Buca su pista"
+ },
+    {
+        "noticeId": "1000000012",
+        "priorityId":"2",
+        "priorityDescr": "Urgenza",
+        "noticeDate": "15-09-2016",
+        "requestStart": "15-09-2016",
+        "requestEnd": "17-09-2016",
+        "noticeState": "TOCL",
+        "requestUser": "Giuseppe Russo",
+        "description": "Manutenzione estintore",
+        "techPlaceId": "Z_02",
+        "techPlaceDescr": "Estintore",
+        "problems": [
+            {   
+       			"typeId": "1",
+                "type": "Issue di tipo 1", 
+                "issuesList":[],
+                "title": "Accertamenti Tecnici",
+                "description": "Prove Specifiche Tecniche"
+     },
+            {   
+       			"typeId": "2",
+                "type": "Issue di tipo 2", 
+                "issuesList":[],
+                "title": "Collaudo",
+                "description": "Test della funzionalit\u00e0 dell'estintore"
+    }
+
+   ],
+        "tasks": [
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Analisi Chimica",
+                "description": "Test chimici prodotto",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Analisi Funzionale",
+                "description": "Test meccanici sull'estintore",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "2",
+                "type": "Correction di tipo 2", 
+                "title": "Collaudo",
+                "description": "Sperimentazione",
+                "status": "MISC",
+                "statusDescr": "Chiuso"
+    },
+            {
+                "typeId": "1",
+                "type": "Correction di tipo 1", 
+                "title": "Montaggio Filtro",
+                "description": "Riapplicare il filtro e bloccarlo",
+                "status": "MIAP",
+                "statusDescr": "Aperto"
+    }
+   ],
+   		"documentation":[
+   			{
+   				"id": "123",
+   				"name": "Planimetria.pdf"
+   			},
+   			{
+   				"id": "124",
+   				"name": "Istruzioni.pdf"
+   			}
+	],
+   		"attachments":[
+   			{
+   				"id": "125",
+   				"name": "DSCN1919822.jpg"
+   			},
+   			{
+   				"id": "126",
+   				"name": "DSCN1919823.jpg"
+   			}
+	],
+        "object": "Estintore",
+        "failureType": "Scaduta manutenzione"
+ }
+]

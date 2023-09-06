@@ -1,0 +1,19 @@
+{
+	"items":
+	[
+		{
+			"key":"pt01",
+			"name":"Mock/Default"
+		},
+		{
+			"key":"pt02",
+			"name":"Mock/Omaggio Con Rivalsa"
+		},
+		{
+			"key":"pt03",
+			"name":"Mock/Omaggio Senza Rivalsa"
+		}
+		
+		
+	]
+}

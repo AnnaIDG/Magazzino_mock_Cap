@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog resizable="true" contentHeight="100%" title="{i18n>addNewIssue}">
+		<buttons>
+			<Button text="{i18n>ok}" press="onAddIssueOkPress"/>
+			<Button text="{i18n>cancel}" press="onAddIssueCancelPress"/>
+		</buttons>
+		<content>
+			<Panel expandable="false" expanded="true" headerText="{i18n>selectFailureObject}" width="auto">
+				<ComboBox items="{objectsList>/results}" selectedKey="{mainModel>/objectId}" width="100%"
+					selectionChange="onChangeObject" textAlign="Center">
+					<core:Item key="{objectsList>codeErr}" text="{objectsList>codeErrDescr}"/>
+				</ComboBox>
+			</Panel>
+			<Panel expandable="false" expanded="true" headerText="{i18n>selectIssueType}" width="auto">
+				<ComboBox items="{path: 'issueTypes>/results', sorter: {path: 'description'}}"
+					selectedKey="{mainModel>/issueCode}" width="100%" textAlign="Center" selectionFinish="handleSelectionFinish"
+					enabled="{ui>/multiComboVisible}">
+					<core:Item key="{issueTypes>codeErr}" text="{issueTypes>codeErrDescr}"/>
+				</ComboBox>
+			</Panel>
+			<Panel expandable="false" expanded="true" headerText="{i18n>issueDescription}">
+				<TextArea value="{issueTypes>/issueTypeTextDescription}" visible="true" rows="8" width="100%"/>
+			</Panel>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

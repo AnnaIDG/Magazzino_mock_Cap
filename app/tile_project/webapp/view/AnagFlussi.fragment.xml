@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:m="sap.ui.table" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form">
+    <Dialog id="AnagFlussi" title="Inserisci nuovo flusso">
+        
+<f:Form id="FormChange32" editable="true" >
+            <f:layout>
+                <f:ResponsiveGridLayout labelSpanXL="6" labelSpanL="4" labelSpanM="4" labelSpanS="4" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false" />
+            </f:layout>
+            <!-- prima colonna form -->
+            <f:formContainers>
+                <f:FormContainer>
+                    <f:formElements>
+                        <f:FormElement label="{i18n>tnome}">
+                            <f:fields>
+                                <Input id="{i18n>tid}" type="Text" maxLength="30" valueStateText="il campo non può essere vuoto" editable="true" placeholder="Scrivi qui" />
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="{i18n>tdescrizione}">
+                            <f:fields>
+                                <TextArea placeholder="Scrivi una breve descrizione" maxLength="50" width="100%"/>
+                            </f:fields>
+                        </f:FormElement>
+
+                        <f:FormElement label="Modulo" id="selectmoduli">
+                            
+                <Select id="modulo" forceSelection="false" selectedKey="">
+                    <items>
+                       
+                        <core:Item text="Abruzzo" key="Abruzzo" />
+                        <core:Item text="Basilicata" key="Basilicata" />
+                        <core:Item text="Calabria" key="Calabria" />
+                        <core:Item text="Campania" key="Campania" />
+                        <core:Item text="Emilia Romagna" key="Emilia Romagna" />
+                        <core:Item text="Friuli Venezia Giulia" key="Friuli Venezia Giulia" />
+                        <core:Item text="Lazio" key="Lazio" />
+                        <core:Item text="Liguria" key="Liguria" />
+                        <core:Item text="Lombardia" key="Lombardia" />
+                        <core:Item text="Marche" key="Marche" />
+                        <core:Item text="Molise" key="Molise" />
+                        <core:Item text="Piemonte" key="Piemonte" />
+                        <core:Item text="Puglia" key="Puglia" />
+                        <core:Item text="Sardegna" key="Sardegna" />
+                        <core:Item text="Sicilia" key="Sicilia" />
+                        <core:Item text="Toscana" key="Toscana" />
+                        <core:Item text="Trentino-Alto Adige" key="Trentino-Alto Adige" />
+                        <core:Item text="Umbria" key="Umbria" />
+                        <core:Item text="Valle d'Aosta" key="Valle d'Aosta" />
+                        <core:Item text="Veneto" key="Veneto" />
+                    </items>
+                    
+                </Select>
+                        </f:FormElement>
+                    </f:formElements>
+                    
+                </f:FormContainer>
+            </f:formContainers>
+            
+        </f:Form>
+        <endButton>
+            <Button text="Chiudi" press="onCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

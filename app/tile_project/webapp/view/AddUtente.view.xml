@@ -1,0 +1,66 @@
+
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tileproject.tileproject.controller.AddUtente" xmlns:semantic="sap.m.semantic" displayBlock="true" xmlns:f="sap.ui.layout.form">
+   
+        
+            <semantic:DetailPage title="Nuovo Utente" id="detail">
+                <f:SimpleForm
+                    id="SimpleFormDisplay354wide"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    title=""
+                    labelSpanXL="4"
+                    labelSpanL="3"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="0"
+                    emptySpanL="4"
+                    emptySpanM="0"
+                    emptySpanS="0"
+                    columnsXL="2"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false"
+                 
+                >
+                    <f:content>
+                        <Label text="{i18n>tid}" />
+                        <Input id="id" editable="false"/>
+
+                        <Label text="{i18n>tcognome}" />
+                        <Input id="cognome" />
+
+                        <Label text="{i18n>tnome}" />
+                        <Input id="nome" />
+
+                        <Label text="{i18n>truolo}" />
+                        <Input id="ruolo" />
+
+                        <Label text="{i18n>temail}" />
+                        <Input id="email" />
+
+                        <Label text="{i18n>ttelefono}" />
+                        <Input id="telefono" />
+                    </f:content>
+                </f:SimpleForm>
+
+               
+
+				<semantic:customFooterContent>
+               
+                
+                
+                <OverflowToolbarButton icon="sap-icon://refresh" id="refreshBtn" press="refresh" />
+
+                <OverflowToolbarButton icon="sap-icon://save" id="exitBtn"  press="exit" />
+
+                <OverflowToolbarButton icon="sap-icon://add" id="addBtn" press="add"/>
+
+
+		
+				</semantic:customFooterContent>
+
+				
+            </semantic:DetailPage>
+       
+</mvc:View>

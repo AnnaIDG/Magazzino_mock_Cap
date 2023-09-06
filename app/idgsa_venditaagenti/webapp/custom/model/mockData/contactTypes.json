@@ -1,0 +1,17 @@
+{
+  "items":
+  [
+    {
+      "id":"P1",
+      "name":"Posta"
+    },
+    {
+      "id":"T1",
+      "name":"Telefono"
+    },
+    {
+      "id":"W1",
+      "name":"Web"
+    }
+  ]
+}

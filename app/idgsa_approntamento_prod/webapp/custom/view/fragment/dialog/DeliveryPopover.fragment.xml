@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Popover title="{i18n>DELIVERY_POPOVER_TITLE}" class="sapUiContentPadding" placement="Left">
+        <Table items="{bills>/items}">
+            <columns>
+                <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="{i18n>ORDERID}" /> </Column>
+                <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="{i18n>DELIVERYID}" /> </Column>
+                <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="{i18n>BOLLANUM}" /> </Column>
+                <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="{i18n>DELIVERYSTATE}" /> </Column>
+                <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="{i18n>DOCUMENTDATE}" /> </Column>
+                <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="{i18n>DELIVERYDATE}" /> </Column>
+
+            </columns>
+            <items>
+                <ColumnListItem type="Active" press="onTrackingPress">
+                    <cells>
+                        <Text text="{path: 'bills>orderId', formatter: 'utils.Formatter.removeLeadingZeroes'}" />
+                        <Text text="{path: 'bills>deliveryId', formatter: 'utils.Formatter.removeLeadingZeroes'}" />
+                        <Text text="{path:'bills>numBolla', formatter: 'utils.Formatter.removeLeadingZeroes'}" />
+                        <Text text="{bills>deliveryStatus}" />
+                        <DatePicker dateValue="{bills>documentDate}" valueFormat="yyyy-MM-dd" displayFormat="short" editable="false" placeholder=" " hAlign="End" textAlign="Center" />
+                        <DatePicker dateValue="{bills>deliveryDate}" valueFormat="yyyy-MM-dd" displayFormat="short" editable="false" placeholder=" " hAlign="End" textAlign="Center" />
+                        <Text text="{bills>destinationName}" />
+                        <Text text="{bills>filiale}" />
+                        <Text text="{bills>state}" />
+                        <!--
+              <Button icon="sap-icon://taxi" press="onShippmentsInfoPress" tooltip="{i18n>LINKTOCARRIER}"/>
+              <Button icon="sap-icon://print" press="onShippmentPrintPress" tooltip="{i18n>LINKTOPDF}"/>
+              <Button icon="sap-icon://money-bills" press="onInvoicePrintPress" tooltip="{i18n>INVOICEPRINT}"/>
+-->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <!-- <List
+      items="{d>/components}" >
+      <items>
+        <ObjectListItem
+				title="{d>text}"
+				type="Active"
+				press="onTrackingPress"
+				/>
+      </items>
+
+    </List> -->
+    </Popover>
+</core:FragmentDefinition>

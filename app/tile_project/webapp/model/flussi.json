@@ -1,0 +1,168 @@
+{
+    "flussi": [
+        {
+            "id": "0",
+            "nome": "Vendite Bari",
+            "descrizione": "questo flusso è del processo di vendita",
+            "stato": true,
+            "utenti": [
+                {
+                    "id": "0",
+                    "nome": "Mario",
+                    "cognome": "Rossi",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },
+                {
+                    "id": "1",
+                    "nome": "Diana",
+                    "cognome": "Sanna",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },  
+                {
+                    "id": "2",
+                    "nome": "Flavia",
+                    "cognome": "Cidonio",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                }
+            ]
+          
+        },
+        {
+            "id": "1",
+            "nome": "Vendite Napoli",
+            "descrizione": "questo flusso è del processo di vendita",
+            "stato": true,
+            "utenti": [
+                {
+                    "id": "3",
+                    "nome": "Angelo",
+                    "cognome": "Sisinna",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },
+                {
+                    "id": "4",
+                    "nome": "Chiara",
+                    "cognome": "Fedele",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                }
+            ]
+           
+        },
+        {
+            "id": "2",
+            "nome": "Vendite Cesenatico",
+            "descrizione": "questo flusso è del processo di vendita",
+            "stato": false,
+            "utenti": [
+                {
+                    "id": "0",
+                    "nome": "Mario",
+                    "cognome": "Rossi",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },
+                {
+                    "id": "1",
+                    "nome": "Diana",
+                    "cognome": "Sanna",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },  
+                {
+                    "id": "2",
+                    "nome": "Flavia",
+                    "cognome": "Cidonio",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                }
+               
+            ]
+        },
+        {
+            "id": "3",
+            "nome": "Produzione Bari",
+            "descrizione": "questo flusso è del processo di vendita",
+            "stato": true,
+            "utenti": [
+                {
+                    "id": "0",
+                    "nome": "Mario",
+                    "cognome": "Rossi",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },
+                 
+                {
+                    "id": "2",
+                    "nome": "Flavia",
+                    "cognome": "Cidonio",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "nome": "Magazzino Napoli",
+            "descrizione": "questo flusso è del processo di vendita",
+            "stato": true,
+            "utenti": [
+                {
+                    "id": "0",
+                    "nome": "Mario",
+                    "cognome": "Rossi",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },
+                {
+                    "id": "1",
+                    "nome": "Diana",
+                    "cognome": "Sanna",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },  
+                {
+                    "id": "2",
+                    "nome": "Flavia",
+                    "cognome": "Cidonio",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },
+                {
+                    "id": "3",
+                    "nome": "Angelo",
+                    "cognome": "Sisinna",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                },
+                {
+                    "id": "4",
+                    "nome": "Chiara",
+                    "cognome": "Fedele",
+                    "email":"cheneso@email.com",
+                    "ruolo":"admin",
+                    "telefono":3206367123
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:frm="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:control="control">
+	<List items="{mainModel>/tasks}" headerText="{i18n>taskList}" class="taskListItemClass">
+		<NotificationListItem title="{i18n>selectTaskType}: {mainModel>typeDescr}"
+			description="{i18n>selectIssueType}: {mainModel>objectDescr}\n{i18n>selectFailureObject}: {mainModel>problemDescr}\n{i18n>taskDescription}: {mainModel>description}"
+			authorName="{i18n>state}: {mainModel>state/text}" authorPicture="sap-icon://activity-2"
+			showCloseButton="false"
+			priority="{= ${mainModel>state/key} === 'MISC' ? 'Low' : (${mainModel>startDate} !== '' ? 'Medium' : 'High')}"
+			datetime="{= ${mainModel>startDate} !== '' ? ${i18n>taskCreationDate} : '' } {parts:[{path:'mainModel>startDate'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} {mainModel>startTime} {= ${mainModel>state/key} === 'MISC' ? ' - ' : '' }{= ${mainModel>state/key} === 'MISC' ? ${i18n>taskEndingDate} : '' } {parts:[{path:'mainModel>endDate'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} {mainModel>endTime}">
+			<buttons>
+<!--				<Button type="Accept" press="onOpenTaskItemPress" icon="sap-icon://play" visible="{= (${ui>/openCloseTaskVisible} &amp;&amp; ${mainModel>state/key} === 'MIAP' &amp;&amp; ${mainModel>startDate} === '')}" />-->
+				<Button type="Reject" press="onCloseTaskItemPress" icon="sap-icon://stop"
+					visible="{= (${ui>/openCloseTaskVisible} &amp;&amp; ${mainModel>state/key} === 'MIAP')}" />
+				<Button type="Emphasized" press="onEditTaskItemPress" icon="sap-icon://edit"
+					visible="{= ${mainModel>state/key} === 'MIAP'}" />
+				<!-- <Button type="Reject" press="onTaskItemDelete" icon="sap-icon://sys-cancel"></Button> -->
+			</buttons>
+		</NotificationListItem>
+	</List>
+	<Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://play" text="{i18n>startProcess}" press="onPressStartProblemSolving" visible="{=(${mainModel>/noticeState} !== 'TOCP' &amp;&amp; ${mainModel>/noticeState} !== 'TOCL') &amp;&amp; (${ui>/dateStartProblemSolving} === true ? false : true)}" />
+        <ToolbarSpacer/>
+		<Button icon="sap-icon://add" text="{i18n>addActivityBtn}" press="onPressCreateTaskDialog" visible="{ui>/dateStartProblemSolving}" />
+	</Toolbar>
+</core:FragmentDefinition>

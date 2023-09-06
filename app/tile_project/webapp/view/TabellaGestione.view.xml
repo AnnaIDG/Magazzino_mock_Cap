@@ -1,0 +1,164 @@
+<mvc:View
+    xmlns:f="sap.ui.layout.form"
+    controllerName="tileproject.tileproject.controller.TabellaGestione"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+    xmlns:t="sap.m.Table"
+    xmlns:layout="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+    xmlns:m="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core='sap.ui.core'
+    xmlns:u="sap.ui.unified"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:p13n="sap.m.p13n"
+    xmlns:ce="sap.ui.codeeditor"
+    class="sapUiContentPadding"
+>
+<Page
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding"
+		showNavButton="false" >
+
+   
+    
+    
+    <content>
+            <InputListItem label="Utenti">
+               
+                <ActionSelect id="idUtenti" items="{path: '/Anagrafica_Utenti'}" forceSelection="false">
+                    <items>
+                        <core:Item key="{ID_UTENTE}" text="{COGNOME_UTENTE} {NOME_UTENTE}" />
+                    </items>
+                </ActionSelect>
+            
+		    </InputListItem>
+
+    
+        
+       
+            <ToolbarSpacer/>
+                
+        <InputListItem label="Flussi">
+            <ActionSelect id="id_Flusso" items="{path: '/Anagrafica_Flussi'}" forceSelection="false">
+                <items>
+                    <core:Item key="{ID_FLUSSO}" text="{NOME_FLUSSO}" />
+                </items>
+            </ActionSelect>
+        </InputListItem>
+         <Input id="id_utente_flusso" description="INSERISCI IL NUMERO DELL'ASSOCIAZIONE" visible="false" width="auto"></Input>
+        
+    </content>
+      
+    <Table id="table2" inset="false" items="{UtenteFlusso>/UtentiFlussiSelezionati}" alternateRowColors="true" >
+       
+ <headerToolbar>
+    <OverflowToolbar>
+            
+        <Button type="Accept" press="associazione" text="Visualizza Associazione" icon="sap-icon://accept" />
+       
+    </OverflowToolbar>
+        
+        </headerToolbar>
+        
+        
+        <columns>
+        
+            <!-- <Column width="10%" minScreenWidth="Desktop" demandPopin="true">
+                <Text text="ID Utente Flusso" /> 
+            </Column> -->
+            <Column width="10%">
+                <Text text="ID Flusso" />
+            </Column>
+            <Column width="10%" minScreenWidth="Desktop" demandPopin="true">
+                <Text text="Nome Flusso" /> 
+            </Column>
+            
+            <Column width="10%" minScreenWidth="Desktop" demandPopin="true">
+                <Text text="ID Utente" /> 
+            </Column>
+            <!-- <Column width="10%" minScreenWidth="Desktop" demandPopin="true">
+                <Text id="id_ut_fl" text="ID_UTENTE_FLUSSO" /> 
+            </Column> -->
+            <Column width="10%" minScreenWidth="Desktop" demandPopin="true">
+                <Text text="Nome Utente" /> 
+            </Column>
+            
+            
+            
+        </columns>
+        <items>
+            <ColumnListItem vAlign="Middle" press="onPress">
+                <cells>
+                    
+                    <Text text="{UtenteFlusso>ID_FLUSSO_ID_FLUSSO}" />
+                    <Text text="{UtenteFlusso>descrFlusso}" />
+                    <Text text="{UtenteFlusso>ID_UTENTE_ID_UTENTE}" />
+                    <!-- <Text text="{UtenteFlusso>ID_UTENTE_FLUSSO}" /> -->
+                    <Text text="{UtenteFlusso>descrUtente}" />
+    
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+    <!-- <Button type="Success" press="save" text="Salva" icon="sap-icon://accept" />-->
+<!--     	
+            <f:SimpleForm
+                    id="simple_form"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    title=""
+                    labelSpanXL="4"
+                    labelSpanL="3"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="0"
+                    emptySpanL="4"
+                    emptySpanM="0"
+                    emptySpanS="0"
+                    columnsXL="2"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false"
+                    visible="true"
+                 
+                >
+                    <f:content>
+                        <Label text="{i18n>tid}" />
+                        <TextArea id="id" value="" editable="true" />
+
+                        <Label text="{i18n>tutente}" />
+                        <Input id="DESCR_UTENTE" />
+
+                        <Label text="{i18n>idFlusso}" />
+                        <Input id="id_flusso" />
+
+                        <Label text="{i18n>temail}" />
+                        <Input id="email" />
+
+                        <Label text="{i18n>nomeFlusso}" />
+                        <Input id="DESCRIZIONE_FLUSSO" />
+
+                    </f:content>
+                </f:SimpleForm> -->
+
+                <!-- <Button
+			text="Salva dati"
+			class="sapUiSmallMarginBottom"
+			press="save"
+			width="250px"
+			ariaHasPopup="Dialog"/> -->
+
+            <Button
+			text="Crea associazione"
+			class="sapUiSmallMarginBottom"
+			press="crea_associazione"
+			width="250px"
+			ariaHasPopup="Dialog"/> 
+
+</Page>
+</mvc:View>

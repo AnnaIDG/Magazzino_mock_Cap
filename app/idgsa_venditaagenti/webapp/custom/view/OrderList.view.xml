@@ -1,0 +1,85 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.OrderList" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page id="orderListModelPageId">
+		<headerContent>
+			<core:Fragment fragmentName="view.fragment.Header" type="XML"/>
+		</headerContent>
+		<subHeader class="sapUiSizeCompact">
+			<Toolbar>
+				<Button icon="sap-icon://filter" press="onFilterPress"/>
+				<SearchField liveChange="onFilterOrderList" width="100%" value="{ui>/searchValue}"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<Table id="orderListModelTable" class="sapUiSizeCompact" width="100%"
+				items="{path:'orderListModel>/results', sorter: {path:'orderId', descending:true}}">
+				<columns>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="100px">
+						<Text text="{i18n>listOrderId}"/>
+					</Column>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="100px">
+						<Text text="{i18n>listCustomerId}"/>
+					</Column>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+						<Text text="{i18n>listCustomerName}"/>
+					</Column>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+						<Text text="{i18n>listOrderCreateDate}"/>
+					</Column>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+						<Text text="{i18n>listRequestedDate}"/>
+					</Column>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle"  width="150px">
+						<Text text="{i18n>orderStatus}"/>
+					</Column>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="40px">
+						<Text text=""/>
+					</Column>
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="40px">
+						<Text text=" "/>
+					</Column>
+					<!--  
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+						<Text text=" "/>
+					</Column>
+					-->
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="40px">
+						<Text text=" "/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem press="onOrderPress" type="Inactive" vAlign="Middle"
+						selected="{orderListModel>selected}">
+						<cells>
+							<Text text="{orderListModel>orderId}"/>
+							<Text text="{orderListModel>customerId}"/>
+							<Text text="{orderListModel>customerName}"/>
+							<Text text="{path:'orderListModel>validDateList', formatter:'utils.Formatter.formatDate'}"/>
+							<ObjectNumber
+								number="{path : 'orderListModel>validDateList', formatter:'utils.Formatter.formatDate'}"
+								state="{parts: [{path:'orderListModel>validDateList'}, {path: 'orderListModel>shippmentDate'}], formatter: 'utils.Formatter.formatDateState'}"/>
+							<ObjectNumber number="{orderListModel>orderStatus}">
+								<customData>
+									<core:CustomData key="statusColor" value="{orderListModel>blockCode}"
+										writeToDom="true"/>
+								</customData>
+							</ObjectNumber>
+							<core:Icon src="sap-icon://pdf-attachment" size="1.2rem" useIconTooltip="false"
+								tooltip="{i18n>orderPrintTooltip}" color="#0F3D7B" press="onLinkToPdfPress"/>
+							<core:Icon src="sap-icon://shipping-status" size="1.2rem" useIconTooltip="false"
+								tooltip="{i18n>shippmentPrintTooltip}" color="grey"/>
+							<core:Icon src="sap-icon://sys-help" size="1.2rem" useIconTooltip="false"
+								tooltip="{i18n>orderInfoButtonTitle}" color="#0F3D7B" press="onOrderPress"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<Toolbar>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

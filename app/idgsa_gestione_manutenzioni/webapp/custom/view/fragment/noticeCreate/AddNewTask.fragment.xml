@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog resizable="true" contentHeight="100%" title="{i18n>addNewTask}">
+		<buttons>
+			<Button text="{i18n>ok}" press="onAddTaskOkPress"/>
+			<Button text="{i18n>cancel}" press="onAddTaskCancelPress"/>
+		</buttons>
+		<content>
+			<Panel expandable="false" expanded="true" headerText="{i18n>selectFailureObject}" width="auto">
+				<ComboBox selectedKey="{taskModel>/object}" items="{path: 'taskModel>/objects', sorter: {path: 'object'}}"
+					placeholder="{i18n>object}" selectionChange="onTaskObjectSelectionChange" textAlign="Center"
+					width="100%">
+					<core:ListItem key="{taskModel>objectId}" text="{taskModel>object}"/>
+				</ComboBox>
+				<ComboBox selectedKey="{taskModel>/problem}" enabled="{= ( ${taskModel>/object} !== '' ) }"
+					items="{path: 'taskModel>/problems'}" placeholder="{i18n>problem}" selectionChange="onTaskProblemSelectionChange"
+					textAlign="Center" width="100%">
+					<core:ListItem key="{taskModel>problemId}" text="{taskModel>type}"/>
+				</ComboBox>
+			</Panel>
+			<Panel expandable="false" expanded="true" headerText="{i18n>selectTaskType}" width="auto">
+				<ComboBox selectedKey="{taskModel>/task}" enabled="{= ( ${taskModel>/object} !== '' ) }"
+					items="{path: 'taskModel>/tasks'}" textAlign="Center" width="100%" selectionChange="onTaskSelectionChange">
+					<core:ListItem key="{taskModel>codeErr}" text="{taskModel>codeErrDescr}"/>
+				</ComboBox>
+				<!-- <Select forceSelection="false" items="{path: 'taskTypes>/results', sorter: {path: 'description'}}" 
+					textAlign="Center" width="100%"> -->
+				<!-- <core:Item key="{taskTypes>id}" text="{taskTypes>description}" /> -->
+				<!-- </Select> -->
+			</Panel>
+			<Panel expandable="false" expanded="true" headerText="{i18n>taskDescription}" width="auto">
+				<TextArea value="{taskModel>/description}" visible="true" rows="8" width="100%"/>
+			</Panel>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>
+
+
+        
+
+
+
+
+
+

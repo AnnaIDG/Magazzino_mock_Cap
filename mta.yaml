@@ -1,40 +1,238 @@
-_schema-version: '3.1'
+_schema-version: "3.1"
 ID: Magazzino_mock
+description: A simple CAP project.
 version: 1.0.0
-description: "A simple CAP project."
+modules:
+- name: Magazzino_mock-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: Magazzino_mock-db
+  - name: uaa_Magazzino_mock
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    host: ${appname}
+  build-parameters:
+    builder: npm
+    ignore:
+    - .env
+    - ./node_modules
+- name: Magazzino_mock-db-deployer
+  type: hdb
+  path: db
+  requires:
+  - name: Magazzino_mock-db
+  parameters:
+    buildpack: nodejs_buildpack
+    ignore:
+    - .env
+    - ./node_modules
+- name: Magazzino_mock-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: Magazzino_mock-destination-service
+    parameters:
+      content-target: true
+  - name: Magazzino_mock_html_repo_host
+    parameters:
+      service-key:
+        name: Magazzino_mock_html_repo_host-key
+  - name: uaa_Magazzino_mock
+    parameters:
+      service-key:
+        name: uaa_Magazzino_mock-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: hana_app_Magazzino_mock_html_repo_host
+          ServiceInstanceName: Magazzino_mock-html5-app-host-service
+          ServiceKeyName: Magazzino_mock_html_repo_host-key
+          sap.cloud.service: hana.app
+        - Authentication: OAuth2UserTokenExchange
+          Name: hana_app_uaa_Magazzino_mock
+          ServiceInstanceName: Magazzino_mock-xsuaa-service
+          ServiceKeyName: uaa_Magazzino_mock-key
+          sap.cloud.service: hana.app
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: Magazzino_mock-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Magazzino_mock_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - mfcconsumer.zip
+      name: mfcconsumer
+      target-path: resources/
+    - artifacts:
+      - mfctechnical.zip
+      name: mfctechnical
+      target-path: resources/
+    - artifacts:
+      - tileprojecttileproject.zip
+      name: tileprojecttileproject
+      target-path: resources/
+    - artifacts:
+      - idgsagestionetravelidgsagestionetravel.zip
+      name: idgsagestionetravelidgsagestionetravel
+      target-path: resources/
+    - artifacts:
+      - idgsawizardofferteidgsawizardofferte.zip
+      name: idgsawizardofferteidgsawizardofferte
+      target-path: resources/
+    - artifacts:
+      - idgsavenditaagenti.zip
+      name: idgsavenditaagenti
+      target-path: resources/
+    - artifacts:
+      - idgsagestionemanutenzioni.zip
+      name: idgsagestionemanutenzioni
+      target-path: resources/
+    - artifacts:
+      - idgsaapprontamentoprod.zip
+      name: idgsaapprontamentoprod
+      target-path: resources/
+- name: mfcconsumer
+  type: html5
+  path: app/mfc_consumer
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mfctechnical
+  type: html5
+  path: app/mfc_technical
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: tileprojecttileproject
+  type: html5
+  path: app/tile_project
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: idgsagestionetravelidgsagestionetravel
+  type: html5
+  path: app/idgsa_gestione_travel
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: idgsawizardofferteidgsawizardofferte
+  type: html5
+  path: app/idgsa_wizardofferte
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: idgsavenditaagenti
+  type: html5
+  path: app/idgsa_venditaagenti
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: idgsagestionemanutenzioni
+  type: html5
+  path: app/idgsa_gestione_manutenzioni
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: idgsaapprontamentoprod
+  type: html5
+  path: app/idgsa_approntamento_prod
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: Magazzino_mock-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: Magazzino_mock-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            HTML5.DinamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: hana-app-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://${appname}.${default-domain}
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: Magazzino_mock-destination-service
+    service-plan: lite
+- name: Magazzino_mock_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: Magazzino_mock-html5-app-host-service
+    service-plan: app-host
+- name: uaa_Magazzino_mock
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: Magazzino_mock-xsuaa-service
+    service-plan: application
 parameters:
+  appname: unique-2bf190225d88
+  deploy_mode: html5-repo
   enable-parallel-deployments: true
 build-parameters:
   before-all:
-    - builder: custom
-      commands:
-        - npx cds build --production
-modules:
-  - name: Magazzino_mock-srv
-    type: nodejs
-    path: gen/srv
-    parameters:
-      buildpack: nodejs_buildpack
-    build-parameters:
-      builder: npm
-    provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
-        properties:
-          srv-url: ${default-url}
-    requires:
-      - name: Magazzino_mock-db
-
-  - name: Magazzino_mock-db-deployer
-    type: hdb
-    path: db #gen/db
-    parameters:
-      buildpack: nodejs_buildpack
-    requires:
-      - name: Magazzino_mock-db
-
-resources:
-  - name: Magazzino_mock-db
-    type: com.sap.xs.hdi-container
-    parameters:
-      service: hana
-      service-plan: hdi-shared
+  - builder: custom
+    commands:
+    - npx cds build --production

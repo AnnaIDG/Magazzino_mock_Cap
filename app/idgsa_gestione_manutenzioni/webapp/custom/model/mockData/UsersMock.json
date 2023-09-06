@@ -1,0 +1,59 @@
+{
+	"users": 
+	[
+		{
+			"userId": "1",
+			"userAlias": "CRSAVE",
+			"name": "Francesco",
+			"surname": "Cardellini",
+			"roleId": "1",
+			"roleDesc": "Control Room SAVE",
+			"password": "c",
+			"techPlace": ""
+		},
+
+		{
+			"userId": "2",
+			"userAlias": "OSAVE",
+			"name": "Nunzio",
+			"surname": "Della Ragione",
+			"roleId": "2",
+			"roleDesc": "Operatore SAVE",
+			"password": "o",
+			"techPlace": ""
+		},
+
+		{
+			"userId": "3",
+			"userAlias": "CREXT",
+			"name": "Francesco",
+			"surname": "Spina",
+			"roleId": "3",
+			"roleDesc": "Control room esterna",
+			"password": "c",
+			"techPlace": "Z_02"
+		},
+
+		{
+			"userId": "4",
+			"userAlias": "OEXT",
+			"name": "Fabio",
+			"surname": "Giordano",
+			"roleId": "4",
+			"roleDesc": "Operatore esterno",
+			"password": "o",
+			"techPlace": "Z_03"
+		},
+		
+		{
+			"userId":"x",
+			"userAlias": "RLOAD",
+			"name": "Lorenzo",
+			"surname": "Celotti",
+			"roleId": "x",
+			"roleDesc": "RFID Loader",
+			"password": "x",
+			"techPlace": ""
+		}
+	]
+}

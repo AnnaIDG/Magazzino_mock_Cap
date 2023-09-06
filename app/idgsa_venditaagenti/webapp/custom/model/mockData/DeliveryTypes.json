@@ -1,0 +1,14 @@
+{
+  "items":
+  [
+    {
+      "id":"DT01",
+      "name":"Normale"
+    },
+    {
+      "id":"DT02",
+      "name":"Speciale"
+    }
+
+  ]
+}

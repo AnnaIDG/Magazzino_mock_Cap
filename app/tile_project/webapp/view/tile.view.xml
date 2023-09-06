@@ -1,0 +1,96 @@
+<mvc:View xmlns:cards="sap.f.cards" xmlns:f="sap.f" controllerName="tileproject.tileproject.controller.tile" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:t="sap.m.Table" xmlns:layout="sap.ui.layout" xmlns:tnt="sap.tnt">
+    <Page id="tile" title="{i18n>title}">
+        <tnt:ToolHeader>
+            <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" />
+            <Text text="Welcome Admin" wrapping="false" />
+
+            <!-- <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" press=".onAvatarPressed" /> -->
+            <!-- <Image src="test-resources/sap/tnt/images/SAP_Logo.png" /> -->
+
+            <ToolbarSpacer />
+            <!-- <Button icon="sap-icon://search" type="Transparent" /> -->
+            <!-- <Button icon="sap-icon://task" type="Transparent" press="vaiADnD" /> -->
+            <Button icon="sap-icon://home" type="Transparent" />
+
+            <Button icon="sap-icon://grid" type="Transparent" />
+        </tnt:ToolHeader>
+        <!-- tile admin -->
+        <content>
+            <Panel width="auto" class="sapUiResponsiveMargin">
+                <!-- <headerToolbar>
+                    <OverflowToolbar height="3rem">
+                        <Title text="admin" />
+                        <ToolbarSpacer />
+                    </OverflowToolbar>
+                </headerToolbar> -->
+
+                <layout:HorizontalLayout allowWrapping="true">
+                    <GenericTile header="Gestione Utenti" class="sapUiTinyMargin" press="vaiAnagUtenti">
+                        <tileContent>
+                            <TileContent unit="" footer="">
+                                <ImageContent src="sap-icon://person-placeholder" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile header="Gestione Flussi" class="sapUiTinyMargin" press="vaiAnagFlussi">
+                        <tileContent>
+                            <TileContent unit="" footer="">
+                                <ImageContent src="sap-icon://workflow-tasks" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile header="Associazioni Flussi-Utenti" class="sapUiTinyMargin" press="vaiTabellaGestione">
+                        <tileContent>
+                            <TileContent unit="" footer="">
+                                <ImageContent src="" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                </layout:HorizontalLayout>
+            </Panel>
+        </content>
+        <!-- flussi in errore -->
+        <!-- <content>
+            <Panel width="auto" class="sapUiResponsiveMargin">
+                <headerToolbar>
+                    <OverflowToolbar height="3rem">
+                        <Title text="Flussi in Errore" />
+                        <ToolbarSpacer />
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <layout:HorizontalLayout allowWrapping="true" content="{path: '/Anagrafica_Flussi'}">
+                    <GenericTile header="{NOME_FLUSSO}" subheader="" class="bgRed sapUiTinyMargin" press="vaiAlDettaglio"  visible="{= ${flussiModel>stato} ? false : true}">
+                       
+                        <tileContent>
+                            <TileContent unit="" footer="">
+                                <ImageContent src="{= ${flussiModel>stato} ? 'sap-icon://accept' : 'sap-icon://error'}" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                </layout:HorizontalLayout>
+            </Panel>
+        </content> -->
+        <!-- flussi ok -->
+        <!-- <content>
+            <Panel width="auto" class="sapUiResponsiveMargin">
+                <headerToolbar>
+                    <OverflowToolbar height="3rem">
+                        <Title text="Flussi OK" />
+                        <ToolbarSpacer />
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <layout:HorizontalLayout allowWrapping="true" content="{flussiModel>/flussi}">
+                    <GenericTile header="{flussiModel>nome}" subheader="" visible="{= ${flussiModel>stato} ? true : false}" class="bgGreen sapUiTinyMargin" press="vaiAlDettaglio">
+                        <tileContent>
+                            <TileContent unit="" footer="" class="sapUiTinyMargin">
+                                <ImageContent src="{= ${flussiModel>stato} ? 'sap-icon://accept' : 'sap-icon://error'}" />
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                </layout:HorizontalLayout>
+            </Panel>
+        </content> -->
+    </Page>
+</mvc:View>

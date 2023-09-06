@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons" xmlns:mvc="sap.ui.core.mvc" xmlns:frm="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:control="control" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" >
+	<Dialog title="{i18n>filterTitleTxt}">
+		
+            <VBox>
+            	<HBox>
+				<Input value="{i18n>techPlaceTypeLabel}" editable="false"/>
+            	
+            	 <ComboBox items="{techPlaceTypesModel>/results}" selectedKey="{rfidFilterModel>/type}" class="filterComboClass">
+                 	<core:Item key="{techPlaceTypesModel>id}" text="{techPlaceTypesModel>description}" />
+                 </ComboBox>
+			</HBox>
+            	<HBox>
+				<Input value="{i18n>techPlaceCategoryLabel}" editable="false"/>
+				<ComboBox items="{techPlaceCategoriesModel>/results}" selectedKey="{rfidFilterModel>/category}">
+                	<core:Item key="{techPlaceCategoriesModel>id}" text="{techPlaceCategoriesModel>description}" />
+                 </ComboBox>
+            	
+				</HBox>
+            
+            </VBox>
+			<buttons>
+				<Button text="{i18n>cancel}" press="onCancelFilterDialogPress"/>
+				<Button text="{i18n>reset}" press="onResetFilterDialogPress"/>
+				<Button text="{i18n>ok}" press="onOKFilterDialogPress"/>
+				
+			</buttons>
+			
+			
+            
+           
+
+
+
+       
+	</Dialog>
+    
+</core:FragmentDefinition>

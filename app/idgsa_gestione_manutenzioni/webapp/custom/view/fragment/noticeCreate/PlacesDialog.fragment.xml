@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog contentHeight="100%">
+		<Page showHeader="false">
+			<content>
+				<Toolbar>
+					<SearchField liveChange="_handleSearchDialog" width="100%" />
+				</Toolbar>
+				<List id="listPlacesId" items="{/results}" mode="SingleSelectLeft" includeItemInSelection="true" >
+					<CustomListItem>
+						<FlexBox alignItems="Start" justifyContent="SpaceBetween" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+							<VBox>
+								<Label text="{description}" design="Bold" editable="false" />
+								<Label text="{id}" />
+							</VBox>
+							<FlexBox>
+								<core:Icon size="1.5rem" src="sap-icon://media-play" press="goToChild" visible="{= ${ultimo} !== 'X'}"
+									class="iconDialogClass" useIconTooltip="false" />
+							</FlexBox>
+						</FlexBox>
+					</CustomListItem>
+				</List>
+			</content>
+			<footer>
+				<Toolbar>
+					<Button icon="sap-icon://response" press="goBackToYourFatherLuke" id="goBackToYourFatherLukeButton" visible="{/backButton}" tooltip="{i18n>goBackHierarchyTooltip}" />
+					<ToolbarSpacer/>
+					<Button text="{i18n>annulla}" press="onPressCloseHelpPlaces" />
+					<Button text="{i18n>ConfirmSelection}" press="_handleValueHelpPlacesClose" />
+				</Toolbar>
+			</footer>
+		</Page>
+	</Dialog>
+</core:FragmentDefinition>

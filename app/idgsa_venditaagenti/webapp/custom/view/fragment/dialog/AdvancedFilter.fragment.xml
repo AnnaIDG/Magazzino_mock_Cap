@@ -1,0 +1,72 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:l="sap.ui.layout"
+  xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Dialog title="{i18n>masterFilter}" contentWidth="700px" contentHeight="180px" >
+        <content>
+            
+            <Panel expandable="true" expanded="false" headerText="{i18n>lastBoughtDate}" id ="lastBoughtDate" expand = "activateEnable">
+                <headerToolbar>
+                    <Toolbar active="true">
+                        <Title text="{i18n>lastBoughtDate}"/>
+                        <ToolbarSpacer />
+                        <Switch  state="{filterOut>/lastBoughtDate/en}">
+                            <layoutData>
+                             <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                    </Toolbar>
+                </headerToolbar>
+                 <content>
+                    
+                    <FlexBox alignItems="Center" justifyContent="SpaceBetween" width="90%">
+                    
+                    <Title text="{i18n>from}" textAlign="Center" labelFor="fromLastBoughtDateID">
+                       
+                    </Title>
+                    <DatePicker
+                      id="fromLastBoughtDateID"
+                      valueFormat="dd-MM-yyyy" displayFormat="long"
+                      enabled = "{filterOut>/lastBoughtDate/en}"
+                      
+                      value="{path:'filterOut>/lastBoughtDate/results/from', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}">
+                      
+                    </DatePicker>
+                   
+                  
+                     <Title text="{i18n>to}" textAlign="Center" labelFor="toLastBoughtDateID">
+                     
+                    </Title>
+                    <DatePicker
+                      id="toLastBoughtDateID"
+                      valueFormat="dd-MM-yyyy" displayFormat="long"
+                      
+                       enabled = "{filterOut>/lastBoughtDate/en}"
+                      value="{path:'filterOut>/lastBoughtDate/results/to', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}">
+                      
+                    </DatePicker>
+                    
+                    </FlexBox>
+                    
+                </content>
+            </Panel>
+            
+              
+            
+               
+            
+
+            
+                
+                
+           
+        </content>
+        <beginButton>
+            <Button text="{i18n>ok}" press="onConfirmAdvancedFilterPress"/>
+        </beginButton>
+        <endButton>
+			<Button text="{i18n>cancel}" press="onAdvancedFilterCloseButton" />
+		</endButton>
+    </Dialog>  
+</core:FragmentDefinition>

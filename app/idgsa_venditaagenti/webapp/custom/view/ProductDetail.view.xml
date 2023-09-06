@@ -1,0 +1,171 @@
+<mvc:View controllerName="controller.ProductDetail" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:h="http://www.w3.org/1999/xhtml">
+    <Page showNavButton="false" id="productDetailPageId" enableScrolling="true" busyIndicatorDelay="1">
+        <customHeader>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        </customHeader>
+        <content>
+
+            <frm:SimpleForm title="{i18n>productInfoTitle}" layout="ResponsiveGridLayout" editable="true" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" maxContainerCols="2" class="center" enableScrolling="true" visible="{ui>/productDetailVisible}">
+                <frm:content>
+                    <Label text="{i18n>productIdLabel}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" />
+                        </layoutData>
+                    </Label>
+                    <Input value="{productDetailModel>/productId}" editable="false">
+                    <layoutData>
+                        <lay:GridData span="L8 M8 S8" />
+                    </layoutData>
+                    </Input>
+                    <Label text="{i18n>productDescriptionLabel}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" />
+                        </layoutData>
+                    </Label>
+                    <Input value="{productDetailModel>/description}" editable="false">
+                    <layoutData>
+                        <lay:GridData span="L8 M8 S8" />
+                    </layoutData>
+                    </Input>
+                    <Label text="{i18n>productScaleLabel}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" />
+                        </layoutData>
+                    </Label>
+
+                    <ComboBox id="scaleComboBox" items="{scaleSelectModel>/scaleTypes}" selectedKey="{productDetailModel>/scale}" maxWidth="10em" editable="false" selectionChange="onScaleValueChange">
+                        <core:Item key="{scaleSelectModel>id}" text="{scaleSelectModel>name}" />
+                        <layoutData>
+                            <lay:GridData span="L8 M8 S8" />
+                        </layoutData>
+                    </ComboBox>
+                    <!--
+					<Input value="{productDetailModel>/scale}" editable="false">
+						<layoutData>
+							<lay:GridData span="L8 M8 S8"/>
+						</layoutData>
+					</Input>
+-->
+                    <Label text="{i18n>productUnitPriceLabel}" design="Bold" visible="{= (!${ui>/isBackofficeUser})}">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" />
+                        </layoutData>
+                    </Label>
+                    <Input class="priceClass" value="{productDetailModel>/unitListPrice} {productDetailModel>/currency}" editable="false" visible="{= (!${ui>/isBackofficeUser})}">
+
+                    <layoutData>
+                        <lay:GridData span="L8 M8 S8" />
+                    </layoutData>
+                    </Input>
+                    
+                     <Label text="{i18n>availabilityInfo}" design="Bold" visible="{ui>/checkATPTriggered}">
+                         <layoutData>
+                             <lay:GridData span="L4 M4 S4" />
+                         </layoutData>
+                     </Label>
+                     <Input value="{parts:[{path:'productDetailModel>/available'},{path:'productDetailModel>/warning'}], formatter: 'utils.Formatter.formatAvailabilityInfo'}" editable="false"  >
+                     <layoutData>
+                         <lay:GridData span="L3 M3 S3" />
+                     </layoutData>
+                     </Input>
+
+                     <Button id="availabilityCheckButton" text="" icon="{parts:[{path:'productDetailModel>/available'},{path:'productDetailModel>/warning'}], formatter: 'utils.Formatter.formatAvailabilityIconOnProductDetail'}" width="5px">
+                         <layoutData>
+                             <lay:GridData span="L2 M2 S2" />
+                         </layoutData>
+                     </Button>
+                    
+                    
+                    
+<!--                     <Label text="{i18n>freeProduct}" design="Bold" visible="{= (${ui>/productDetailVisible} ===  true &amp;&amp; ${ui>/isFromOrder} ===  true)}"> -->
+<!--                         <layoutData> -->
+<!--                             <lay:GridData span="L4 M4 S4" /> -->
+<!--                         </layoutData> -->
+<!--                     </Label> -->
+                    
+                   
+<!--                     <CheckBox selected="{productDetailModel>/free}" visible="{= (${ui>/productDetailVisible} ===  true &amp;&amp; ${ui>/isFromOrder} ===  true)}" /> -->
+
+					
+
+
+                </frm:content>
+            </frm:SimpleForm>
+
+<!--             <Panel id="requestProductAvailabilityPanel" expandable="true" expanded="false" class="productRequestPanel" visible="{= (${ui>/productDetailVisible} ===  true &amp;&amp; ${ui>/isFromOrder} ===  true)}"> -->
+
+<!--                 <headerToolbar> -->
+<!--                     <Toolbar height="3rem"> -->
+
+<!--                         <Button id="availabilityButton" type="Reject" class="availabilityButton" width="110px" text="{i18n>requestAvailability}" press="onAvailabilityButtonPress" /> -->
+<!--                     </Toolbar> -->
+<!--                 </headerToolbar> -->
+<!--                 <content> -->
+<!--                     <frm:SimpleForm title="{i18n>availability}" breakpointM="400" editable="true" layout="ResponsiveGridLayout" maxContainerCols="2" columnsL="2" columnsM="2" labelSpanM="4" labelSpanL="4" emptySpanM="1" emptySpanL="2"> -->
+
+<!--                         <frm:content> -->
+<!--                             <Label text="{i18n>quantity}" design="Bold"> -->
+<!--                                 <layoutData> -->
+<!--                                     <lay:GridData span="L4 M4 S4" /> -->
+<!--                                 </layoutData> -->
+<!--                             </Label> -->
+<!--                             <Input id="atpCheckInputQuantity" value="{productDetailModel>/reqQty}" editable="true" width="{path:'ui>/deviceType', formatter:'utils.Formatter.formatDimensionByType'}" liveChange="liveChangeATPCheck"> -->
+<!--                                 <layoutData> -->
+<!--                                     <lay:GridData span="L2 M2 S2" /> -->
+<!--                                 </layoutData> -->
+<!--                             </Input> -->
+<!--                             <Button id="confirmQuantityButton" type="Reject" width="100px" class="confirmButton" text="{i18n>confirm}" press="simulateATPCheckPressButton" > -->
+<!--                                 <layoutData> -->
+<!--                                     <lay:GridData span="L4 M4 S4" /> -->
+<!--                                 </layoutData> -->
+<!--                             </Button> -->
+
+<!--
+                            <Label text="{i18n>requestedDate}" design="Bold" visible="false"/>
+                            <DatePicker visible="false" dateValue="{path:'req>/reqDate'}" valueFormat="yyyy-MM-dd" displayFormat="long" width="{path:'ui>/deviceType', formatter:'utils.Formatter.formatDimensionByType'}" class="sapUiSmallMarginBottom" />
+-->
+
+<!--
+                            <Label text="{i18n>availability}" design="Bold" visible="{ui>/checkATPTriggered}"/>
+                            <Switch type="AcceptReject" state="{res>/available}" enabled="false"  visible="{ui>/checkATPTriggered}">
+                                <layoutData>
+                                    <FlexItemData growFactor="1" />
+                                </layoutData>
+                            </Switch>
+-->
+<!--                             <Label text="{i18n>availabilityInfo}" design="Bold" visible="{ui>/checkATPTriggered}"> -->
+<!--                                 <layoutData> -->
+<!--                                     <lay:GridData span="L4 M4 S4" /> -->
+<!--                                 </layoutData> -->
+<!--                             </Label> -->
+<!--                             <Input value="{parts:[{path:'res>/available'},{path:'res>/warning'}], formatter: 'utils.Formatter.formatAvailabilityInfo'}" editable="false" visible="{ui>/checkATPTriggered}" > -->
+<!--                             <layoutData> -->
+<!--                                 <lay:GridData span="L3 M3 S3" /> -->
+<!--                             </layoutData> -->
+<!--                             </Input> -->
+
+<!--                             <Button id="availabilityCheckButton" visible="{ui>/checkATPTriggered}" text="" icon="{parts:[{path:'res>/available'},{path:'res>/warning'}], formatter: 'utils.Formatter.formatAvailabilityIconOnProductDetail'}" width="5px"> -->
+<!--                                 <layoutData> -->
+<!--                                     <lay:GridData span="L2 M2 S2" /> -->
+<!--                                 </layoutData> -->
+<!--                             </Button> -->
+
+<!--                         </frm:content> -->
+<!--                     </frm:SimpleForm> -->
+<!--                     <Toolbar class="toolbarNoBorder"> -->
+<!--                          <ToolbarSpacer/> -->
+<!--                        <Button id="confirmQuantityButton" type="Reject" width="110px" class="confirmButton" text="{i18n>confirm}" press="onRequestAvailabilityPress" />--> 
+<!--                     </Toolbar> -->
+
+<!--                 </content> -->
+<!--             </Panel> -->
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button visible="{= (${ui>/productDetailVisible} ===  true &amp;&amp; ${ui>/isFromOrder} ===  true)}" class="confirmAvailabilityButton" width="150px" text="{i18n>confirmAddToCart}" type="Emphasized" press="onConfirmCheckPress" />
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

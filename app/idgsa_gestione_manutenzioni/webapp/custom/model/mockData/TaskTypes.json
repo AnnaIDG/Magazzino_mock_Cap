@@ -1,0 +1,178 @@
+{
+    "results": [
+        {
+            "id": "1"
+            , "description": "Riasfaltare"
+            , "issueId":"1"
+            ,"objectId":"Z_01"
+    }
+        , {
+            "id": "2"
+            , "description": "Dare la ghiaia"
+            , "issueId":"1"
+            ,"objectId":"Z_01"
+    }
+        , {
+            "id": "3"
+            , "description": "Misure di evacuazione"
+            , "issueId":"2"
+            ,"objectId":"E_01"
+    }
+        , {
+            "id": "4"
+            , "description": "Sostituire le luci"
+            , "issueId":"3"
+            ,"objectId":"Z_03"
+    }
+        , {
+            "id": "5"
+            , "description": "Rimuovere le ruote"
+            , "issueId":"3"
+            ,"objectId":"E_02"
+    }
+        , {
+            "id": "6"
+            , "description": "Tracciare il percorso e rimuovere il terreno"
+            , "issueId":"1"
+            ,"objectId":"Z_01"
+    }
+    , {
+            "id": "7"
+            , "description": "Rimuovere le piastrelle"
+            , "issueId":"4"
+            ,"objectId":"Z_02"
+    }
+    , {
+            "id": "8"
+            , "description": "Applicare colla per piastrelle"
+            , "issueId":"5"
+            ,"objectId":"Z_02"
+    }
+    , {
+            "id": "9"
+            , "description": "Protezione Area circostante"
+            , "issueId":"3"
+            ,"objectId":"E_01"
+    }
+    , {
+            "id": "10"
+            , "description": "Segnalare Buca"
+            , "issueId":"2"
+            ,"objectId":"Z_01"
+    },
+    {
+    	"id": "11"
+            , "description": "Riverniciare l'asfalto"
+            , "issueId":"2"
+            ,"objectId":"Z_10"
+    },
+    {
+    	"id": "12"
+            , "description": "Controllare le luci di corsia"
+            , "issueId":"2"
+            ,"objectId":"Z_10"
+    },
+    {
+            "id": "13"
+            , "description": "Riparare prese elettriche"
+            , "issueId":"3"
+            ,"objectId":"Z_03"
+    },
+    {
+            "id": "14"
+            , "description": "Sistemare la linea telefonica"
+            , "issueId":"3"
+            ,"objectId":"Z_03"
+    },
+    {
+    	 "id": "15",
+         "description": "Disinfettare Lavandino",
+         "objectId":"Z_02",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "16",
+         "description": "Aspirapolvere",
+         "objectId":"Z_07",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "17",
+         "description": "Straccio",
+         "objectId":"Z_07",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "18",
+         "description": "Disinfettare WC",
+         "objectId":"Z_02",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "19",
+         "description": "Distruggere Lavandino",
+         "objectId":"Z_08",
+         "issueId":"3" 
+    },
+     {
+    	 "id": "20",
+         "description": "Preparazione Sostegno",
+         "objectId":"Z_08",
+         "issueId":"3" 
+    },
+     {
+    	 "id": "21",
+         "description": "Applicazione Lavandino",
+         "objectId":"Z_08",
+         "issueId":"3" 
+    },
+     {
+    	 "id": "22",
+         "description": "Disassemblaggio Condizionatore",
+         "objectId":"Z_09",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "23",
+         "description": "Lavaggio Filtro",
+         "objectId":"Z_09",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "24",
+         "description": "Applicazione Disinfettanti",
+         "objectId":"Z_09",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "25",
+         "description": "Montaggio Filtro",
+         "objectId":"Z_09",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "26",
+         "description": "Test chimici",
+         "objectId":"E_01",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "27",
+         "description": "Test funzionali",
+         "objectId":"E_01",
+         "issueId":"3" 
+    },
+    {
+    	 "id": "28",
+         "description": "Collaudo",
+         "objectId":"E_01",
+         "issueId":"3" 
+    },
+    {
+            "id": "29"
+            , "description": "Sostituire il cestello"
+            , "issueId":"3"
+            ,"objectId":"E_02"
+    }
+]
+}

@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:frm="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:control="control">
+	<List items="{mainModel>/problems}" headerText="{i18n>problemList}" mode="None"
+		class="problemListItemClass">
+		<NotificationListItem title="{i18n>selectIssueType}: {mainModel>type}"
+			description="{i18n>selectFailureObject}: {mainModel>object}\n{i18n>issueDescription}:{mainModel>description}"
+			authorName="" authorPicture="sap-icon://message-warning" showButtons="true" showCloseButton="false"
+			datetime="">
+			<buttons>
+				<Button type="Emphasized" press="onEditIssueItemPress" icon="sap-icon://edit" />
+				<!-- <Button type="Reject" press="onIssueItemDelete" icon="sap-icon://sys-cancel"></Button> -->
+			</buttons>
+		</NotificationListItem>
+	</List>
+	<Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://add" text="{i18n>addProblemBtn}" visible="{=(${mainModel>/noticeState} !== 'TOCP' &amp;&amp; ${mainModel>/noticeState} !== 'TOCL')}" press="openAddIssueDialog"/>
+	</Toolbar>
+</core:FragmentDefinition>
+

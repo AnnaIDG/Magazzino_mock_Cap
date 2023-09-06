@@ -1,0 +1,19 @@
+[
+	{	
+		"id":"T1",
+		"description":"type_1"
+	},
+	{
+		"id":"T2",
+		"description":"type_2"
+	},
+	{
+		"id":"T3",
+		"description":"type_3"
+	},
+	{
+		"id":"T4",
+		"description":"type_4"
+	}
+	
+]

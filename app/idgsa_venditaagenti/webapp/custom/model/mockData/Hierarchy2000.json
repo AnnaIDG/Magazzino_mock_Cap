@@ -1,0 +1,19 @@
+[
+    {
+		"productId": "PRO",
+		"description": "PRO",
+		"distrCh": "10",
+		"division": "10",
+		"salesOrg": "2000",
+        "level":1
+		
+	},
+    {
+		"productId": "MI",
+		"description": "MI",
+		"distrCh": "10",
+		"division": "10",
+		"salesOrg": "2000",
+        "level":1
+	}  
+]

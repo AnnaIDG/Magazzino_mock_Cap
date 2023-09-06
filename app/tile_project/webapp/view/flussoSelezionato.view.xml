@@ -1,0 +1,81 @@
+<mvc:View
+    xmlns:f="sap.ui.layout.form"
+    controllerName="tileproject.tileproject.controller.flussoSelezionato"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+    xmlns:t="sap.m.Table"
+    xmlns:layout="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <tnt:ToolHeader>
+        <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" />
+        <Text text="Welcome Admin" wrapping="false" />
+
+        <!-- <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" press=".onAvatarPressed" /> -->
+        <Image src="test-resources/sap/tnt/images/SAP_Logo.png" />
+
+        <ToolbarSpacer />
+        <!-- <Button icon="sap-icon://search" type="Transparent" /> -->
+        <Button icon="sap-icon://task" type="Transparent" press="vaiADnD" />
+        <Button icon="sap-icon://home" type="Transparent" press="vaiHome" />
+
+        <Button icon="sap-icon://grid" type="Transparent" />
+    </tnt:ToolHeader>
+    <SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master">
+        <detailPages>
+            <Page id="detail" title="{flussiModel>nome}" backgroundDesign="Solid">
+                <Label text="{ErroriModel>nome}" />
+
+                <f:SimpleForm
+                    id="SimpleFormDisplay354wide"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    title="{ErroriModel>nome}"
+                    labelSpanXL="4"
+                    labelSpanL="3"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="0"
+                    emptySpanL="4"
+                    emptySpanM="0"
+                    emptySpanS="0"
+                    columnsXL="2"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false"
+                >
+                    <f:content>
+                        <Label text="{i18n>tid}" />
+                        <Text id="id" text="{ErroriModel>id}" width="800px" />
+
+                        <Label text="{i18n>nomeFlusso}" />
+                        <Text id="flusso" text="{ErroriModel>flusso}" width="500px" />
+
+                        <Label text="{i18n>StatoErrore}" />
+                        <ObjectStatus text="{= ${ErroriModel>stato} ? 'Risolto' : 'Da Risolvere'}" inverted="true" state="{= ${ErroriModel>stato} ? 'Success' : 'Error'}" />
+
+                        <Label text="{i18n>messError}" />
+                        <TextArea id="messaggio" value="{ErroriModel>messaggio}" rows="2" editable="false" />
+
+                        <Label text="{i18n>dataError}" />
+                        <Text id="data" text="{ErroriModel>data}" width="500px" />
+                    </f:content>
+                </f:SimpleForm>
+            </Page>
+        </detailPages>
+
+        <masterPages>
+            <Page id="master" title="Master 1" backgroundDesign="List">
+                <List id="list" items="{ErroriModel>/errori}">
+                    <items>
+                        <ObjectListItem id="ObjectListItem" type="Navigation" press="onSelectionChange" title="{ErroriModel>nome}" intro="{ErroriModel>data}" highlight="{= ${ErroriModel>stato} ? 'Success' : 'Error'}" />
+                    </items>
+                </List>
+            </Page>
+        </masterPages>
+    </SplitApp>
+</mvc:View>

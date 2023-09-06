@@ -1,23 +1,26 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
   "configurations": [
     {
-      "name": "cds serve",
+      "name": "Run Magazzino_mock-5",
       "request": "launch",
       "type": "node",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "cds",
       "args": [
         "serve",
-        "--with-mocks",
         "--in-memory?"
       ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": [
         "<node_internals>/**"
-      ]
+      ],
+      "envFile": "${workspaceFolder}/.env5",
+      "env": {
+        "NODE_ENV": "development",
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/Magazzino_mock\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
+      }
     }
-  ]
+  ],
+  "version": "0.2.0"
 }

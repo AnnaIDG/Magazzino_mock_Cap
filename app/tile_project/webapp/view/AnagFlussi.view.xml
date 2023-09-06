@@ -1,0 +1,279 @@
+<mvc:View
+    height="100%"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="tileproject.tileproject.controller.AnagFlussi"
+    xmlns:semantic="sap.m.semantic"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+>
+    <SplitContainer>
+        <!-- MASTER -->
+        <masterPages>
+            <semantic:MasterPage title="Flussi">
+                <List
+                    id="list"
+                    items="{path: '/Anagrafica_Flussi', sorter: {
+                        path: 'ID_FLUSSO',
+                        descending: true
+                    }}"
+                    updateFinished=".onUpdateFinished"
+                >
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <content>
+                                <SearchField
+                                    id="searchField"
+                                    width="70%"
+                                    placeholder="searchfield"
+                                    liveChange="onSearch"
+                                />
+
+                                <Button
+                                    id="sortUsersButton"
+                                    icon="sap-icon://sort"
+                                    tooltip="{i18n>sortButtonText}"
+                                    press="onSort"
+                                />
+                                <Button
+                                    icon="sap-icon://add"
+                                    id="addBtn"
+                                    press="add"
+                                />
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <items>
+                        <ObjectListItem
+                            id="ObjectListItem"
+                            type="Navigation"
+                            press="onSelectionChange"
+                            title="{NOME_FLUSSO}"
+                            intro="{DESCRIZIONE_FLUSSO}"
+                            blocked="{UIModel>/blocked}"
+                        >
+                            <ObjectAttribute
+                                title="{ID_MODULO_ID_MODULO}"
+                                visible="false"
+                            />
+                        </ObjectListItem>
+                    </items>
+                </List>
+
+                <semantic:landmarkInfo>
+                    <PageAccessibleLandmarkInfo
+                        rootLabel="Root label"
+                        headerLabel="Header label"
+                        footerLabel="Footer label"
+                    />
+                </semantic:landmarkInfo>
+
+                <!-- <semantic:filter>
+                    <semantic:FilterAction press="onSemanticButtonPress" />
+                </semantic:filter> -->
+            </semantic:MasterPage>
+        </masterPages>
+
+        <!-- DETAIL -->
+        <detailPages>
+            <semantic:DetailPage id="detail">
+                <!--icon tab-->
+                <IconTabBar
+                    id="idIconTabBarMulti"
+                    expanded="true"
+                    class="sapUiResponsiveContentPadding"
+                >
+                    <items>
+                        <!-- DETTAGLIO -->
+                        <IconTabFilter
+                            text="Dettaglio"
+                            key="operativo"
+                        >
+                            <f:SimpleForm
+                                id="SimpleFormDisplay354wide"
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                title="{flussiModel>nome}"
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            >
+                                <f:content>
+                                    <Label text="{i18n>tid}" />
+                                    <Input
+                                        id="id"
+                                        value="{ID_FLUSSO}"
+                                        editable="false"
+                                    />
+
+                                    <Label text="{i18n>tnome}" />
+                                    <Input
+                                        id="nome"
+                                        value="{NOME_FLUSSO}"
+                                        editable="false"
+                                    />
+
+                                    <Label text="{i18n>tdescrizione}" />
+                                    <Input
+                                        id="descrizione"
+                                        value="{DESCRIZIONE_FLUSSO}"
+                                        editable="false"
+                                    />
+
+                                    <Label text="{i18n>tmodulo}" />
+                                    <ActionSelect
+                                        id="modulo"
+                                        items="{
+				                path: '/Anagrafica_Moduli'}"
+                                        forceSelection="true"
+                                        selectedKey="{ path: 'ID_MODULO_ID_MODULO', formatter: '.formatter.idModuloToString' }"
+                                        editable="false"
+                                    >
+                                        <items>
+                                            <core:Item
+                                                key="{MODULO}"
+                                                text="{MODULO}"
+                                            />
+                                        </items>
+                                    </ActionSelect>
+
+                                    <!-- <List items="{path: 'flussiModel>utenti'}">
+                                     <InputListItem >
+                                    <StandardListItem title="{flussiModel>cognome}{flussiModel>nome}" />
+                                    </InputListItem>
+                                        
+                                    </List> -->
+                                </f:content>
+                            </f:SimpleForm>
+
+                            <f:SimpleForm
+                                id="SimpleFormDisplay354wideAdd"
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                title=""
+                                labelSpanXL="4"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="4"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="2"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                                visible="false"
+                            >
+                                <f:content>
+                                    <Label text="{i18n>tid}" />
+                                    <Input id="idAdd" />
+
+                                    <Label text="{i18n>tnome}" />
+                                    <Input id="nomeAdd" />
+
+                                    <Label text="{i18n>tdescrizione}" />
+                                    <Input id="descrizioneAdd" />
+
+                                    <Label text="{i18n>tmodulo}" />
+                                    <ActionSelect
+                                        id="selectModuloAdd"
+                                        items="{
+				                path: '/Anagrafica_Moduli'}"
+                                        forceSelection="false"
+                                    >
+                                        <items>
+                                            <core:Item
+                                                key="{MODULO}"
+                                                text="{MODULO}"
+                                            />
+                                        </items>
+                                    </ActionSelect>
+
+                                    <!-- <List items="{path: 'flussiModel>utenti'}">
+                                     <InputListItem >
+                                    <StandardListItem title="{flussiModel>cognome}{flussiModel>nome}" />
+                                    </InputListItem>
+                                        
+                                    </List> -->
+                                </f:content>
+                            </f:SimpleForm>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+
+                <semantic:customFooterContent>
+                    <OverflowToolbarButton
+                        icon="sap-icon://refresh"
+                        id="refreshAddBtn"
+                        press="refreshAdd"
+                        visible="false"
+                    />
+
+                    <OverflowToolbarButton
+                        icon="sap-icon://refresh"
+                        id="refreshBtn"
+                        press="refresh"
+                        visible="false"
+                    />
+
+                    <OverflowToolbarButton
+                        icon="sap-icon://save"
+                        id="saveAddBtn"
+                        press="saveAdd"
+                        visible="false"
+                    />
+
+                    <OverflowToolbarButton
+                        icon="sap-icon://save"
+                        id="saveBtn"
+                        press="save"
+                        visible="false"
+                    />
+
+                    <OverflowToolbarButton
+                        icon="sap-icon://edit"
+                        id="editBtn"
+                        press="edit"
+                        visible="true"
+                    />
+
+                    <OverflowToolbarButton
+                        icon="sap-icon://delete"
+                        id="deleteBtn"
+                        press="delete"
+                        visible="false"
+                    />
+
+                    <OverflowToolbarButton
+                        icon="sap-icon://undo"
+                        id="exitAddBtn"
+                        press="exitAdd"
+                        visible="false"
+                    />
+
+                    <OverflowToolbarButton
+                        icon="sap-icon://undo"
+                        id="exitBtn"
+                        press="exit"
+                        visible="false"
+                    />
+
+                    <!-- <OverflowToolbarButton icon="sap-icon://add" id="addBtn1" press="add" /> -->
+                </semantic:customFooterContent>
+            </semantic:DetailPage>
+        </detailPages>
+    </SplitContainer>
+</mvc:View>

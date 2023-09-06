@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:control="control" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<ActionSheet id="assignStatusActionSheet" title="{i18n>ASSIGN_NEW_STATUS}"
+		showCancelButton="true" placement="Top">
+		<buttons>
+
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

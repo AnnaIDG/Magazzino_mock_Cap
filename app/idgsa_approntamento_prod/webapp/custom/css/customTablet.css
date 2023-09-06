@@ -1,0 +1,53 @@
+@media screen and (max-width: 780px) {
+    .loginPageSfondo {
+        /* IE10 Consumer Preview */
+        background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+        /* Mozilla Firefox */
+        background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+        /* Opera */
+        background-image: -o-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+        /* Webkit (Safari/Chrome 10) */
+        background-image: -webkit-gradient(radial, left top, 0, left top, 1011, color-stop(0.6, #FFFFFF), color-stop(1, #C9C7C3));
+        /* Webkit (Chrome 11+) */
+        background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 60%, #C9C7C3 100%);
+        /* W3C Markup, IE10 Release Preview */
+        background-image: radial-gradient(ellipse farthest-corner at left top, #FFFFFF 60%, #C9C7C3 100%);
+        /*    background: url("../images/footer.png") no-repeat ;*/
+    }
+    .loginImageBackGround {
+        margin-top: 4em;
+        background: url("../images/sapBackgroundImage.jpeg")  center;
+        background-size: cover;
+       
+    }
+    .loginFormCustomer {
+        width: 30%;
+        margin: 20% 10% 5% 0;
+        padding: 10px;
+        background: rgba(180, 180, 180, 0.5);
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+        border: 1.5px solid rgba(50, 50, 50, 0.7);
+    }
+    .loginFormCustomer label,
+    .loginFormCustomer input[type=text],
+    .loginFormCustomer input[type=password],
+    .loginButton {
+        width: 60% !important;
+        
+    }
+    
+    .sapMInputDivWrapper:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner):hover
+    {
+        width:60%;
+        background-color: #FFFFFF !important;
+    }
+    
+ 
+
+.loginFormCustomer input[type=text]:hover,
+.loginFormCustomer input[type=password]:hover {
+    color: #000000;
+    background-color: #FFFFFF !important;
+  
+}
+}

@@ -1,0 +1,201 @@
+<mvc:View controllerName="controller.OrderCreate" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sc="sap.suite.ui.commons" xmlns:html="http://www.w3.org/1999/xhtml">
+    <Page showNavButton="false" id="orderCreate">
+        <headerContent>
+<!--            <core:Fragment fragmentName="view.fragment.Header" type="XML" />-->
+            <Bar>
+                <contentLeft>
+                    <Button icon="sap-icon://nav-back" press="onNavBackPress" tooltip="{i18n>backTooltip}" visible="{= !(${ui>/isFromOrderList}) &amp;&amp; (${ui>/backButtonVisible})}" />
+                </contentLeft>
+                <contentMiddle>
+                    <Text text="{user>/userLogged/userFullName} 
+                                {= ((${user>/userLogged/roleId} ===  'AG' || ${user>/userLogged/roleId} === 'BO') &amp;&amp; ${user>/selectedCustomer/customerName} !==  null) ? '-' : '' }
+                                {= ((${user>/userLogged/roleId} ===  'AG' || ${user>/userLogged/roleId} === 'BO')&amp;&amp; ${user>/selectedCustomer/customerName} !==  null) ? ${user>/selectedCustomer/customerName} : '' }" class="headerUserText" />
+                </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://log" press="onLogoutPress" tooltip="{i18n>logoutTooltip}" />
+                </contentRight>
+            </Bar>
+        </headerContent>
+        <content>
+            <frm:SimpleForm id="simpleform0" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2" >
+                <frm:content class="simpleformHeader">
+                   	<core:Title text="" id="tit1" />
+                    <Label text="{i18n>customerId}" design="Bold" />
+                    <Input value="{orderCreateModel>/customer/customerId}" editable="false" />
+                    <Label text="{i18n>companyName}" design="Bold" />
+                    <Input value="{orderCreateModel>/customer/customerName}" editable="false" />
+                </frm:content>
+            </frm:SimpleForm>
+
+            <lay:VerticalLayout defaultSpan="L12 M12 S12" width="100%">
+                <lay:content>
+                    <IconTabBar class="Icontab" id="idIconTabBarOrderCreate">
+                        <items>
+                            <IconTabFilter text="{i18n>orderHeader}" icon="sap-icon://customer">
+                                <frm:SimpleForm id="simpleform1" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2">
+                                    <frm:content>
+                                        <core:Title text="" id="tit3" />
+                                        <Label text="{i18n>docType}" design="Bold" />
+<!--                                        <Input value="{orderCreateModel>/basketType}" editable="false" width="18em" />-->
+                                        <ComboBox id="docTypeComboBox" items="{path: 'orderCreateModelSelect>/docTypes'}" selectedKey="{orderCreateModel>/docType}" maxWidth="18em" editable="true">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                            <layoutData>
+                                                <FlexItemData alignSelf="auto" />
+                                            </layoutData>
+                                        </ComboBox>
+                                        
+                                        <core:Title text="" id="tit4" />
+                                        
+                                        <Label text="{i18n>destination}" design="Bold" />
+                                        <ComboBox id="destinationComboBox" items="{orderCreateModel>/destinationsType}" selectedKey="{orderCreateModel>/destination}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModel>id}" text="{orderCreateModel>destinationsName}" />
+                                            <layoutData>
+                                                <FlexItemData alignSelf="auto" />
+                                            </layoutData>
+                                        </ComboBox>
+                                    </frm:content>
+                                    <frm:content>
+                                        <core:Title text="" id="tit5" />
+                                        <Label required="true" text="{i18n>nrDocCliente}" design="Bold" />
+                                        <Input id="clientDocNr" value="{orderCreateModel>/nrDocCliente}" editable="true" width="18em" />
+  
+                                        <Label text="{i18n>paymentConditions}" design="Bold" />
+                                        <ComboBox id="paymentConditionsComboBox" items="{path: 'orderCreateModelSelect>/paymentConditions'}" selectedKey="{orderCreateModel>/paymentCondition}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                        </ComboBox>
+                                        
+                                        <Label text="{i18n>incoterms}" design="Bold" />
+                                        <ComboBox id="incotermsComboBox" items="{path: 'orderCreateModelSelect>/incotermsTypes'}" selectedKey="{orderCreateModel>/incoterms}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                        </ComboBox>                                        
+                                        
+                                        <core:Title text="" id="tit6" />
+                                        <Label text="{i18n>shippingTypeLabel}" design="Bold" />
+<!--                                        <Input value="{orderCreateModel>/transporter}" editable="false" width="18em" />-->
+                                        <ComboBox id="transporterComboBox" items="{path: 'orderCreateModelSelect>/transporterTypes'}" selectedKey="{orderCreateModel>/transporter}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                        </ComboBox>
+<!--
+                                        <Label text="{i18n>appointmentToDelivery}" design="Bold" />
+                                        <Input value="{orderCreateModel>/appointmentToDelivery}" editable="false" width="18em" />
+-->
+<!--
+                                        <ComboBox id="appointementToDeliveryComboBox" items="{path: 'orderCreateModelSelect>/appointmentToDeliveryTypes'}" selectedKey="{orderCreateModel>/appointmentToDelivery}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                        </ComboBox>
+-->
+<!--
+                                        <Label text="{i18n>deliveryType}" design="Bold" />
+                                        <Input value="{orderCreateModel>/deliveryType}" editable="false" width="18em" />
+-->
+<!--
+                                        <ComboBox id="deliveryTypeComboBox" items="{path: 'orderCreateModelSelect>/deliveryTypes'}" selectedKey="{orderCreateModel>/deliveryType}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                        </ComboBox>
+-->
+<!--
+                                        <Label text="{i18n>totalEvasion}" design="Bold" />
+                                        <Switch type="AcceptReject" state="{path:'orderCreateModel>/totalEvasion', formatter:'utils.Formatter.adaptCheckBoxValue'}" id="idSwitchTotalEvasion">
+                                            <layoutData>
+                                                <FlexItemData growFactor="1" />
+                                            </layoutData>
+                                        </Switch>
+-->
+<!--
+                                        <Label text="{i18n>chargeTransportType}" design="Bold" />
+                                        <Input value="{orderCreateModel>/chargeTrasport}" editable="false" width="18em" />
+-->
+<!--
+                                
+                                        <ComboBox id="chargeTrasportComboBox" items="{path: 'orderCreateModelSelect>/chargeTransportTypes'}" selectedKey="{orderCreateModel>/chargeTrasport}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                        </ComboBox>
+-->
+<!--
+                                        <Label text="{i18n>ivaType}" design="Bold" />
+                                        <ComboBox id="IVACodeComboBox" items="{path: 'orderCreateModelSelect>/ivaTypes'}" selectedKey="{orderCreateModel>/IVACode}" maxWidth="18em">
+                                            <core:Item key="{orderCreateModelSelect>name}" text="{orderCreateModelSelect>name}" />
+                                        </ComboBox>
+-->
+                                        <!--
+                                        <Label text="{i18n>validDate}" design="Bold" />
+                                        <DatePicker value="{orderCreateModel>/validDate}" valueFormat="yyyy-MM-dd" displayFormat="long" class="sapUiSmallMarginBottom" editable="false" />
+-->
+                                        <Label text="{i18n>requiredDate}" design="Bold" />
+                                        <DatePicker dateValue="{orderCreateModel>/requestedDate}" valueFormat="yyyy-MM-dd" displayFormat="long" width="18em" class="sapUiSmallMarginBottom" />
+                                        
+                                        
+                                        <Label text="{i18n>priceListType}" design="Bold" />
+                                 
+                                        <ComboBox  items="{path: 'orderCreateModelSelect>/priceListTypes'}" selectedKey="{orderCreateModel>/priceListType}" maxWidth="18em" editable="true">
+                                            <core:Item key="{orderCreateModelSelect>key}" text="{orderCreateModelSelect>name}" />
+                                            <layoutData>
+                                                <FlexItemData alignSelf="auto" /> </layoutData>
+                                        </ComboBox>
+                                        
+                                        <Label text="{i18n>priceGroup}" design="Bold" />
+                                       
+                                       	
+                                       		<ComboBox 
+		                                        items="{path: 'orderCreateModelSelect>/priceGroupTypes'}" 
+		                                        selectedKey="{orderCreateModel>/priceGroup}" 
+		                                        maxWidth="18em" 
+		                                        editable="{= ( ${orderCreateModel>/priceGroup} === undefined ) || ( ${orderCreateModel>/priceGroup} === '') }"
+		                                        selectionChange="onPriceGroupChange">
+                                            <core:Item key="{orderCreateModelSelect>key}" text="{orderCreateModelSelect>text}" />
+                                            <layoutData>
+                                                <FlexItemData alignSelf="auto" /> </layoutData>
+                                        	</ComboBox>
+                                        	
+                                       	<Label text="{i18n>headerDiscounts}" design="Bold" visible="{= ${orderCreateModel>/priceGroup} !== undefined &amp;&amp; ${orderCreateModel>/priceGroup} !== ''}"/>
+                                        <Button icon="sap-icon://list" press="onHeaderDiscountPress" tooltip="{i18n>headerDiscount}" width="3em" visible="{= ${orderCreateModel>/priceGroup} !== undefined &amp;&amp; ${orderCreateModel>/priceGroup} !== ''}"></Button>
+                                        
+                                        
+<!--
+				
+                                        <Label text="{i18n>orderReason}" design="Bold" />
+                                        <Input value="{orderCreateModel>/orderReason}" editable="true" width="18em" />
+-->
+                                    </frm:content>
+                                </frm:SimpleForm>
+                            </IconTabFilter>
+
+                            <IconTabFilter text="{i18n>notes}" icon="sap-icon://notes">
+                                <frm:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="0" labelSpanM="0" emptySpanL="0" emptySpanM="0">
+                                    <frm:content>
+                                        <VBox>
+                                            <FlexBox justifyContent="SpaceBetween">
+                                                <Select forceSelection="false" items="{path: 'orderCreateModelSelect>/noteTypes', sorter: {path: 'description'}}" textAlign="Center" class="orderDetailNote" id="idNoteSelect">
+                                                    <core:Item key="{orderCreateModelSelect>id}" text="{orderCreateModelSelect>description}" />
+                                                </Select>
+                                                <TextArea value="{orderCreateModel>/textNote}" visible="{enableModel>/noteInput}"  class="orderDetailNote" /> <!--textAlign="Center"-->
+                                            </FlexBox>
+                                        </VBox>
+                                    </frm:content>
+                                </frm:SimpleForm>
+                                <FlexBox justifyContent="End">
+                                    <Button icon="sap-icon://add" text="{i18n>addNote}" press="onAddNotePress" class="enlargeButton" />
+                                </FlexBox>
+                                <List id="idNotesList" headerText="{i18n>notesList}" items="{orderCreateModel>/notes}">
+                                    <StandardListItem title="{orderCreateModel>description}" description="{orderCreateModel>noteValue}" type="Active" info="{{orderCreateModel>id}}" press="onNotePress" />
+                                </List>
+                            </IconTabFilter>
+
+                        </items>
+                    </IconTabBar>
+                </lay:content>
+            </lay:VerticalLayout>
+        </content>
+
+        <footer>
+            <Toolbar>
+                <Button icon="sap-icon://cart" text="{i18n>goToCart}" press="onGoToCart" />
+                <Button icon="sap-icon://list" text="{i18n>toOrderList}" press="returnToOrderList" visible="{ui>/isFromOrderList}"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://add" text="{i18n>addProduct}" press="onAddProductsPress" />
+                <Button id="saveButton" text="{i18n>save}" press="onSavePress" icon="sap-icon://save" />
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,27 @@
+<mvc:View controllerName="controller.Launchpad" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Page enableScrolling="false" showHeader="false" id="launchpadPageId">
+        <content>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+            <FlexBox>
+                <Image src="custom/images/sapCompanyLogo.png" densityAware="true" class="imagePaginaInizialeLaunchpad sapUiSmallMarginBegin " width="25%" />
+            </FlexBox>
+            <TileContainer id="tileContainer" tiles="{tiles>/}" class="tileContainerClass" height="50%">
+                <StandardTile icon="sap-icon://{tiles>icon}" title="{tiles>title}" app:tileUrl="{tiles>url}" press="onTilePress" class="launchpadTiles" number="{tiles>number}" numberUnit="{tiles>info}"/>
+            </TileContainer>
+             
+        </content>
+        <footer>
+            <Bar>
+                <contentLeft>
+                    <!--                    <Button text="{i18n>changeOrganizationButton}" icon="sap-icon://retail-store-manager" press="onDataOrgDialogOpen" visible="{ui>/changeOrganization}" tooltip="{i18n>changeOrganizationTooltip}" />-->
+                </contentLeft>
+                <contentMiddle>
+                    <!--                    <Label text="{user>/userLogged/orgData/description}" design="Bold" />-->
+                </contentMiddle>
+                <contentRight>
+
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

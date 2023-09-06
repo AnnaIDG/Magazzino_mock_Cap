@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:frm="sap.ui.layout.form">
+    <Dialog resizable="false" title="{i18n>printLabelConfirmTitle}" contentWidth="80%">
+        <buttons>
+            <Button text="{i18n>cancel}" press="onCancelPrintListPress" />
+            <Button text="{i18n>confirmPrint}" press="onConfirmPrintListPress" type="Accept"/>
+        </buttons>
+        <content>
+
+           <Title level="H4" text="{i18n>packingsLists}" class="sapUiSmallMargin sapUiMediumMarginTop" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }" />
+            <Table busyIndicatorDelay="0" items="{path: 'moveOrderDetailModel>/packingList/results'}" class="sapUiSizeCompact" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }">
+                <columns>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>cartProductIdLabel}" /> </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>description}" /> </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>scale}" /> </Column>
+                    <Column hAlign="End" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>unitPrice}" /> </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>quantity}" /> </Column>
+
+                </columns>
+                <items>
+
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{moveOrderDetailModel>productId}" />
+                            <Text text="{moveOrderDetailModel>description}" />
+                            <Text text="{moveOrderDetailModel>scaleDescr}" textAlign="End" />
+                            <Text text="{path: 'moveOrderDetailModel>unitListPrice', formatter: 'utils.Formatter.AggiungiVirgole'}" />
+                            <Text text="{moveOrderDetailModel>quantity}" textAlign="End" />
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+
+
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

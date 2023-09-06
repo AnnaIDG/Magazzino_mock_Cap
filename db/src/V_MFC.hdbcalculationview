@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="V_MFC" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="V_MFC"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="MFCSHARE_ANAGRAFICA_UTENTE_FLUSSO">
+    <resourceUri>MFCSHARE_ANAGRAFICA_UTENTE_FLUSSO</resourceUri>
+  </DataSource>
+  <DataSource id="MFCSHARE_ANAGRAFICA_FLUSSI">
+    <resourceUri>MFCSHARE_ANAGRAFICA_FLUSSI</resourceUri>
+  </DataSource>
+  <DataSource id="MFCSHARE_ANAGRAFICA_UTENTI">
+    <resourceUri>MFCSHARE_ANAGRAFICA_UTENTI</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1_1" cardinality="CN_1" joinType="inner" multiJoinNode="Join_1" multiJoinCentralTable="MFCSHARE_ANAGRAFICA_UTENTE_FLUSSO" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="ID_FLUSSO_ID_FLUSSO"/>
+      <viewAttribute id="NOME_FLUSSO"/>
+      <viewAttribute id="DESCRIZIONE_FLUSSO"/>
+      <viewAttribute id="ID_UTENTE_ID_UTENTE"/>
+      <viewAttribute hidden="true" id="JOIN$ID_FLUSSO_ID_FLUSSO$ID_FLUSSO"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MFCSHARE_ANAGRAFICA_UTENTE_FLUSSO">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID_FLUSSO_ID_FLUSSO" source="ID_FLUSSO_ID_FLUSSO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID_UTENTE_ID_UTENTE" source="ID_UTENTE_ID_UTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID_FLUSSO_ID_FLUSSO$ID_FLUSSO" source="ID_FLUSSO_ID_FLUSSO"/>
+    </input>
+    <input node="MFCSHARE_ANAGRAFICA_FLUSSI">
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOME_FLUSSO" source="NOME_FLUSSO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESCRIZIONE_FLUSSO" source="DESCRIZIONE_FLUSSO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID_FLUSSO_ID_FLUSSO$ID_FLUSSO" source="ID_FLUSSO"/>
+    </input>
+    <joinAttribute name="JOIN$ID_FLUSSO_ID_FLUSSO$ID_FLUSSO"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1_2" cardinality="CN_1" joinType="inner" multiJoinNode="Join_1" multiJoinCentralTable="MFCSHARE_ANAGRAFICA_UTENTE_FLUSSO" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="ID_FLUSSO_ID_FLUSSO"/>
+      <viewAttribute id="NOME_FLUSSO"/>
+      <viewAttribute id="DESCRIZIONE_FLUSSO"/>
+      <viewAttribute id="ID_UTENTE_ID_UTENTE"/>
+      <viewAttribute id="ID_UTENTE"/>
+      <viewAttribute id="COGNOME_UTENTE"/>
+      <viewAttribute id="NOME_UTENTE"/>
+      <viewAttribute id="EMAIL_UTENTE"/>
+      <viewAttribute hidden="true" id="JOIN$ID_UTENTE_ID_UTENTE$ID_UTENTE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID_FLUSSO_ID_FLUSSO" source="ID_FLUSSO_ID_FLUSSO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOME_FLUSSO" source="NOME_FLUSSO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESCRIZIONE_FLUSSO" source="DESCRIZIONE_FLUSSO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID_UTENTE_ID_UTENTE" source="ID_UTENTE_ID_UTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID_UTENTE_ID_UTENTE$ID_UTENTE" source="ID_UTENTE_ID_UTENTE"/>
+    </input>
+    <input node="MFCSHARE_ANAGRAFICA_UTENTI">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID_UTENTE" source="ID_UTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COGNOME_UTENTE" source="COGNOME_UTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOME_UTENTE" source="NOME_UTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMAIL_UTENTE" source="EMAIL_UTENTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID_UTENTE_ID_UTENTE$ID_UTENTE" source="ID_UTENTE"/>
+    </input>
+    <joinAttribute name="JOIN$ID_UTENTE_ID_UTENTE$ID_UTENTE"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1_2">
+  <attributes>
+    <attribute id="ID_UTENTE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID_UTENTE"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="ID_UTENTE"/>
+    </attribute>
+    <attribute id="COGNOME_UTENTE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COGNOME_UTENTE"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="COGNOME_UTENTE"/>
+    </attribute>
+    <attribute id="NOME_UTENTE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NOME_UTENTE"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="NOME_UTENTE"/>
+    </attribute>
+    <attribute id="EMAIL_UTENTE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMAIL_UTENTE"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="EMAIL_UTENTE"/>
+    </attribute>
+    <attribute id="ID_FLUSSO_ID_FLUSSO" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID_FLUSSO_ID_FLUSSO"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="ID_FLUSSO_ID_FLUSSO"/>
+    </attribute>
+    <attribute id="NOME_FLUSSO" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NOME_FLUSSO"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="NOME_FLUSSO"/>
+    </attribute>
+    <attribute id="DESCRIZIONE_FLUSSO" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESCRIZIONE_FLUSSO"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="DESCRIZIONE_FLUSSO"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-30" y="218"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="MFCSHARE_ANAGRAFICA_UTENTI" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="466" y="115"/>
+      <rectangleSize width="269"/>
+    </shape>
+    <shape modelObjectName="MFCSHARE_ANAGRAFICA_UTENTE_FLUSSO" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="329"/>
+    </shape>
+    <shape modelObjectName="MFCSHARE_ANAGRAFICA_FLUSSI" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="466" y="-25"/>
+      <rectangleSize width="268"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

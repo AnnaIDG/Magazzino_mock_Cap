@@ -1,0 +1,63 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:frm="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:control="control"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<frm:SimpleForm id="simpleFormDetail" editable="true" layout="ResponsiveGridLayout"
+		title="" labelSpanL="6" labelSpanM="12" adjustLabelSpan="false" emptySpanL="0" emptySpanM="0"
+		columnsL="2" columnsM="2" class="bordo">
+		<frm:content>
+			<core:Title text=""/>
+			<Label text="{i18n>noticeIdLabel}" design="Bold"/>
+			<Text text="{mainModel>/noticeId}" class="hightFontDetailNotice noticeIdList"/>
+			<Label text="{i18n>noticeDateLabel}" design="Bold"/>
+			<Text
+				text="{parts:[{path:'mainModel>/noticeDate'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'}"
+				class="hightFontDetailNotice"/>
+			<Label text="{i18n>priorityLabel}" design="Bold" visible="{= (${user>/userLogged/isRtt} !== 'X')}"/>
+			<Text text="{mainModel>/priorityDescr}" class="hightFontDetailNotice" visible="{= (${user>/userLogged/isRtt} !== 'X')}">
+				<customData>
+					<core:CustomData key="prioritycolor" value="{mainModel>/priorityDescr}"
+						writeToDom="true"/>
+				</customData>
+			</Text>
+			<Label text="{i18n>priorityLabel}" design="Bold" visible="{= (${user>/userLogged/isRtt} === 'X')}"/>
+			<ComboBox id="priorityComboBox" items="{priorities>/}" selectedKey="{mainModel>/priorityId}"
+				width="16rem" visible="{= (${user>/userLogged/isRtt} === 'X')}" selectionChange="onChangePriorityValueState">
+				<core:Item key="{priorities>id}" text="{priorities>description}" />
+			</ComboBox>
+            <Label text="{i18n>dataOraTel}" design="Bold" visible="{=${mainModel>/priorityId} === '2' || ${mainModel>/priorityId} === '4' }" />
+            <DatePicker id="idDataTel" value="{path:'mainModel>/dataTel', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'dd-MM-yyyy'}}" change="onChangeDataTel" visible="{=${mainModel>/priorityId} === '2' || ${mainModel>/priorityId} === '4' }" editable="{=${mainModel>/noticeState} !== 'TRAS' &amp;&amp; ${mainModel>/noticeState} !== 'TOCP' &amp;&amp; ${mainModel>/noticeState} !== 'TOCL'}" />
+            <TimePicker id="idOraTel" value="{path:'mainModel>/oraTel'}" valueFormat="HH:mm" displayFormat="HH:mm" change="onChangeHourTel" visible="{=${mainModel>/priorityId} === '2' || ${mainModel>/priorityId} === '4' }" editable="{=${mainModel>/noticeState} !== 'TRAS' &amp;&amp; ${mainModel>/noticeState} !== 'TOCP' &amp;&amp; ${mainModel>/noticeState} !== 'TOCL'}" />
+            
+			<Label text="{i18n>requestStartLabel}" design="Bold"/>
+<!--			<Text text="{=(${mainModel>/requestEnd} !== '' ? ${parts:[{path:'mainModel>/requestStart'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} + ' - ' + ${mainModel>/requestHourStart} : '')}" class="hightFontDetailNotice" />-->
+			<Text text="{=(${mainModel>/requestStart} !== '' ? ${parts:[{path:'mainModel>/requestStart'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} + ' - ' + ${mainModel>/requestHourStart} : '')}" class="hightFontDetailNotice" />
+			<Label text="{i18n>requestEndLabel}" design="Bold"/>
+			<Text text="{=(${mainModel>/requestEnd} !== '' ? ${parts:[{path:'mainModel>/requestEnd'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} + ' - ' + ${mainModel>/requestHourEnd} : '')}" class="hightFontDetailNotice" />
+			<core:Title text="" />
+			<Label text="{i18n>descriptionLabel}" design="Bold" />
+			<TextArea value="{mainModel>/description}" width="15rem" rows="1" id="detailDescriptionId" liveChange="onChangeDescriptionValueState" />
+			<Label text="{i18n>techPlaceLabel}" design="Bold"/>
+			<Text text="{mainModel>/techPlaceId}" class="hightFontDetailNotice"/>
+			<Label text="{i18n>techPlaceDescrLabel}" design="Bold"/>
+			<Text text="{mainModel>/techPlaceDescr}" class="hightFontDetailNotice"/>
+			<Label text="{i18n>equipmentLabel}" design="Bold" visible="{=${mainModel>/equipmentId}!==''}"/>
+			<Text text="{mainModel>/equipmentId}" class="hightFontDetailNotice" visible="{=${mainModel>/equipmentId}!==''}"/>
+			<Label text="{i18n>equipmentDescrLabel}" design="Bold" visible="{=${mainModel>/equipmentId}!==''}"/>
+			<Text text="{mainModel>/equipmentDescr}" class="hightFontDetailNotice" visible="{=${mainModel>/equipmentId}!==''}"/>
+			<Label text="{i18n>requestUserLabel}" design="Bold"/>
+			<Text text="{mainModel>/requestUser}" class="hightFontDetailNotice"/>
+			<Label text="{i18n>noticeStateLabel}" design="Bold"/>
+			<Text text="{mainModel>/noticeState}" class="hightFontDetailNotice">
+				<customData>
+					<core:CustomData key="statecolor" value="{mainModel>/noticeState}" writeToDom="true"/>
+				</customData>
+			</Text>
+			<Label text="{i18n>location}" design="Bold" visible="{= (${mainModel>/geoLoc} !== '') }"/>
+			<core:Icon src="sap-icon://map" press="onViewMapPress" size="2rem" class="viewMapIcon"
+				color="red" id="locationIconId" visible="{= (${mainModel>/geoLoc} !== '') }"/>
+			<!-- <Label text="{i18n>extendedDescr}" design="Bold" /> <TextArea value="{mainModel>/extendedDescription}" 
+				rows="3" width="15rem" visible="{= (${mainModel>/extendedDescription} !== '') }" /> -->
+
+		</frm:content>
+	</frm:SimpleForm>
+</core:FragmentDefinition>

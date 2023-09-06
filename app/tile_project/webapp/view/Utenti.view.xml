@@ -1,0 +1,53 @@
+<mvc:View 
+	controllerName="tileproject.tileproject.controller.Utenti"
+	xmlns:dnd="sap.ui.core.dnd"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:c="sap.ui.core"
+	xmlns="sap.m"
+	height="100%">
+	<Table
+		id="table"
+		mode="SingleSelectMaster"
+		growing="true"
+		growingThreshold="10"
+		beforeOpenContextMenu="onBeforeOpenContextMenu"
+		 
+		items="{path: '/utenti', filters: {path: 'Rank', operator: 'EQ', value1: '0'}}"> 
+		<contextMenu>
+			<Menu>
+				<MenuItem text="Move to Selected Products" press="moveToSelectedProductsTable" />
+			</Menu>
+		</contextMenu>
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="{i18n>TitoloUtenti}" id ="Utenti"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="{i18n>cognomeUtente}" id="cognome" />
+			</Column>
+			<Column>
+				<Text text="{i18n>utente}" id="nome" />
+			</Column>
+			
+		</columns>
+		<dragDropConfig>
+			<dnd:DragInfo
+				groupName="available2selected"
+				sourceAggregation="items" />
+			<dnd:DropInfo
+				groupName="selected2available"
+				drop="onDropAvailableProductsTable" />
+		</dragDropConfig>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{cognome}" wrapping="false" />
+					<Text text="{nome}" wrapping="false" />
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

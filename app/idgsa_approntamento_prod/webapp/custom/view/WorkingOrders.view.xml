@@ -1,0 +1,80 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.WorkingOrders" xmlns="sap.m" xmlns:core="sap.ui.core"
+          xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form"
+          xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Page id="workingOrdersPageId" busyIndicatorDelay="0">
+        <headerContent>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        </headerContent>
+        <subHeader class="sapUiSizeCompact">
+            <Toolbar>
+                <!--<Button icon="sap-icon://employee-lookup" press="onAdvancedFilterPress" tooltip="{i18n>advancedRequestFilter}" />-->
+                <SearchField search="onFilterOrderList" width="100%" value="{ui>/searchValue}" placeholder="{i18n>cercaPerNrOrdine}"/>
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table id="workingOrdersTable" width="100%"
+                   items="{path:'workingOrdersModel>/results', sorter: {path:'priority', descending:false}}"
+                   growing="true" growingThreshold="100"
+                   busyIndicatorDelay="0"
+                    class="sortableTable">
+                <columns>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle">
+                        <Text text="{i18n>orderId}"/>
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle">
+                        <Text text="{i18n>operatorId}"/>
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle">
+                        <Text text="{i18n>description}"/>
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle">
+                        <Text text="{i18n>orderStatusDescription}"/>
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle" width="8%" visible="{= ${ui>/loggedUserType} === 'PM'}">
+                        <Text text="{i18n>package}"/>
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="650px" vAlign="Middle" width="8%"  visible="{= ${ui>/loggedUserType} === 'OP'}">
+                        <Text text=""/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <Text text="{workingOrdersModel>orderId}"/>
+                            <Text text="{workingOrdersModel>operatorId}"/>
+                            <Text text="{workingOrdersModel>description}"/>
+                            <!--<Text text="{workingOrdersModel>orderStatusDescription}"/>-->
+                            <!--class="statusCell"-->
+                            <HBox class="statusCell" justifyContent="Center" >
+                                <Link text="{workingOrdersModel>orderStatusDescription}" class="statusLinks" press="onChangeStatus" emphasized="true"
+                                      enabled="{= ${ui>/loggedUserType} === 'PM' }">
+                                </Link>
+                                <customData>
+                                    <core:CustomData key="statusColor" value="{workingOrdersModel>orderStatus}"
+                                                     writeToDom="true"/>
+                                </customData>
+                            </HBox>
+                            <!--<ObjectNumber number="{workingOrdersModel>orderStatusDescription}" class="statusCell" press="onChangeStatus">-->
+                                <!--<customData>-->
+                                    <!--<core:CustomData key="statusColor" value="{workingOrdersModel>orderStatus}"-->
+                                                     <!--writeToDom="true"/>-->
+                                <!--</customData>-->
+                            <!--</ObjectNumber>-->
+                            <core:Icon src="sap-icon://product" size="1.5rem" useIconTooltip="false"  class="supplementaryActiveState"
+                            tooltip="{i18n>packageInfoIconTitle}" color="{= ${workingOrdersModel>package} ? '#0F3D7B' : 'lightgrey' }"
+                                       press=".onPackagePress"/>
+                            <core:Icon src="sap-icon://sys-help" size="1.5rem" useIconTooltip="false"  class="supplementaryActiveState"
+                                        color="#0F3D7B" press="onWorkingOrderDetailPress"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar>
+                <!--<Button icon="sap-icon://refresh" text="{i18n>resetAdvancedFilters}" press="restoreFilters" visible="{ui>/advancedFiltersApplied}"></Button>-->
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

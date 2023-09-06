@@ -1,0 +1,102 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.NoticeList" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" busyIndicatorDelay="1">
+    <Page id="noticeListPageId" showNavButton="false" showHeader="false">
+        <content>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+            <Panel expandable="true" expanded="false" headerText="{i18n>searchFiltersLabel}" width="auto" id="noticeListPanelId">
+                <content>
+                    <lay:HorizontalLayout class="sapUiSmallMargin" id="noticeListHorizontalLayout">
+                        <VBox>
+                            <Label text="{i18n>noticeAndStateLabel}" design="Bold" />
+                            <HBox>
+                                <SearchField placeholder="{i18n>searchNoticeByIdLabel}" showSearchButton="false" value="{ui>/searchNoticeById}" width="12rem" maxWidth="12rem" class="sapUiSmallMarginEnd" search="onSearchNoticeIdOnList" showRefreshButton="true" />
+                                <ComboBox items="{ui>/stateSelectList}" selectedKey="{ui>/searchNoticeByState}" width="12rem" class="sapUiSmallMarginEnd" placeholder="{i18n>noticeStateLabel}">
+                                    <core:ListItem key="{ui>sapStatus}" text="{ui>userStatus}" />
+                                    <layoutData>
+                                        <FlexItemData alignSelf="auto" />
+                                    </layoutData>
+                                </ComboBox>
+                                <ComboBox items="{ui>/prioritySelectList}" selectedKey="{ui>/searchNoticeByPriority}" width="12rem" class="sapUiSmallMarginEnd" placeholder="{i18n>priorityLabel}">
+                                    <core:ListItem key="{ui>id}" text="{ui>description}" />
+                                    <layoutData>
+                                        <FlexItemData alignSelf="auto" />
+                                    </layoutData>
+                                </ComboBox>
+                            </HBox>
+                        </VBox>
+                        <VBox>
+                            <Label text="{i18n>noticeDateLabel}" design="Bold" />
+                            <HBox>
+                                <DatePicker width="10rem" class="sapUiSmallMarginEnd" dateValue="{ui>/searchNoticeByDateFrom}" placeholder="{i18n>noticeDateFromLabel}" displayFormat="short" />
+                                <DatePicker width="10rem" class="sapUiLargeMarginEnd" dateValue="{ui>/searchNoticeByDateTo}" placeholder="{i18n>noticeDateToLabel}" displayFormat="short" />
+                                <Button icon="sap-icon://reset" press="onResetFields" class="sapUiSmallMarginEnd" />
+                                <Button icon="sap-icon://search" text="{i18n>searchNoticeButtonText}" type="Emphasized" press="onSearchNotice" />
+                            </HBox>
+                        </VBox>
+                    </lay:HorizontalLayout>
+                </content>
+            </Panel>
+            <Table id="noticeListModelTable" width="100%" class="tableList" items="{path:'noticeListModel>/results'}" growing="true" growingScrollToLoad="true" growingThreshold="100">
+                <columns>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>noticeIdLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle" width="3rem">
+                        <Text text="{i18n>priorityLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>titleLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>techPlaceLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>noticeDateLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>requestStartLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>requestEndLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>noticeStateLabel}" />
+                    </Column>
+                    <Column hAlign="Center" vAlign="Middle">
+                        <Text text="{i18n>requestUserLabel}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem press="onNoticePress" type="Navigation" vAlign="Middle">
+                        <cells>
+                            <Text text="{noticeListModel>noticeId}" class="noticeIdList" />
+                            <core:Icon src="sap-icon://circle-task-2" useIconTooltip="false" size="1.5rem" press="onPriorityPress" color="#EFF4F9">
+                                <core:customData>
+                                    <core:CustomData key="prioritycolor" value="{noticeListModel>priorityDescr}" writeToDom="true" />
+                                </core:customData>
+                            </core:Icon>
+                            <Link text="{noticeListModel>description}" maxLength="10" tooltip="{noticeListModel>description}" press="onTitlePress" />
+                            <Link text="{noticeListModel>techPlaceId}" tooltip="{noticeListModel>techPlaceDescr}" press="onTechPlacePress" />
+                            <Text text="{parts:[{path:'noticeListModel>noticeDate'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'}" />
+<!--                            <Text text="{=${noticeListModel>requestEnd} !== '' ? ${parts:[{path:'noticeListModel>requestStart'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} : ''}" />-->
+                            <Text text="{=${noticeListModel>requestStart} !== '' ? ${parts:[{path:'noticeListModel>requestStart'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} : ''}" />
+                            <Text text="{parts:[{path:'noticeListModel>requestEnd'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'}" />
+                            <Text text="{noticeListModel>noticeState}">
+                                <customData>
+                                    <core:CustomData key="statecolor" value="{noticeListModel>noticeState}" writeToDom="true" />
+                                </customData>
+                            </Text>
+                            <Text text="{noticeListModel>requestUser}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="{i18n>createNoticeButton}" press="onCreateNoticePress" type="Emphasized" visible="{ui>/noticeCreateVisible}" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Anagrafica_Utenti" EntityType="CatalogService.Anagrafica_Utenti">
+                    <NavigationPropertyBinding Path="ITEMS" Target="Anagrafica_Ruoli"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Ruoli" EntityType="CatalogService.Anagrafica_Ruoli">
+                    <NavigationPropertyBinding Path="ID_RUOLO" Target="Anagrafica_Utenti"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Flussi" EntityType="CatalogService.Anagrafica_Flussi">
+                    <NavigationPropertyBinding Path="ITEMS" Target="Anagrafica_Moduli"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Moduli" EntityType="CatalogService.Anagrafica_Moduli">
+                    <NavigationPropertyBinding Path="ID_MODULO" Target="Anagrafica_Flussi"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Errori" EntityType="CatalogService.Anagrafica_Errori">
+                    <NavigationPropertyBinding Path="ITEMS" Target="Anagrafica_Stato_Errori"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Stato_Errori" EntityType="CatalogService.Anagrafica_Stato_Errori">
+                    <NavigationPropertyBinding Path="ID_STATO_ERRORE" Target="Anagrafica_Errori"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="Anagrafica_Utenti">
+                <Key>
+                    <PropertyRef Name="ID_UTENTE"/>
+                </Key>
+                <Property Name="ID_UTENTE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="COGNOME_UTENTE" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="NOME_UTENTE" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="EMAIL_UTENTE" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <Property Name="ID_RUOLO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="TELEFONO_UTENTE" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <NavigationProperty Name="ITEMS" Type="Collection(CatalogService.Anagrafica_Ruoli)" Partner="ID_RUOLO">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="Anagrafica_Ruoli">
+                <Key>
+                    <PropertyRef Name="ID_RUOLO_ID_UTENTE"/>
+                </Key>
+                <NavigationProperty Name="ID_RUOLO" Type="CatalogService.Anagrafica_Utenti" Partner="ITEMS">
+                    <ReferentialConstraint Property="ID_RUOLO_ID_UTENTE" ReferencedProperty="ID_UTENTE"/>
+                </NavigationProperty>
+                <Property Name="ID_RUOLO_ID_UTENTE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="RUOLO" Type="Edm.String" MaxLength="20" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Flussi">
+                <Key>
+                    <PropertyRef Name="ID_FLUSSO"/>
+                </Key>
+                <Property Name="ID_FLUSSO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="NOME_FLUSSO" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="DESCRIZIONE_FLUSSO" Type="Edm.String" MaxLength="50"/>
+                <Property Name="ID_MODULO" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="ITEMS" Type="Collection(CatalogService.Anagrafica_Moduli)" Partner="ID_MODULO">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="Anagrafica_Moduli">
+                <Key>
+                    <PropertyRef Name="ID_MODULO_ID_FLUSSO"/>
+                </Key>
+                <NavigationProperty Name="ID_MODULO" Type="CatalogService.Anagrafica_Flussi" Partner="ITEMS">
+                    <ReferentialConstraint Property="ID_MODULO_ID_FLUSSO" ReferencedProperty="ID_FLUSSO"/>
+                </NavigationProperty>
+                <Property Name="ID_MODULO_ID_FLUSSO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="MODULO" Type="Edm.String" MaxLength="20" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Errori">
+                <Key>
+                    <PropertyRef Name="ID_ERRORE"/>
+                </Key>
+                <Property Name="ID_ERRORE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="ID_FLUSSO" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="ITEMS" Type="Collection(CatalogService.Anagrafica_Stato_Errori)" Partner="ID_STATO_ERRORE">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <Property Name="MESSAGGIO_ERRORE" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="DATA_ERRORE" Type="Edm.DateTimeOffset" Nullable="false"/>
+                <Property Name="ID_STATO_ERRORE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="ID_UTENTE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Id_UTENTE_TECHNICAL" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="STATO_BOTTONE" Type="Edm.Boolean" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Stato_Errori">
+                <Key>
+                    <PropertyRef Name="ID_STATO_ERRORE_ID_ERRORE"/>
+                </Key>
+                <NavigationProperty Name="ID_STATO_ERRORE" Type="CatalogService.Anagrafica_Errori" Partner="ITEMS">
+                    <ReferentialConstraint Property="ID_STATO_ERRORE_ID_ERRORE" ReferencedProperty="ID_ERRORE"/>
+                </NavigationProperty>
+                <Property Name="ID_STATO_ERRORE_ID_ERRORE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Stato_Errore" Type="Edm.String" MaxLength="30" Nullable="false"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

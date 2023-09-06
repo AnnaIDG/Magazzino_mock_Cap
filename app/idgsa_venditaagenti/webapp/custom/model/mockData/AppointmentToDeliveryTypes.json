@@ -1,0 +1,13 @@
+{
+  "items":
+  [
+    {
+      "id":"ATD01",
+      "name":"Consegna Standard"
+    },
+    {
+      "id":"ATD02",
+      "name":"Consegna Express"
+    }
+  ]
+}

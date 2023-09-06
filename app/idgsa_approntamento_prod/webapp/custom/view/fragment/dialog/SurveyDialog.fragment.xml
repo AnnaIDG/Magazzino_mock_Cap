@@ -1,0 +1,110 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+                         xmlns:c="sap.ui.commons" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Dialog resizable= "true"  contentHeight="100%" title="{i18n>survey}" afterClose="initializeSurvey">
+        <buttons>
+        </buttons>
+        <content>
+            <Wizard id="surveyWizard" complete="surveyCompletedHandler" finishButtonText="Invia i dati">
+                <WizardStep id="surveyStep1" title="Domanda 1" validated="true">
+                    <MessageStrip class="sapUiSmallMarginBottom" text="Materiale pulito/asciutto/preservato: Assenza ossidazioni,sporcizia" showIcon="true" />
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <SegmentedButton width="450px" select="setProductTypeFromSegmented" selectedButton="">
+                            <Button text="Sì" press="yesPress" />
+                            <Button text="No" press="noPress" />
+                        </SegmentedButton>
+                    </HBox>
+
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <Text text="" />
+                    </HBox>
+
+                </WizardStep>
+
+                <WizardStep validated="true" title="Domanda 2">
+                    <MessageStrip class="sapUiSmallMarginBottom"
+                                  text="Presenza e correttezza labels Oracle su items e identificativo PL provvisorio sul fasciame dell' imballo" showIcon="true" />
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <SegmentedButton width="450px" select="setProductTypeFromSegmented" selectedButton="">
+                            <Button text="Sì" press="yesPress" />
+                            <Button text="No" press="noPress" />
+                        </SegmentedButton>
+                    </HBox>
+
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <Text text="" />
+                    </HBox>
+                </WizardStep>
+
+                <WizardStep validated="true" title="Domanda 3">
+                    <MessageStrip class="sapUiSmallMarginBottom" text="Presenza pittogrammi per merci pericolose" showIcon="true" />
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <SegmentedButton width="450px" select="setProductTypeFromSegmented" selectedButton="">
+                            <Button text="Sì" press="yesPress" />
+                            <Button text="No" press="noPress" />
+                        </SegmentedButton>
+                    </HBox>
+
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <Text text="" />
+                    </HBox>
+                </WizardStep>
+
+
+                <WizardStep validated="true" title="Domanda 4">
+                    <MessageStrip class="sapUiSmallMarginBottom" text="Dimensioni dell'imballo utilizzato (mm)" showIcon="true" />
+                    <f:SimpleForm editable="true">
+                        <Label text="Dimensioni (mm)" />
+                        <Input type="Number" value=""></Input>
+                    </f:SimpleForm>
+                </WizardStep>
+
+                <WizardStep validated="true" title="Domanda 5">
+                    <MessageStrip class="sapUiSmallMarginBottom" text="Correttezza applicazione progetto d'imballo" showIcon="true" />
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <SegmentedButton width="450px" select="setProductTypeFromSegmented" selectedButton="">
+                            <Button text="Sì" press="yesPress" />
+                            <Button text="No" press="noPress" />
+                        </SegmentedButton>
+                    </HBox>
+
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <Text text="" />
+                    </HBox>
+                </WizardStep>
+
+                <WizardStep validated="true" title="Domanda 6">
+                    <MessageStrip class="sapUiSmallMarginBottom" text="Corretta saldatura packing list interno" showIcon="true" />
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <SegmentedButton width="450px" select="setProductTypeFromSegmented" selectedButton="">
+                            <Button text="Sì" press="yesPress" />
+                            <Button text="No" press="noPress" />
+                        </SegmentedButton>
+                    </HBox>
+
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <Text text="" />
+                    </HBox>
+                </WizardStep>
+
+
+                <WizardStep validated="true" title="Domanda 7">
+                    <MessageStrip class="sapUiSmallMarginBottom" text="Applicazione colorazione (se richiesto)" showIcon="true" />
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <SegmentedButton width="450px" select="setProductTypeFromSegmented" selectedButton="">
+                            <Button text="Sì" press="yesPress" />
+                            <Button text="No" press="noPress" />
+                        </SegmentedButton>
+                    </HBox>
+
+                    <HBox alignItems="Center" justifyContent="Center" width="100%">
+                        <Text text="" />
+                    </HBox>
+                </WizardStep>
+
+
+
+
+            </Wizard>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

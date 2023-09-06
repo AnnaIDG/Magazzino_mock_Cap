@@ -1,0 +1,158 @@
+<mvc:View controllerName="controller.PackingListOmDetail" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:h="http://www.w3.org/1999/xhtml">
+    <!-- Modifiche Gabio da JIRA -> METASF-7 punto 3 -->
+    <!-- bind al modello ui per visualizzare il bottone se sono arrivato dalla launchpad del cliente -->
+    <Page showNavButton="{ui>/backButtonVisible}" id="moveOrderManagementDetailPageId" enableScrolling="true" busyIndicatorDelay="1">
+        <!-- FINE Modifiche Gabio da JIRA -> METASF-7 punto 3 -->
+        <customHeader>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        </customHeader>
+        <content>
+            <Panel headerText="{i18n>packingListInfoTitle} " expandable="true" expanded="{ui>/panelExpanded}" width="100%" class="pannellodettaglio" visible="{mymodel>/moveOrderManagementDetailVisible}" alignItems="Begin">
+
+                <frm:SimpleForm width="80%" editable="true" layout="ResponsiveGridLayout" class="formProductDetail sapUiSizeCompact sapUiSmallMarginEnd" enableScrolling="true" visible="{ui>/productDetailVisible}">
+                    <frm:content>
+                        <Label text="{i18n>packingId}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" /> </layoutData>
+                        </Label>
+                        <Text text="{packingListOmDetailModel>/packingListId}" editable="false">
+                        <layoutData>
+                            <lay:GridData span="L8 M8 S8" /> </layoutData>
+                        </Text>
+                        <Label text="{i18n>supplier}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" /> </layoutData>
+                        </Label>
+                        <Text text="{packingListOmDetailModel>/supplier}" editable="false">
+                        <layoutData>
+                            <lay:GridData span="L8 M8 S8" /> </layoutData>
+                        </Text>
+                        <Label text="{i18n>moveOrderDate}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" /> </layoutData>
+                        </Label>
+                        <Text text="{path: 'packingListOmDetailModel>/availableDate'}">
+                        <layoutData>
+                            <lay:GridData span="L8 M8 S8" /> </layoutData>
+                        </Text>
+                        <Label text="{i18n>boxDescription}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L4 M4 S4" /> </layoutData>
+                        </Label>
+                        <Text text="{path: 'packingListOmDetailModel>/boxSelected'}" visible="{=${packingListOmDetailModel>/boxSelected} !== ''}">
+                            <layoutData>
+                            <lay:GridData span="L8 M8 S8" /> </layoutData>
+                        </Text>
+                        <Button press="onAddBoxPress" icon="sap-icon://product" tooltip="{i18n>addBox}" text="{i18n>addBox}" visible="{=${packingListOmDetailModel>/boxSelected} === ''}" type="Emphasized" width="10rem">
+                            <layoutData>
+                                <lay:GridData span="L8 M8 S8" /> </layoutData>
+                        </Button>
+                        <Label text="{i18n>headerNote}" design="Bold">
+                        <layoutData>
+                            <lay:GridData span="L2 M2 S2" /> </layoutData>
+                        </Label>
+                        <TextArea value="{path: 'packingListOmDetailModel>/notes/results/0/text'}" editable="false" rows="4" heigth="2em">
+                        <layoutData>
+                            <lay:GridData span="L10 M10 S10" /> </layoutData>
+                        </TextArea>
+
+
+                    </frm:content>
+                </frm:SimpleForm>
+
+                <!--
+                <FlexBox width="100%" class="flexDettaglio sapUiSizeCompact" aligItems="Start" justifyContent="SpaceBetween">
+                    <FlexBox>
+                        <Label text="{i18n>plant}: " design="Bold" class="sapUiTinyMargin" />
+                        <Select forceSelection="false" id="plantsComboBox" items="{path: 'moveOrderDetailModelSelect>/plants'}" selectedKey="{moveOrderDetailModel>/plant}" maxWidth="18em" change="onPlantChange">
+	                   <core:Item key="{moveOrderDetailModelSelect>id}" text="{moveOrderDetailModelSelect>name}" />
+                               	
+                        </Select>
+                    </FlexBox>
+                    <FlexBox>
+                        <Label text="{i18n>worksCenter}: " design="Bold" class="sapUiTinyMargin" />
+                        <Select forceSelection="true" items="{path: 'moveOrderDetailModelSelect>/worksCenter'}" selectedKey="{moveOrderDetailModel>/worksCenter}" maxWidth="18em" enabled="{ui>/plantsSelected}">
+	                   <core:Item key="{moveOrderDetailModelSelect>id}" text="{moveOrderDetailModelSelect>name}" />
+                               	
+                        </Select>
+                    </FlexBox>
+                </FlexBox>
+-->
+            </Panel>
+
+            <!-- Prova inserimento tabella per prodotti correlati-->
+            <Title level="H4" text="{i18n>packingsLists}" class="sapUiSmallMargin sapUiMediumMarginTop" visible="{=  ${mymodel>/moveOrderManagementDetailVisible} === true }" />
+            <Table id="moveOrderListsDetailTable" busyIndicatorDelay="0" width="98%" items="{path: 'packingListOmDetailModel>/packingList/results'}" class="sapUiSizeCompact sapUiTinyMargin" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }">
+                <columns>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>cartProductIdLabel}" /> </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true" width="25%">
+                        <Text text="{i18n>description}" /> </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>scale}" /> </Column>
+                    <Column hAlign="End" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>unitPrice}" /> </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+                        <Text text="{i18n>quantity}" /> </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true" width="20%">
+                        <Text text="{i18n>site}" />
+                    </Column>
+                    <Column hAlign="Center" minScreenWidth="Desktop" demandPopin="true">
+
+                    </Column>
+
+                </columns>
+                <items>
+
+                    <ColumnListItem>
+                        <cells>
+                            <Label text="{packingListOmDetailModel>productId}" design="Bold" />
+                            <Text text="{packingListOmDetailModel>description}" />
+                            <Text text="{packingListOmDetailModel>scaleDescr}" textAlign="End" />
+                            <Text text="{path: 'packingListOmDetailModel>unitListPrice', formatter: 'utils.Formatter.AggiungiVirgole'}" />
+                            <Text text="{packingListOmDetailModel>quantity}" textAlign="End" />
+                            <Select forceSelection="false" items="{path: 'packingListOmDetailModelSelect>/plants', templateShareable: true}" selectedKey="{packingListOmDetailModel>plant}" maxWidth="14em" change="onPlantChange">
+	                   <core:Item key="{packingListOmDetailModelSelect>id}" text="{packingListOmDetailModelSelect>name}" />
+                        </Select>
+                            <Button press="onSaveListPress" tooltip="{i18n>save}" text="{i18n>save}" enabled="{=  ${packingListOmDetailModel>plant} !== '' &amp;&amp; ${packingListOmDetailModel>savePressed} !== 'X' }" visible="{=  ${packingListOmDetailModel>/hasBox} !== ''}" class="sapUiSmallMarginBegin">
+                        </Button>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+
+        </content>
+        <footer>
+            <Bar id="orderManagementFooter">
+                <contentLeft>
+                    <!--
+                    <Button press="onPrintLabelPress" icon="sap-icon://bar-code" tooltip="{i18n>printLabel}" text="{i18n>printLabel}" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }" class="sapUiSmallMarginEnd" type="Accept">
+                        </Button>
+                    <Button press="onPrintListPress" icon="sap-icon://print" tooltip="{i18n>printList}" text="{i18n>printList}" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }" type="Reject">
+                        </Button>
+-->
+                </contentLeft>
+                <contentMiddle>
+                    <!--
+                    <Button press="onAddBoxPress" icon="sap-icon://product" tooltip="{i18n>addBox}" text="{i18n>addBox}" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }" type="Emphasized">
+                        </Button>
+-->
+                </contentMiddle>
+                <contentRight>
+
+                    <!--
+                    <Button press="onsavePress" icon="sap-icon://save" tooltip="{i18n>save}" text="{i18n>save}" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }">
+                        </Button>
+-->
+
+                    <Button press="onCreateOrder" icon="sap-icon://begin" tooltip="{i18n>createOrder}" text="{i18n>createOrder}" visible="{=  ${ui>/moveOrderLists} === true  &amp;&amp; ${mymodel>/moveOrderManagementDetailVisible} === true }" enabled="{ui>/checkCreateEnable}" class="sapUiSmallMarginEnd">
+                        </Button>
+                </contentRight>
+            </Bar>
+
+
+
+        </footer>
+    </Page>
+</mvc:View>

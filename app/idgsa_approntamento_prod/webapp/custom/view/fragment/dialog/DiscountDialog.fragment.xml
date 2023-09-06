@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:frm="sap.ui.layout.form">
+    <Dialog resizable="true" contentHeight="50%" title="{i18n>discounts}" contentWidth="40%" class="sapUiSizeCompact">
+        <buttons>
+            <!-- <Button text= "{i18n>RESET}" press="onResetDiscountPress" visible="{orderDetailModel>/en/wr}" /> -->
+            <Button text="{i18n>close}" press="onDiscountDialogClose" />
+            <!-- <Button text="{i18n>OK}" press="onDiscountDialogOK" visible= "{orderDetailModel>/en/wr}"/> -->
+        </buttons>
+        <content>
+            <Table items="{discountModel>/}">
+                <columns>
+                    <Column hAlign="Center">
+                        <Text text="{i18n>discountType}" /> </Column>
+                    <Column hAlign="Center">
+                        <Text text="{i18n>discountValue}" /> </Column>
+                    <!--
+            <Column hAlign="Center">
+              <Text text="{i18n>discountScale}" />
+            </Column>
+-->
+                    <Column hAlign="Center">
+                        <Text text="{i18n>discountConditionValue}"/> </Column>
+            
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{discountModel>typeDescr}" editable="false"/>
+
+                            <HBox>
+                                <Input value="{discountModel>value}" editable="{discountModel>editable}"  maxLength="9" textAlign="End" width="6em"/>
+                                <Text text="{discountModel>unit}" editable="false" textAlign="Center" class="sapUiTinyMarginTop" width="3em"/> </HBox>
+
+                            
+                            <!-- <Text text="{path:'discountModel>totValue', formatter: 'utils.Formatter.formatDecimal'}"/> -->
+                            <!-- <Text text="{path:'discountModel>totValue'}"/> -->
+<!--                            <Text text="{discountModel>value} {discountModel>unit}" editable="false" maxLength="9" textAlign="End"/>-->
+                            <HBox>
+                            <Input value="{discountModel>total}" editable="false" textAlign="Center"  width="8em"/>
+                            <Text text="{cartModel>/productsList/0/currency}" class="sapUiTinyMarginTop" textAlign="Center" width="4em"/>
+                            </HBox>
+                                </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

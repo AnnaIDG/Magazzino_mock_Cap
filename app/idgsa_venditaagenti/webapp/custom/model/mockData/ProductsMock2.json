@@ -1,0 +1,515 @@
+[
+  {
+    "productId": "0000100001",
+    "scale": "",
+    "description": "BUFALA CAMPANA",
+    "unitListPrice": "",
+    "parentId" : "00001",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000010000100000025",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 25g",
+    "unitListPrice": "5",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X",
+    "orderedBefore":true
+    
+  },
+  {
+    "productId": "000010000100000100",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 100g",
+    "unitListPrice": "8",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X",
+    "orderedBefore":true
+    
+  },
+  {
+    "productId": "000010000100000125",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 125g",
+    "unitListPrice": "10",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000100000025",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 150g",
+    "unitListPrice": "12",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000100000200",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 200g",
+    "unitListPrice": "14",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000100000250",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 250g",
+    "unitListPrice": "16",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000100000350",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 350g",
+    "unitListPrice": "18",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000100000500",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 500g",
+    "unitListPrice": "20",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000100000750",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 750g",
+    "unitListPrice": "25",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000100001000",
+    "scale": "PZ",
+    "description": "BUFALA CAMPANA 1000g",
+    "unitListPrice": "30",
+    "parentId" : "0000100001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000100002",
+    "scale": "",
+    "description": "BURRO BUFALA",
+    "unitListPrice": "",
+    "parentId" : "00001",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000010000200000250",
+    "scale": "PZ",
+    "description": "BURRO BUFALA 250g",
+    "unitListPrice": "5",
+    "parentId" : "0000100002",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000200000275",
+    "scale": "PZ",
+    "description": "BURRO BUFALA 275g",
+    "unitListPrice": "8",
+    "parentId" : "0000100002",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000100003",
+    "scale": "",
+    "description": "FORMAGGIO BUFALA",
+    "unitListPrice": "",
+    "parentId" : "00001",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000010000300000750",
+    "scale": "PZ",
+    "description": "FORMAGGIO BUFALA 750g",
+    "unitListPrice": "5",
+    "parentId" : "0000100003",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000300002000",
+    "scale": "PZ",
+    "description": "FORMAGGIO BUFALA 2000g",
+    "unitListPrice": "8",
+    "parentId" : "0000100003",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000100004",
+    "scale": "",
+    "description": "LATTE BUFALA",
+    "unitListPrice": "",
+    "parentId" : "00001",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000010000400000000",
+    "scale": "PZ",
+    "description": "LATTE BUFALA",
+    "unitListPrice": "5",
+    "parentId" : "0000100004",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000010000400000500",
+    "scale": "PZ",
+    "description": "LATTE BUFALA 500g",
+    "unitListPrice": "10",
+    "parentId" : "0000100004",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000200001",
+    "scale": "",
+    "description": "FORMAGGIO NON FILATO CAPRA",
+    "unitListPrice": "",
+    "parentId" : "00002",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000020000100000000",
+    "scale": "PZ",
+    "description": "FORMAGGIO NON FILATO CAPRA",
+    "unitListPrice": "5",
+    "parentId" : "0000200001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000200002",
+    "scale": "",
+    "description": "LATTE CAPRA",
+    "unitListPrice": "",
+    "parentId" : "00002",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000020000200001000",
+    "scale": "PZ",
+    "description": "LATTE CAPRA 1000g",
+    "unitListPrice": "5",
+    "parentId" : "0000200002",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000300001",
+    "scale": "",
+    "description": "MOZZARELLA TENERA MISTA",
+    "unitListPrice": "",
+    "parentId" : "00003",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000030000100000000",
+    "scale": "PZ",
+    "description": "MOZZARELLA TENERA MISTA 125g",
+    "unitListPrice": "5",
+    "parentId" : "0000300001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000030000100000500",
+    "scale": "PZ",
+    "description": "MOZZARELLA TENERA MISTA 250g",
+    "unitListPrice": "10",
+    "parentId" : "0000300001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000400001",
+    "scale": "",
+    "description": "FORMAGGIO NON FILATO PECORA",
+    "unitListPrice": "",
+    "parentId" : "00004",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000040000100000000",
+    "scale": "PZ",
+    "description": "FORMAGGIO NON FILATO PECORA",
+    "unitListPrice": "5",
+    "parentId" : "0000400001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000040000100000350",
+    "scale": "PZ",
+    "description": "FORMAGGIO NON FILATO PECORA 350g",
+    "unitListPrice": "10",
+    "parentId" : "0000400001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000040000100000700",
+    "scale": "PZ",
+    "description": "FORMAGGIO NON FILATO PECORA 700g",
+    "unitListPrice": "15",
+    "parentId" : "0000400001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000400002",
+    "scale": "",
+    "description": "LATTE PECORA",
+    "unitListPrice": "",
+    "parentId" : "00004",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000040000200000000",
+    "scale": "PZ",
+    "description": "LATTE PECORA",
+    "unitListPrice": "5",
+    "parentId" : "0000400002",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000400003",
+    "scale": "",
+    "description": "RICOTTA PECORA",
+    "unitListPrice": "",
+    "parentId" : "00004",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000040000300000300",
+    "scale": "PZ",
+    "description": "RICOTTA PECORA 300g",
+    "unitListPrice": "5",
+    "parentId" : "0000400003",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000040000300001300",
+    "scale": "PZ",
+    "description": "RICOTTA PECORA 1300g",
+    "unitListPrice": "10",
+    "parentId" : "0000400003",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000040000300002000",
+    "scale": "PZ",
+    "description": "RICOTTA PECORA 2000g",
+    "unitListPrice": "15",
+    "parentId" : "0000400003",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000400004",
+    "scale": "",
+    "description": "RICOTTA SALATA PECORA",
+    "unitListPrice": "",
+    "parentId" : "00004",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000040000400003000",
+    "scale": "PZ",
+    "description": "RICOTTA SALATA PECORA 3000g",
+    "unitListPrice": "25",
+    "parentId" : "0000400004",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000500001",
+    "scale": "",
+    "description": "BURRO VACCA",
+    "unitListPrice": "",
+    "parentId" : "00005",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000050000100000000",
+    "scale": "PZ",
+    "description": "BURRO VACCA",
+    "unitListPrice": "5",
+    "parentId" : "0000500001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000050000100000010",
+    "scale": "PZ",
+    "description": "BURRO VACCA 10g",
+    "unitListPrice": "10",
+    "parentId" : "0000500001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000050000100000125",
+    "scale": "PZ",
+    "description": "BURRO VACCA 125g",
+    "unitListPrice": "15",
+    "parentId" : "0000500001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000500002",
+    "scale": "",
+    "description": "BURRATA VACCA",
+    "unitListPrice": "",
+    "parentId" : "00005",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000050000200000125",
+    "scale": "PZ",
+    "description": "BURRATA VACCA 125g",
+    "unitListPrice": "5",
+    "parentId" : "0000500002",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000050000200000200",
+    "scale": "PZ",
+    "description": "BURRATA VACCA 200g",
+    "unitListPrice": "10",
+    "parentId" : "0000500002",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000050000200000250",
+    "scale": "PZ",
+    "description": "BURRATA VACCA 250g",
+    "unitListPrice": "15",
+    "parentId" : "0000500002",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "0000600001",
+    "scale": "",
+    "description": "COMMERCIALIZZATI 4GAMMA",
+    "unitListPrice": "",
+    "parentId" : "00006",
+    "level":"2",
+    "ultimo" : ""
+    
+  },
+  {
+    "productId": "000060000100000030",
+    "scale": "PZ",
+    "description": "COMMERCIALIZZATI 4GAMMA 30g",
+    "unitListPrice": "5",
+    "parentId" : "0000600001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000060000100000050",
+    "scale": "PZ",
+    "description": "COMMERCIALIZZATI 4GAMMA 50g",
+    "unitListPrice": "10",
+    "parentId" : "0000600001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  },
+  {
+    "productId": "000060000100000100",
+    "scale": "PZ",
+    "description": "COMMERCIALIZZATI 4GAMMA 100g",
+    "unitListPrice": "15",
+    "parentId" : "0000600001",
+    "level":"3",
+    "ultimo" : "X"
+    
+  }
+  
+]

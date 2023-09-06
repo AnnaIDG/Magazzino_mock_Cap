@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" >
+    <Dialog title="{i18n>REDEFINE_FILE_NAME}" >
+        <content>
+          <Label text="{i18n>FILE_NAME}"/>
+          <Input value="{fn>/name}" />
+
+        </content>
+        <beginButton>
+
+            <Button text="{i18n>CANCEL}" press="onFileNameClose" />
+        </beginButton>
+        <endButton>
+          <Button text="{i18n>OK}" press="onFileNameOK" />
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>

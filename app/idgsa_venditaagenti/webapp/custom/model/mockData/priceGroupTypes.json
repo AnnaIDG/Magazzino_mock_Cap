@@ -1,0 +1,147 @@
+{
+	"items":
+	[{
+		"key":"pg01",
+		"text":"Mock/Price Group 01",
+		"discounts":[	
+		{
+			"name":"Sconto Testata 1",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 2",
+			"unitVal":"5",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 3",
+			"unitVal":"5",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 4",
+			"unitVal":"2",
+			"scale": "%",
+			"currency":"EUR"
+		}]
+		
+		},
+		{
+		"key":"pg02",
+		"text":"Mock/Price Group 02",
+		"discounts":[	
+		{
+			"name":"Sconto Testata 1",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 2",
+			"unitVal":"15",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 3",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		}
+		]
+		},
+		{
+		"key":"pg03",
+		"text":"Mock/Price Group 03",
+		"discounts":[	
+		{
+			"name":"Sconto Testata 1",
+			"unitVal":"15",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 2",
+			"unitVal":"5",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 3",
+			"unitVal":"5",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 4",
+			"unitVal":"2",
+			"scale": "%",
+			"currency":"EUR"
+		}]
+		},
+		{
+		"key":"pg04",
+		"text":"Mock/Price Group 04",
+		"discounts":[	
+		{
+			"name":"Sconto Testata 1",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 2",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 3",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 4",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 5",
+			"unitVal":"10",
+			"scale": "%",
+			"currency":"EUR"
+		}]
+		},
+		{
+		"key":"pg05",
+		"text":"Mock/Price Group 05",
+		"discounts":[	
+		{
+			"name":"Sconto Testata 1",
+			"unitVal":"5",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 2",
+			"unitVal":"5",
+			"scale": "%",
+			"currency":"EUR"
+		},
+		{
+			"name":"Sconto Testata 3",
+			"unitVal":"5",
+			"scale": "%",
+			"currency":"EUR"
+		}]
+		
+		}
+		
+	]
+}

@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="mySelectDialog"
+		noDataText="No Products Found"
+		title="Select Product"
+		search=".onSearchFlussi"
+		confirm="selezionaFlusso"
+		cancel="onCloseDialogFlussi"
+		items="{flussiModel>/flussi}">
+		<StandardListItem
+			title="{flussiModel>nome}"
+			description=""
+			icon=""
+			iconDensityAware="false"
+			iconInset="false"
+			type="Active"
+        />
+			
+	</SelectDialog>
+</core:FragmentDefinition>

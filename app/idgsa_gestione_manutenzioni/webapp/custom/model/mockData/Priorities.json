@@ -1,0 +1,21 @@
+{
+  "results":
+  [
+    {
+      "id":"2",
+      "description":"Urgenza"
+    },
+    {
+      "id":"3",
+      "description":"Urgenza segn. tel."
+    },
+    {
+      "id":"4",
+      "description":"Normale"
+    },
+    {
+      "id":"5",
+      "description":"Programm./nuova att."
+    }
+  ]
+}

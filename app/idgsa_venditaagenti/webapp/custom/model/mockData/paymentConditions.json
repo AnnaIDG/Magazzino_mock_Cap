@@ -1,0 +1,18 @@
+{
+  "items":
+  [
+    {
+      "id":"BB",
+      "name":"Bonifico 30gg data fattura"
+    },
+    {
+      "id":"CS",
+      "name":"RIBA 30, 60, 90 fine mese"
+    },
+    {
+      "id":"AN",
+      "name":"Anticipato"
+    }
+  ]
+
+}

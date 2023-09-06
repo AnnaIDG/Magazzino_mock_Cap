@@ -1,0 +1,19 @@
+/* Enter your custom styles here */
+.noMargin{
+    margin: 3px!important;
+}
+.noPadding{
+    padding: 3x!important;
+}
+.bgRed{
+    /* background-color: rgba(255,0,0,10%)!important;
+    border-color:red!important;
+    border-width: 1px; */
+    border-left: 5px solid red!important;
+}
+.bgGreen{
+    /* background-color: rgba(0,128,0,10%)!important;
+    border-color:green!important;
+    border-width: 1px; */
+    border-left: 5px solid green!important;
+}

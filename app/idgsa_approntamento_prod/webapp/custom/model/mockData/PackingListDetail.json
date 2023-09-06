@@ -1,0 +1,392 @@
+{
+    "results": [
+        {
+            "packingListId": "00001231",
+            "customerId": "5644b014985b3395ebb58eae",
+            "hasBox":"X",
+            "boxSelected":"STANDARD",
+            "supplier": "ICMS",
+            "rifOrder": "AA01",
+            "basketType": "BT01",
+            "dockType": "Invio in conto visione",
+            "destination": "Via Longhin 3, 39012 Padova",
+            "paymentMethod": "C",
+            "paymentCondition": "Bonifico 30gg data fattura",
+            "incoterms": "PORTO ASSEGNATO",
+            "notes": {
+                "results": [
+                    {
+                        "id": "ZM01",
+                        "description": "Nota di testata 1",
+                        "text": "L'ordine in oggetto è trasferire il prima possibile"
+				},
+
+                    {
+                        "id": "ZM02",
+                        "description": "Nota di spedizione 2",
+                        "text": "ZM02ZM02ZM02ZM02ZM02ZM02ZM02"
+				}
+			]
+            },
+            "meansShipping": "SDA",
+            "totalEvasion": "X",
+            "appointmentToDelivery": "ATD01",
+            "deliveryType": "DT01",
+            "chargeTrasport": "CT01",
+            "IVACode": "IVA01",
+            "validDateList": "23/11/2015",
+            "availableDate": "23/11/2015",
+            "orderReason": "OR01",
+            "packingList": {
+                "results": [
+                    {
+                        "orderId": "00001235",
+                        "positionId": "01",
+                        "plant":"",
+                        "quantity": "4",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "80",
+                        "discountApplyed": "20",
+                        "productId": "A110901",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Vaso di terracotta 14x27",
+                        "unitListPrice": "25",
+                        "unitNetPrice": "20",
+                        "currency": "EUR",
+                        "picked": "false"
+				},
+
+                    {
+                        "orderId": "00001235",
+                        "positionId": "02",
+                        "plant":"",
+                        "quantity": "5",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "90",
+                        "discountApplyed": "10",
+                        "productId": "Z304987",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Coperchio lamierato",
+                        "unitListPrice": "20",
+                        "unitNetPrice": "18",
+                        "currency": "EUR",
+                        "picked": "false"
+				}, {
+                        "orderId": "00001235",
+                        "positionId": "03",
+                        "positionId": "01",
+                        "plant":"",
+                        "quantity": "4",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "80",
+                        "discountApplyed": "20",
+                        "productId": "A546001",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Prodotto di cat 1",
+                        "unitListPrice": "25",
+                        "unitNetPrice": "20",
+                        "currency": "EUR",
+                        "picked": "false"
+				},
+
+                    {
+                        "orderId": "00001235",
+                        "positionId": "04",
+                        "plant":"",
+                        "quantity": "5",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "90",
+                        "discountApplyed": "10",
+                        "productId": "L602311",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Prodotto di cat 2",
+                        "unitListPrice": "20",
+                        "unitNetPrice": "18",
+                        "currency": "EUR",
+                        "picked": "false"
+				}
+			]
+            }
+
+	},
+        {
+            "packingListId": "00001232",
+            "hasBox":"",
+            "boxSelected":"",
+            "customerId": "5644b014985b3395ebb58eae",
+            "supplier": "ICMS",
+            "rifOrder": "AA01",
+            "basketType": "BT01",
+            "dockType": "Invio in conto visione",
+            "destination": "Via Longhin 3, 39012 Padova",
+            "paymentMethod": "C",
+            "paymentCondition": "Bonifico 30gg data fattura",
+            "incoterms": "PORTO ASSEGNATO",
+            "notes": {
+                "results": [
+                    {
+                        "id": "ZM01",
+                        "description": "Nota di testata 1",
+                        "text": "Trattamento speciale"
+				},
+
+                    {
+                        "id": "ZM02",
+                        "description": "Nota di spedizione 2",
+                        "text": "ZM02ZM02ZM02ZM02ZM02ZM02ZM02"
+				}
+			]
+            },
+            "meansShipping": "SDA",
+            "totalEvasion": "X",
+            "appointmentToDelivery": "ATD01",
+            "deliveryType": "DT01",
+            "chargeTrasport": "CT01",
+            "IVACode": "IVA01",
+            "validDateList": "23/11/2015",
+            "availableDate": "23/11/2015",
+            "orderReason": "OR01",
+            "packingList": {
+                "results": [
+                    {
+                        "orderId": "00001235",
+                        "positionId": "01",
+                        "plant":"",
+                        "quantity": "21",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "80",
+                        "discountApplyed": "20",
+                        "productId": "L005401",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Finale di ottone 0.5",
+                        "unitListPrice": "0.45",
+                        "unitNetPrice": "20",
+                        "currency": "EUR",
+                        "picked": "false"
+				},
+
+                    {
+                        "orderId": "00001235",
+                        "positionId": "02",
+                        "plant":"",
+                        "quantity": "11",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "90",
+                        "discountApplyed": "10",
+                        "productId": "Z050670",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Base arcuata 9p2",
+                        "unitListPrice": "12",
+                        "unitNetPrice": "18",
+                        "currency": "EUR",
+                        "picked": "false"
+				},
+                    {
+                        "orderId": "00001235",
+                        "positionId": "03",
+                        "plant":"",
+                        "quantity": "4",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "80",
+                        "discountApplyed": "20",
+                        "productId": "A546001",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Prodotto di cat 1",
+                        "unitListPrice": "25",
+                        "unitNetPrice": "20",
+                        "currency": "EUR",
+                        "picked": "false"
+				},
+
+                    {
+                        "orderId": "00001235",
+                        "positionId": "04",
+                        "plant":"",
+                        "quantity": "5",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "90",
+                        "discountApplyed": "10",
+                        "productId": "L602311",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Prodotto di cat 2",
+                        "unitListPrice": "20",
+                        "unitNetPrice": "18",
+                        "currency": "EUR",
+                        "picked": "false"
+				}
+			]
+            }
+
+	},
+
+
+        {
+            "packingListId": "00001234",
+            "hasBox":"X",
+            "boxSelected":"PERSONALIZZATA",
+            "customerId": "5644b014985b3395ebb58eae",
+            "supplier": "ICMS",
+            "rifOrder": "AA01",
+            "basketType": "BT01",
+            "dockType": "Invio in conto visione",
+            "destination": "Via Longhin 3, 39012 Padova",
+            "paymentMethod": "C",
+            "paymentCondition": "Bonifico 30gg data fattura",
+            "incoterms": "PORTO ASSEGNATO",
+            "notes": {
+                "results": [
+                    {
+                        "id": "ZM01",
+                        "description": "Nota di testata 1",
+                        "text": "Materiale Fragile"
+				},
+
+                    {
+                        "id": "ZM02",
+                        "description": "Nota di spedizione 2",
+                        "text": "ZM02ZM02ZM02ZM02ZM02ZM02ZM02"
+				}
+			]
+            },
+            "meansShipping": "SDA",
+            "totalEvasion": "X",
+            "appointmentToDelivery": "ATD01",
+            "deliveryType": "DT01",
+            "chargeTrasport": "CT01",
+            "IVACode": "IVA01",
+            "validDateList": "23/11/2015",
+            "availableDate": "23/11/2015",
+            "orderReason": "OR01",
+            "packingList": {
+                "results": [
+                    {
+                        "orderId": "00001235",
+                        "positionId": "01",
+                        "plant":"",
+                        "quantity": "1",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "80",
+                        "discountApplyed": "20",
+                        "productId": "A325001",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Tubo di zinco",
+                        "unitListPrice": "25",
+                        "unitNetPrice": "42",
+                        "currency": "EUR",
+                        "picked": "false"
+				},
+
+                    {
+                        "orderId": "00001235",
+                        "positionId": "02",
+                        "plant":"",
+                        "quantity": "5",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "90",
+                        "discountApplyed": "10",
+                        "productId": "F048572",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Lamierato s07",
+                        "unitListPrice": "2",
+                        "unitNetPrice": "18",
+                        "currency": "EUR",
+                        "picked": "false"
+				}
+			]
+            }
+
+	},
+        {
+            "packingListId": "00001235",
+            "hasBox":"X",
+            "boxSelected":"PERSONALIZZATA",
+            "customerId": "5644b014985b3395ebb58eae",
+            "supplier": "ICMS",
+            "rifOrder": "AA01",
+            "basketType": "BT01",
+            "dockType": "Invio in conto visione",
+            "destination": "Via Longhin 3, 39012 Padova",
+            "paymentMethod": "C",
+            "paymentCondition": "Bonifico 30gg data fattura",
+            "incoterms": "PORTO ASSEGNATO",
+            "notes": {
+                "results": [
+                    {
+                        "id": "ZM01",
+                        "description": "Nota di testata 1",
+                        "text": "Necessario imballo aggiuntivo"
+				},
+
+                    {
+                        "id": "ZM02",
+                        "description": "Nota di spedizione 2",
+                        "text": "ZM02ZM02ZM02ZM02ZM02ZM02ZM02"
+				}
+			]
+            },
+            "meansShipping": "SDA",
+            "totalEvasion": "X",
+            "appointmentToDelivery": "ATD01",
+            "deliveryType": "DT01",
+            "chargeTrasport": "CT01",
+            "IVACode": "IVA01",
+            "validDateList": "23/11/2015",
+            "availableDate": "23/11/2015",
+            "orderReason": "OR01",
+            "packingList": {
+                "results": [
+                    {
+                        "orderId": "00001235",
+                        "positionId": "01",
+                        "plant":"",
+                        "quantity": "21",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "80",
+                        "discountApplyed": "20",
+                        "productId": "L005401",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Finale di ottone 0.5",
+                        "unitListPrice": "0.45",
+                        "unitNetPrice": "20",
+                        "currency": "EUR",
+                        "picked": "false"
+				},
+
+                    {
+                        "orderId": "00001235",
+                        "positionId": "02",
+                        "plant":"",
+                        "quantity": "11",
+                        "totalListPrice": "100",
+                        "totalNetPrice": "90",
+                        "discountApplyed": "10",
+                        "productId": "Z050670",
+                        "scale": "PZ",
+                        "scaleDescr": "Pezzo",
+                        "description": "Base arcuata 9p2",
+                        "unitListPrice": "12",
+                        "unitNetPrice": "18",
+                        "currency": "EUR",
+                        "picked": "false"
+				}
+			]
+            }
+
+	}
+
+
+
+  ]
+
+}

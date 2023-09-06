@@ -1,0 +1,20 @@
+{
+  "items":
+  [
+    {
+      "id":"BT01",
+      "name":"Milano",
+      "CAP": 20019
+    },
+    {
+      "id":"BT02",
+      "name":"Padova",
+      "CAP": 35100
+    },
+    {
+      "id":"BT03",
+      "name":"Verona",
+      "CAP": 37100
+    }
+  ]
+}

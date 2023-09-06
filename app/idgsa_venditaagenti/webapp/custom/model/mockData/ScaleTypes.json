@@ -1,0 +1,21 @@
+{
+  "items":
+  [
+    {
+      "id":"PZ",
+      "name":"pezzi"
+    },
+    {
+      "id":"CART",
+      "name":"cartoni"
+    },
+    {
+      "id":"KG",
+      "name":"kilogrammi"
+    },
+    {
+      "id":"LT",
+      "name":"litri"
+    }
+  ]
+}

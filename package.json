@@ -1,34 +1,61 @@
 {
-  "name": "Magazzino_mock",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^7",
-    "express": "^4",
-    "@sap/cds-hana": "^2"
-  },
-  "scripts": {
-    "start": "cds-serve"
-  },
-  "cds": {
-    "build": {
-      "tasks": [
-        {
-          "for": "hana",
-          "dest": "../db"
-        },
-        {
-          "for": "node-cf"
-        }
-      ]
+    "name": "Magazzino_mock",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^7",
+        "@sap/cds-hana": "^2",
+        "@sap/hana-client": "^2.17.22",
+        "express": "^4"
     },
-    "requires": {
-      "db": {
-        "kind": "hana-cloud"
-      }
-    }
-  }
+    "scripts": {
+        "start": "cds-serve",
+        "watch-frontend": "cds watch --open frontend/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy Magazzino_mock --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "watch-mfctile": "cds watch --open mfctile/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-mfc_consumer": "cds watch --open mfc_consumer/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-mfc_technical": "cds watch --open mfc_technical/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-idgvenditaagenti": "cds watch --open idgvenditaagenti/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-idgsa_venditaagenti": "cds watch --open idgsa_venditaagenti/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-idgsa_gestione_manutenzioni": "cds watch --open idgsa_gestione_manutenzioni/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-tile_project": "cds watch --open tile_project/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-idgsa_gestione_travel": "cds watch --open idgsa_gestione_travel/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-idgsa_approntamento_produzione": "cds watch --open idgsa_approntamento_produzione/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-idgsa_wizardofferte": "cds watch --open idgsa_wizardofferte/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-idgsa_approntamento_prod": "cds watch --open idgsa_approntamento_prod/webapp/index.html?sap-ui-xx-viewCache=false"
+    },
+    "cds": {
+        "build": {
+            "tasks": [
+                {
+                    "for": "hana",
+                    "dest": "../db"
+                },
+                {
+                    "for": "node-cf"
+                }
+            ]
+        },
+        "requires": {
+            "db": {
+                "kind": "hana-cloud"
+            }
+        },
+        "hana": {
+            "deploy-format": "hdbtable"
+        }
+    },
+    "devDependencies": {
+        "@sap/hdi-deploy": "4.8.0",
+        "@sap/ux-specification": "^1.108.13",
+        "rimraf": "^3.0.2"
+    },
+    "sapux": [
+        "app/frontend"
+    ]
 }

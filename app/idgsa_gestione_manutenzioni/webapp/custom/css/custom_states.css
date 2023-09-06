@@ -1,0 +1,80 @@
+/* Classi per Colori Priorita*/
+li[id*="noticeListObj"] span.sapMObjLIcon.sapUiIcon{
+	color: #EFF4F9 !important;
+}
+span[data-prioritycolor*="Em"], div[data-prioritycolor*="Em"], 
+li[data-prioritycolor*="Em"] span.sapMObjLIcon.sapUiIcon{
+    color: #FF0000 !important;
+    font-weight: bold !important;
+}
+span[data-prioritycolor*="Urgenza"], div[data-prioritycolor*="Urgenza"], 
+li[data-prioritycolor*="Urgenza"] span.sapMObjLIcon.sapUiIcon{
+	color: #FF9800 !important;
+    font-weight: bold !important;
+}
+span[data-prioritycolor*="Programmat"], div[data-prioritycolor*="Programmat"], 
+li[data-prioritycolor*="Programmat"] span.sapMObjLIcon.sapUiIcon,
+span[data-prioritycolor*="Normale"], div[data-prioritycolor*="Normale"], 
+li[data-prioritycolor*="Normale"] span.sapMObjLIcon.sapUiIcon{
+    color: #4CAF50 !important;
+    font-weight: bold !important;
+}
+span[data-prioritycolor*="Nuov"], div[data-prioritycolor*="Nuov"], 
+li[data-prioritycolor*="Nuov"] span.sapMObjLIcon.sapUiIcon ,
+span[data-prioritycolor*="nuova"], div[data-prioritycolor*="nuova"], 
+li[data-prioritycolor*="nuova"] span.sapMObjLIcon.sapUiIcon {
+    color: #03A9F4 !important;
+    font-weight: bold !important;
+}
+/* Fine priorità*/
+/* CLASSI PER ACTION SHEET */
+.WIPP .sapMBtnInner,
+.WIPP .sapUiIcon {
+    color: #80DEEA !important;
+    font-weight: bold !important;
+}
+.TOCP .sapMBtnInner,
+.TOCP .sapUiIcon {
+    color: #03A9F4 !important;
+    font-weight: bold !important;
+}
+.TRAS .sapMBtnInner,
+.TRAS .sapUiIcon {
+    color: #E040FB !important;
+    font-weight: bold !important;
+}
+.WIPM .sapMBtnInner,
+.WIPM .sapUiIcon {
+    color: #FF9800 !important;
+    font-weight: bold !important;
+}
+.TOCL .sapMBtnInner,
+.TOCL .sapUiIcon {
+    color: #F44336 !important;
+    font-weight: bold !important;
+}
+/* CLASSI PER GESTIRE GLI STATI*/
+span[data-statecolor="INIZ"], div[data-statecolor="INIZ"] span{
+    color: #4CAF50 !important;
+    font-weight: bold !important;
+}
+span[data-statecolor="WIPP"], div[data-statecolor="WIPP"] span{
+    color: #80DEEA !important;
+    font-weight: bold !important;
+}
+span[data-statecolor="TOCP"], div[data-statecolor="TOCP"] span{
+    color: #03A9F4 !important;
+    font-weight: bold !important;
+}
+span[data-statecolor="TRAS"], div[data-statecolor="TRAS"] span{
+    color: #E040FB !important;
+    font-weight: bold !important;
+}
+span[data-statecolor="WIPM"], div[data-statecolor="WIPM"] span{
+    color: #FF9800 !important;
+    font-weight: bold !important;
+}
+span[data-statecolor="TOCL"], div[data-statecolor="TOCL"] span{
+    color: #F44336 !important;
+    font-weight: bold !important;
+}

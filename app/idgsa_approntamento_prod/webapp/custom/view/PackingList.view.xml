@@ -1,0 +1,83 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.PackingList" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" busyIndicatorDelay="1">
+    <Page id="packingListModelPageId">
+        <headerContent>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        </headerContent>
+        <subHeader class="sapUiSizeCompact">
+            <Toolbar>
+                <Button icon="sap-icon://filter" press="onFilterPress" id="filterButton" />
+                <SearchField liveChange="onFilterPackingList" width="100%" value="{ui>/searchValue}" search="onSearchOrderByVbeln" />
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table id="packingListModelTable" class="sapUiSizeCompact" width="100%" items="{path:'packingListModel>/results', sorter: {path:'packingId', descending:true}}">
+                <columns>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>packingId}" />
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>supplierId}" />
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="20%">
+                        <Text text="{i18n>supplier}" />
+                    </Column>
+
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>documentDate}" />
+                    </Column>
+
+<!--
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>listRequestedDate}" />
+                    </Column>
+-->
+
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>packingStatus}" />
+                    </Column>
+                
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="5%">
+                        <Text text=" " />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem press="onOrderPress" type="Inactive" vAlign="Middle" selected="{packingListModel>selected}">
+                        <cells>
+                            <Label text="{path:'packingListModel>packingId', formatter: 'utils.Formatter.removeLeadingZeroes'}" design="Bold" />
+                            <Text text="{path:'packingListModel>supplierId', formatter: 'utils.Formatter.removeLeadingZeroes'}" />
+                            <Text text="{packingListModel>supplier}" />
+                            <ObjectNumber number="{path : 'packingListModel>shippmentDate', formatter:'utils.Formatter.formatDate'}" />
+<!--                            <ObjectNumber number="{path : 'packingListModel>validDateList', formatter:'utils.Formatter.formatDate'}" />-->
+                            <ObjectNumber number="{packingListModel>packingStatus}">
+                                <customData>
+                                    <core:CustomData key="packingStatusColor" value="{packingListModel>packingStatusId}" writeToDom="true" /> </customData>
+                            </ObjectNumber>
+<!--
+                            <core:Icon src="sap-icon://pdf-attachment" size="1.2rem" useIconTooltip="false" tooltip="{i18n>pdfDownload}" color="#0F3D7B" press="onLinkToPdfPress" />
+                            <Button icon="sap-icon://shipping-status" id="orderlistTrackingButton" press="onTrackingPress" type="{= (${packingListModel>bolle} === 'X')  ? 'Accept' : 'Transparent' }" tooltip="{i18n>shippmentAvailableButtonTooltip}" enabled="{= ${packingListModel>bolle} === 'X'}" />
+                            <Button icon="sap-icon://locked" id="orderlistShowBlockButton" press="showOrderBlockReasons" type="{= (${packingListModel>packingStatus} === 'B') ? 'Reject' : 'Transparent' }" tooltip="{i18n>orderBlockButtonTooltip}" enabled="{= ${packingListModel>packingStatus} === 'B' }" />
+-->
+                            <core:Icon src="sap-icon://menu" size="1.2rem" useIconTooltip="false" color="#0F3D7B" id="iconForPress" tooltip="{i18n>packingInfoButtonTitle}"/>
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+
+            <Bar>
+                <contentLeft>
+                    <Text text="{i18n>fromDate}: {ui>/fromDate} - {i18n>toDate}: {ui>/toDate}" visible="{ui>/rangeVisible}" />
+                </contentLeft>
+                <contentMiddle>
+                    <!--                    <Label text="{user>/userLogged/orgData/description}" design="Bold" />-->
+                </contentMiddle>
+                <contentRight>
+                    <ToggleButton icon="sap-icon://history" text="{i18n>filterOnDate}" press="onFilterOnDatePress" id="packingListToggleButton" pressed="{ui>/rangeVisible}" />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

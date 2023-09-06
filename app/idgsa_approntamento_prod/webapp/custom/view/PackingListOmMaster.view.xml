@@ -1,0 +1,32 @@
+<mvc:View controllerName="controller.PackingListOmMaster" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:h="http://www.w3.org/1999/xhtml">
+    <Page showNavButton="false" id="PackingListOmMasterId" busyIndicatorDelay="1">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Button icon="sap-icon://nav-back" press="onNavButtonBackPress" class="navigationButtonOnMaster" /> </contentLeft>
+                <contentMiddle> </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://target-group" press="onOdataDirectSearch" tooltip="{i18n>onOdataDirectSearch}" class="navigationButtonOnMaster" /> </contentRight>
+            </Bar>
+        </customHeader>
+        <subHeader>
+            <Toolbar>
+                <Button icon="sap-icon://filter" press="onFilterPress" id="filterButton" class="filterClassButton" />
+                <SearchField liveChange="onFilterPackingItemList" width="100%" value="{ui>/searchValue}" search="onSearchPackingItemList" class="searchFieldClass" /> </Toolbar>
+        </subHeader>
+        <content>
+            <List id="packingListId" items="{packingListOmMasterModel>/}" includeItemInSelection="true" class="lista">
+                <items>
+                    <ObjectListItem title="{packingListOmMasterModel>packingId}" iconDensityAware="false" iconInset="false" type="Active" press="onPackingItemPress" icon="{= ${packingListOmMasterModel>hasBox} === 'X'  ? 'sap-icon://database' : '' }" class="moveOrderItem">
+                        <attributes>
+                            <ObjectAttribute text="{packingListOmMasterModel>supplier}" class="addressDescription" /> </attributes>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Toolbar>
+                <Button icon="sap-icon://refresh" press="refreshList" visible="{ui>/filtersApplied}" /> </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

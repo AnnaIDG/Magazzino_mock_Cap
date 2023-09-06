@@ -1,0 +1,40 @@
+<mvc:View controllerName="controller.UserDetail" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:u="sap.ui.unified">
+    <Page>
+        <customHeader>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        </customHeader>
+        <content>
+            <l:Grid defaultSpan="L10 M10 S10" class="sapUiTinyMarginTop centraPaginaCambioPsw">
+                <l:content>
+                    <Panel width="auto" class="sapUiSmallMargin">
+                        <IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding" select="onIconTablePress">
+                            <items>
+                                <IconTabFilter icon="sap-icon://hint">
+                                    <f:SimpleForm maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="" labelSpanL="4" labelSpanM="4" emptySpanL="3" emptySpanM="3" columnsL="1" columnsM="1">
+                                        <Label text="{i18n>userName}" />
+                                        <Text text="{user>/userLogged/userName}" />
+                                        <Label text="" />
+                                        <Link text="{i18n>modificaPassword}" press="onPressChangePsw" />
+                                    </f:SimpleForm>
+                                    <f:SimpleForm maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="" labelSpanL="4" labelSpanM="4" emptySpanL="3" emptySpanM="3" columnsL="1" columnsM="1" visible="{modelPropertyPage>/modPass}">
+                                        <Label text="{i18n>oldPassword}" />
+                                        <Input value="{editPsw>/passOld}" placeholder="{i18n>inserirePasswordAttuale}" id="passOld" type="Password" liveChange="liveChange1" />
+                                        <Label text="{i18n>newPassword1}" />
+                                        <Input value="{editPsw>/passNew}" placeholder="{i18n>inserirePasswordNuova}" id="passNew" type="Password" liveChange="liveChange2" />
+                                        <Label text="{i18n>newPasswordConfirm}" />
+                                        <Input value="{editPsw>/passNewConfirm}" placeholder="{i18n>reinserirePasswordNuova}" id="passNewConfirm" type="Password" liveChange="liveChange3" />
+                                        <Label text="" />
+                                        <Text text="" />
+                                        <Label text="" />
+                                        <Button text="{i18n>cambaPassword}" press="onPressChangePassword" enabled="{modelPropertyPage>/confirmChange}" />
+                                    </f:SimpleForm>
+                                </IconTabFilter>
+                                
+                            </items>
+                        </IconTabBar>
+                    </Panel>
+                </l:content>
+            </l:Grid>
+        </content>
+    </Page>
+</mvc:View>

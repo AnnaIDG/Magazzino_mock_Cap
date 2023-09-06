@@ -1,0 +1,48 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.NoticeMasterList" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" busyIndicatorDelay="1">
+    <Page id="noticeMasterListPageId" showNavButton="false" showHeader="true">
+        <customHeader>
+            <Bar id="noticeMasterListBarId">
+                <contentLeft>
+                    <Button icon="sap-icon://nav-back" press="onNavBackPress" tooltip="{i18n>backTooltip}" />
+                </contentLeft>
+                <contentMiddle>
+                </contentMiddle>
+            </Bar>
+        </customHeader>
+        <subHeader>
+            <Toolbar>
+                <Button icon="sap-icon://filter" press="onFilterPress" />
+                <SearchField liveChange="onFieldSearch" width="100%" value="{noticeListModel>/searchValue}" showRefreshButton="true" search="onResetListPress" />
+            </Toolbar>
+        </subHeader>
+        <content>
+            <List items="{path:'noticeListModel>/results'}" id="noticeMasterListId" growing="true" growingThreshold="20">
+                <ObjectListItem title="{noticeListModel>description}" id="noticeListObj" type="Active" press="onNoticePress" icon="sap-icon://circle-task-2">
+                    <customData>
+                        <core:CustomData key="prioritycolor" value="{noticeListModel>priorityDescr}" writeToDom="true" />
+                    </customData>
+                    <attributes>
+                        <ObjectAttribute title="{i18n>noticeIdLabel}" text="{path: 'noticeListModel>noticeId'}" />
+                        <ObjectAttribute title="{i18n>noticeStateLabel}" text="{path: 'noticeListModel>noticeState'}" id="noticeListState">
+                            <customData>
+                                <core:CustomData key="statecolor" value="{noticeListModel>noticeState}" writeToDom="true" />
+                            </customData>
+                        </ObjectAttribute>
+<!--                        <ObjectAttribute title="{i18n>techPlaceLabel}" text="{noticeListModel>techPlaceId} {noticeListModel>techPlaceDescr}" />--> 
+                        <ObjectAttribute title="{i18n>techPlaceLabel}" text="{noticeListModel>techPlaceId}" /> <!-- fabio 16/03 -->
+                        <ObjectAttribute title="{}" text="{noticeListModel>techPlaceDescr}" /><!-- fabio 16/03 -->
+<!--                        <Text text="{=${noticeListModel>requestEnd} !== '' ? ${parts:[{path:'noticeListModel>requestStart'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} : ''}" />-->
+                        <ObjectAttribute text="{=${noticeListModel>requestStart} !== '' ? ${i18n>startDate} + ' ' + ${parts:[{path:'noticeListModel>requestStart'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} + ' ' + ${noticeListModel>requestHourStart} : ${i18n>startDate}}" />
+                        <ObjectAttribute text="{=${noticeListModel>requestEnd} !== '' ? ${i18n>endDate} + ' ' + ${parts:[{path:'noticeListModel>requestEnd'}, {path:'ui>/dateFormat'}], formatter:'utils.Formatter.Date.formatDateTo'} + ' ' + ${noticeListModel>requestHourEnd} : ${i18n>startDate}}"/>
+                    </attributes>
+                </ObjectListItem>
+            </List>
+        </content>
+        <footer>
+            <Toolbar>
+                <Button text="{i18n>createNoticeButton}" press="onCreateNoticePress" type="Emphasized" visible="{ui>/noticeCreateVisible}" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

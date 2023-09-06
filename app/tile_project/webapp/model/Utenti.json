@@ -1,0 +1,124 @@
+{
+    "utenti": [
+        {
+            "id": "0",
+            "nome": "Mario",
+            "cognome": "Rossi",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "1",
+            "nome": "Diana",
+            "cognome": "Sanna",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },  
+        {
+            "id": "2",
+            "nome": "Flavia",
+            "cognome": "Cidonio",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "3",
+            "nome": "Angelo",
+            "cognome": "Sisinna",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "4",
+            "nome": "Chiara",
+            "cognome": "Fedele",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "5",
+            "nome": "Nunzio",
+            "cognome": "Della Ragione",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "6",
+            "nome": "Francesco",
+            "cognome": "Albertini",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },  
+        {
+            "id": "7",
+            "nome": "Daniele",
+            "cognome": "Cantile",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "8",
+            "nome": "Fabrizio",
+            "cognome": "Mauro",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "9",
+            "nome": "Alessandro",
+            "cognome": "Bragetti",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "10",
+            "nome": "Anna",
+            "cognome": "D'Addario",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "11",
+            "nome": "Massimo",
+            "cognome": "Er King",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },  
+        {
+            "id": "12",
+            "nome": "Silvio",
+            "cognome": "Berlusconi",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "13",
+            "nome": "Romano",
+            "cognome": "Prodi",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        },
+        {
+            "id": "14",
+            "nome": "Giorgia",
+            "cognome": "Sono una Donna",
+            "email":"cheneso@email.com",
+            "ruolo":"admin",
+            "telefono":3206367123
+        }
+    ]
+}

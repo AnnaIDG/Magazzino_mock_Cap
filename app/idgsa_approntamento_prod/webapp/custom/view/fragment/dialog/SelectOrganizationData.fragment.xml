@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="salesOrgDialog" class="filterDialogItem" contentHeight="auto"
+		title="{i18n>selectOrgDataTitle}" afterOpen="onDataOrgDialogAfterOpen" beforeClose="onDataOrgDialogBeforeClose"
+		afterClose="onDataOrgDialogAfterClose">
+		<buttons>
+			<Button text="{i18n>commonSelectButton}" press="onDataOrgDialogConfirm"/>
+		</buttons>
+		<content>
+			<List id="dataOrgSelectListId" items="{dataOrg>/orgData}" mode="SingleSelectLeft"
+				includeItemInSelection="true">
+				<StandardListItem title="{dataOrg>description}" iconDensityAware="false"
+					iconInset="false" description="{dataOrg>societyName}"/>
+			</List>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

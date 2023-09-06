@@ -1,0 +1,109 @@
+{
+    "associazioni": [
+        {
+            "id": "0",
+            "flusso": "Vendite Bari",
+            "nome": "Mario",
+            "cognome": "Rossi"
+           
+        },
+        {
+            "id": "1",
+            "flusso": "Vendite Bari",
+            "nome": "Diana",
+            "cognome": "Sanna"
+           
+        },  
+        {
+            "id": "2",
+            "flusso": "Vendite Bari",
+            "nome": "Flavia",
+            "cognome": "Cidonio"
+        },
+
+
+
+
+        {
+            "id": "3",
+            "flusso": "Vendite Napoli",
+            "nome": "Angelo",
+            "cognome": "Sisinna"
+        },
+        {
+            "id": "4",
+            "flusso": "Vendite Napoli",
+            "nome": "Chiara",
+            "cognome": "Fedele"
+        },
+
+
+        {
+            "id": "5",
+            "flusso": "Vendite Cesenatico",
+            "nome": "Mario",
+            "cognome": "Rossi"
+        },
+        {
+            "id": "6",
+            "flusso": "Vendite Cesenatico",
+            "nome": "Diana",
+            "cognome": "Sanna"
+        },
+        {
+            "id": "7",
+            "flusso": "Vendite Cesenatico",
+            "nome": "Flavia",
+            "cognome": "Cidonio"
+        },
+
+
+
+        {
+            "id": "8",
+            "flusso": "Produzione Bari",
+            "nome": "Mario",
+            "cognome": "Rossi"
+        },
+        {
+            "id": "9",
+            "flusso": "Produzione Bari",
+            "nome": "Flavia",
+            "cognome": "Cidonio"
+        },
+
+
+        {
+            "id": "10",
+            "flusso": "Magazzino Napoli",
+            "nome": "Mario",
+            "cognome": "Rossi"
+        },
+        {
+            "id": "11",
+            "flusso": "Magazzino Napoli",
+            "nome": "Diana",
+            "cognome": "Sanna"
+        },
+        {
+            "id": "12",
+            "flusso": "Magazzino Napoli",
+            "nome": "Flavia",
+            "cognome": "Cidonio"
+        },
+        {
+            "id": "13",
+            "flusso": "Magazzino Napoli",
+            "nome": "Angelo",
+            "cognome": "Sisinna"
+        },
+        {
+            "id": "13",
+            "flusso": "Magazzino Napoli",
+            "nome": "Chiara",
+            "cognome": "Fedele"
+        }
+
+
+    ]
+}

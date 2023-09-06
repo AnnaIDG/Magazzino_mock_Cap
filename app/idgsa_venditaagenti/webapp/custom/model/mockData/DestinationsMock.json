@@ -1,0 +1,63 @@
+[
+    {
+        "Kunnr": "0601202164",
+        "Vkorg": "3000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "VIA VITO DI JASI 89, AVERSA(CE)"
+  },{
+        "Kunnr": "12010",
+        "Vkorg": "3000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "VIA VITO DI JASI 89, AVERSA(CE)"
+  },{
+        "Kunnr": "0601201567",
+        "Vkorg": "3000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "VIA MATTEI 4, NOVARA(NO)"
+  },{
+        "Kunnr": "0601201516",
+        "Vkorg": "3000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "VIA EMPEDOCLE RESTIVO 176, PALERMO(PA)"
+  },{
+        "Kunnr": "008373",
+        "Vkorg": "2000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "VIA EMILIA EST 885/A, MODENA(MO)"
+  },{
+        "Kunnr": "007921",
+        "Vkorg": "2000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "VIA ARRIGO BOITO 8, MILANO(MI)"
+  },{
+        "Kunnr": "009838",
+        "Vkorg": "2000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "VIALE MAZZINI 14, ROMA(RM)"
+  },{
+        "Kunnr": "009838",
+        "Vkorg": "2000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "CORSO GIAMBONE 68, TORINO(TO)"
+  },{
+        "Kunnr": "009838",
+        "Vkorg": "2000",
+        "Vtweg": "10",
+        "Spart": "10",
+        "Name1": "CORSO SEMPIONE 27, MILANO(MI)"
+  },{
+        "Kunnr": "",
+        "Vkorg": "SA20",
+        "Vtweg": "DO",
+        "Spart": "CF",
+        "Name1": "Via San Crispino 82, PD"
+  }
+]

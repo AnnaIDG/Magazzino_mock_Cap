@@ -1,0 +1,110 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.RfidLoader" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" busyIndicatorDelay="1">
+
+    <Page id="rfidLoaderPageId" showNavButton="false" showHeader="false">
+        <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        <Toolbar>
+            <!-- <Button icon="sap-icon://filter" press="onFilterPress"/> -->
+            <SearchField search="onSearch" width="100%" class="rfidLoaderSearchField" value="{rfidFilterModel>/searchValue}" />
+        </Toolbar>
+
+        <!-- items="{path:'listTypeModel>/results', templateShareable:false}"  -->
+        <IconTabBar id="rfidIconTabBar" selectedKey="{rfidLoaderModel>/listType}" select="refreshList">
+            <items>
+
+                <IconTabFilter text="{listTypeModel>/results/0/name}" key="{listTypeModel>/results/0/key}" icon="{listTypeModel>/results/0/icon}">
+                    <content>
+                        <Table id="rfidLoaderTechPlaceTable" width="100%" items="{path:'rfidLoaderModel>/results'}">
+                            <columns>
+                                <Column hAlign="Left" vAlign="Middle" width="0.1em">
+                                    <Text text="" />
+                                </Column>
+                                <Column hAlign="Left" vAlign="Middle" width="5em">
+                                    <Text text="{i18n>techPlaceIdLabel}" />
+                                </Column>
+                                <Column hAlign="Left" vAlign="Middle" width="13em">
+                                    <Text text="{i18n>techPlaceDescriptionLabel}" />
+                                </Column>
+                                <Column hAlign="Center" vAlign="Middle" width="6em">
+                                    <Text text="{i18n>rfidLabel}" />
+                                </Column>
+                                <Column hAlign="Center" vAlign="Middle" width="3em">
+                                    <Text text="" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem press="onRfidLoaderModelPress" vAlign="Middle">
+                                    <cells>
+                                        <core:Icon src="sap-icon://media-play" visible="{= ${rfidLoaderModel>ultimo} !== 'X' }" size="3em" press="goToChild" useIconTooltip="false" color="#427cac" />
+                                        <Text text="{rfidLoaderModel>id}" />
+                                        <Text text="{rfidLoaderModel>description}" class="rfidTechPlaceDescr" />
+                                        <Input value="{rfidLoaderModel>rfidCode}" editable="{rfidLoaderModel>rfidEditable}" placeholder="..." change="onRfidInput" class="rfidCodeInput" />
+                                        <lay:HorizontalLayout>
+                                            <core:Icon src="sap-icon://bar-code" size="2.5em" press="onBindRfidBtnPress" tooltip="{i18n>bindRfidTooltip}" visible="{= ( ${rfidLoaderModel>rfidCode} === '') }" color="#2b7d2b" />
+                                            <core:Icon src="sap-icon://decline" size="4em" press="onCancelRfid" tooltip="{i18n>cancelRfid}" visible="{= ( ${rfidLoaderModel>rfidCode} !== '') }" color="#bb0000" />
+                                        </lay:HorizontalLayout>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+
+                        </Table>
+                    </content>
+                </IconTabFilter>
+
+                <IconTabFilter text="{listTypeModel>/results/1/name}" key="{listTypeModel>/results/1/key}" icon="{listTypeModel>/results/1/icon}">
+                    <content>
+                        <Table id="rfidLoaderEquipmentTable" width="100%" items="{path:'rfidLoaderModel>/results'}" growing="true" growingThreshold="100" growingScrollToLoad="true">
+                            <columns>
+<!--
+                                <Column hAlign="Left" vAlign="Middle" width="3em">
+                                    <Text text="" />
+                                </Column>
+-->
+                                <Column hAlign="Left" vAlign="Middle" width="7em">
+                                    <Text text="{i18n>equipmentIdLabel}" />
+                                </Column>
+                                <Column hAlign="Left" vAlign="Middle" width="7em">
+                                    <Text text="{i18n>equipmentDescriptionLabel}" />
+                                </Column>
+                                <Column hAlign="Left" vAlign="Middle" width="7em">
+                                    <Text text="{i18n>techPlaceDescriptionLabelInEquipment}" />
+                                </Column>
+                                <Column hAlign="Center" vAlign="Middle" width="7em">
+                                    <Text text="{i18n>rfidLabel}" />
+                                </Column>
+                                <Column hAlign="Center" vAlign="Middle" width="5em">
+                                    <Text text="" />
+                                </Column>
+                                <Column hAlign="Center" vAlign="Middle" width="3em">
+                                    <Text text="" />
+                                </Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem press="onRfidLoaderModelPress" vAlign="Middle">
+                                    <cells>
+<!--                                        <core:Icon src="sap-icon://media-play" visible="{= ${rfidLoaderModel>ultimo} !== 'X' }" size="2em" press="goToChild" useIconTooltip="false" />-->
+                                        <Text text="{rfidLoaderModel>id}" />
+                                        <Text text="{rfidLoaderModel>description}" class="rfidTechPlaceDescr" />
+                                        <Text text="{rfidLoaderModel>descriptionTechPlace}" class="rfidTechPlaceDescr" /> <!-- fabio 16/03 -->
+                                        <Input value="{rfidLoaderModel>rfidCode}" editable="{rfidLoaderModel>rfidEditable}" placeholder="..." change="onRfidInput" class="rfidCodeInput" />
+                                        <core:Icon src="sap-icon://bar-code" size="3em" press="onBindRfidBtnPress" tooltip="{i18n>bindRfidTooltip}" />
+                                        <core:Icon src="sap-icon://decline" size="2em" press="onCancelRfid" tooltip="{i18n>cancelRfid}" visible="{= ( ${rfidLoaderModel>rfidCode} !== '') }" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+                </IconTabFilter>
+
+            </items>
+        </IconTabBar>
+
+
+        <footer>
+            <Toolbar>
+                <Button icon="sap-icon://response" press="goBackToYourFatherLuke" visible="{ui>/backButton}" tooltip="{i18n>goBackHierarchyTooltip}" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

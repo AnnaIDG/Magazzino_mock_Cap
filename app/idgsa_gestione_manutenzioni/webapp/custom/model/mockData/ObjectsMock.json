@@ -1,0 +1,71 @@
+{
+    "results": [
+        {
+            "id": "1",
+            "masterCategory" : "S"
+            , "masterCat": "Z_01"
+            , "object": "Segnaletica Orizzontale"
+    }
+        , {
+            "id": "2",
+            "masterCategory" : "S"
+            , "masterCat": "Z_02"
+            , "object": "Bagni"
+    }
+        , {
+            "id": "3",
+            "masterCategory" : "S"
+            , "masterCat": "Z_03"
+            , "object": "Uffici"
+    },
+        
+        {
+            "id": "4",
+            "masterCategory" : "E"
+            , "masterCat": "E_01"
+            , "object": "Estintore"
+    },
+        
+        {
+            "id": "6",
+            "masterCategory" : "E"
+            , "masterCat": "E_02"
+            , "object": "Carrello"
+    },
+      {
+            "id": "7",
+            "masterCategory" : "S"
+            , "masterCat": "Z_07"
+            , "object": "Pavimento"
+    },
+    {
+            "id": "8",
+            "masterCategory" : "S"
+            , "masterCat": "Z_08"
+            , "object": "Lavandino"
+    },
+    {
+            "id": "9",
+            "masterCategory" : "S"
+            , "masterCat": "Z_09"
+            , "object": "Condizionatore"
+    },
+    {
+    	"id":"10",
+    	"masterCategory":"S",
+    	"masterCat":"Z_10",
+    	"object":"Pista"
+    }
+    
+        
+        
+  
+        
+        
+        
+        
+        
+        
+
+  ]
+}

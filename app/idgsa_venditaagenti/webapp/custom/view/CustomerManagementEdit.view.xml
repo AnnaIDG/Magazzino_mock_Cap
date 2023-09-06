@@ -1,0 +1,236 @@
+<mvc:View controllerName="controller.CustomerManagementEdit" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form"
+	xmlns:h="http://www.w3.org/1999/xhtml">
+	<Page showNavButton="false" id="customerManagementEdit">
+
+		<customHeader>
+			<!-- <core:Fragment fragmentName="view.fragment.customerToolbar" type="XML" /> -->
+			<Bar>
+				<contentMiddle>
+					<Text
+						text="{user>/userLogged/userFullName} 
+						{= (${user>/userLogged/roleId} ===  'AG' &amp;&amp; ${user>/selectedCustomer/customerName} !==  null) ? '-' : '' }
+                        {= (${user>/userLogged/roleId} ===  'AG' &amp;&amp; ${user>/selectedCustomer/customerName} !==  null) ? ${user>/selectedCustomer/customerName} : '' }"
+						class="headerUserText"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://log" press="onLogoutPress" tooltip="{i18n>logoutTooltip}"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+
+		<content>
+			<IconTabBar id="idCustomerIconTabBar" class="customIconTabBar">
+				<items>
+					<IconTabFilter text="{i18n>registry}" icon="sap-icon://customer">
+						<frm:SimpleForm title="{i18n>customerInfo}" minWidth="1024" editable="true"
+							layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+							columnsL="2" maxContainerCols="2" class="center">
+							<frm:toolbar>
+								<Toolbar>
+									<Title text="{i18n>customerInfo}" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://locked" type="Reject" class="lockedCustomerButton" press="unlockCustomer"
+										tooltip="{i18n>unlockCustomer}" visible="{= (${c>/registry/isBlocked} === true)}"/>
+								</Toolbar>
+							</frm:toolbar>
+							<frm:content>
+								<Label text="{i18n>customerCode}" design="Bold"/>
+								<Input value="{c>/registry/customerId}" editable="false"/>
+
+								<Label text="{i18n>name}" design="Bold"/>
+								<Input value="{c>/registry/customerName}" editable="false"/>
+
+								<Label text="{i18n>discountGroupLabel}" design="Bold"/>
+								<Input value="{customerDetailModel>/customer/registry/discountGroup}" editable="false"/>
+
+								<Label text="{i18n>taxCode}" design="Bold"/>
+								<Input value="{c>/registry/codiceFiscale}" editable="true"/>
+
+								<Label text="{i18n>vatNumber}" design="Bold"/>
+								<Input value="{c>/registry/partitaIVA}" editable="{en>/editable}"/>
+							</frm:content>
+						</frm:SimpleForm>
+						<frm:SimpleForm title="{i18n>addressInfo}" minWidth="1024" editable="true"
+							layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+							columnsL="2" maxContainerCols="2" class="center">
+							<frm:content>
+								<Label text="{i18n>street}" design="Bold"/>
+								<Input value="{c>/registry/street}" editable="{en>/editable}"/>
+								<Input value="{c>/registry/numAddr}" editable="{en>/editable}">
+									<layoutData>
+										<lay:GridData span="L2 M2 S4"/>
+									</layoutData>
+								</Input>
+
+								<Label text="{i18n>city}" design="Bold"/>
+								<!-- <Input value="{c>/registry/city}, {c>/registry/postalCode}" editable= "{en>/editable}"/> -->
+								<Input value="{c>/registry/city}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>postalCode}" design="Bold"/>
+								<!-- <Input value="{c>/registry/city}, {c>/registry/postalCode}" editable= "{en>/editable}"/> -->
+								<Input value="{c>/registry/postalCode}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>prov}" design="Bold"/>
+								<!-- //To trasform in comboBox -->
+								<Input value="{c>/registry/prov}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>nation}" design="Bold"/>
+								<!-- <Input value="{c>/registry/nation}" editable= "{en>/editable}"/> -->
+								<ComboBox value="{c>/registry/country}" items="{path: 'p>/items'}"
+									selectedKey="{c>/registry/country}">
+									<core:Item key="{p>id}" text="{p>id}"/>
+								</ComboBox>
+
+							</frm:content>
+						</frm:SimpleForm>
+					</IconTabFilter>
+
+					<IconTabFilter text="{i18n>contact}" icon="sap-icon://contacts">
+						<frm:SimpleForm title="{i18n>contactInfo}" minWidth="1024" editable="true"
+							layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+							columnsL="2" maxContainerCols="2" class="center">
+							<frm:toolbar>
+								<Toolbar>
+									<Title text="{i18n>contactInfo}" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://locked" type="Reject" class="lockedCustomerButton" press="unlockCustomer"
+										tooltip="{i18n>unlockCustomer}" visible="{= (${c>/registry/isBlocked} === true)}"/>
+								</Toolbar>
+							</frm:toolbar>
+							<frm:content>
+								<Label text="{i18n>phone}" design="Bold"/>
+								<Input value="{c>/contact/tel}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>mobile}" design="Bold"/>
+								<Input value="{c>/contact/mobile}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>fax}" design="Bold"/>
+								<Input value="{c>/contact/fax}" editable="{en>/editable}"/>
+								<!--  
+								<Label text="{i18n>contactType}" design="Bold"/>
+								<ComboBox items="{path: 'ct>/items'}" selectedKey="{c>/contact/contactType}">
+									<core:Item key="{ct>name}" text="{ct>name}"/>
+								</ComboBox>
+								-->
+								<Label text="{i18n>email}" design="Bold"/>
+								<Input value="{c>/contact/email}" editable="{en>/editable}"/>
+							</frm:content>
+						</frm:SimpleForm>
+
+					</IconTabFilter>
+
+
+
+					<IconTabFilter text="{i18n>bankaccount}" icon="sap-icon://lead-outdated">
+
+						<frm:SimpleForm title="{i18n>bankInfo}" minWidth="1024" editable="true"
+							layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+							columnsL="2" maxContainerCols="2" class="center">
+							<frm:toolbar>
+								<Toolbar>
+									<Title text="{i18n>bankInfo}" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://locked" type="Reject" class="lockedCustomerButton" press="unlockCustomer"
+										tooltip="{i18n>unlockCustomer}" visible="{= (${c>/registry/isBlocked} === true)}"/>
+								</Toolbar>
+							</frm:toolbar>
+							<frm:content>
+								<Label text="{i18n>iban}" design="Bold"/>
+								<Input value="{c>/bank/iban}" editable="{en>/editable}"/>
+
+								<!-- <Label text="{i18n>DESCRIPTION}" design="Bold" /> <Input value="{c>/bank/descr}" editable="{en>/editable}" 
+									/> -->
+
+								<Label text="{i18n>nation}" design="Bold"/>
+								<Input value="{c>/bank/bankCountry}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>accountNum}" design="Bold"/>
+								<Input value="{c>/bank/bankAccount}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>abcab}" design="Bold"/>
+								<Input value="{c>/bank/bankNumber}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>bankName}" design="Bold"/>
+								<Input value="{c>/bank/bankName}" editable="{en>/editable}"/>
+							</frm:content>
+						</frm:SimpleForm>
+
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>sales}" icon="sap-icon://sales-order-item">
+
+						<frm:SimpleForm title="{i18n>sales}" minWidth="1024" editable="true"
+							layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+							columnsL="2" maxContainerCols="2" class="center">
+							<frm:toolbar>
+								<Toolbar>
+									<Title text="{i18n>sales}" level="H4" titleStyle="H4"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://locked" type="Reject" class="lockedCustomerButton" press="unlockCustomer"
+										tooltip="{i18n>unlockCustomer}" visible="{= (${c>/registry/isBlocked} === true)}"/>
+								</Toolbar>
+							</frm:toolbar>
+							<frm:content>
+
+								<Label text="{i18n>transportZone}" design="Bold"/>
+								<Input value="{c>/sales/transportZone} {c>/sales/transportZoneCode}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>paymentConditions}" design="Bold"/>
+								<Input value="{c>/sales/paymentTerms}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>districtName}" design="Bold"/>
+								<Input value="{c>/sales/macroZone} {c>/sales/zoneCode}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>zone}" design="Bold"/>
+								<Input value="{c>/sales/zone}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>customerGroup}" design="Bold"/>
+								<Input value="{c>/sales/customerGroup}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>priceList}" design="Bold"/>
+								<Input value="{c>/sales/priceList}" editable="{en>/editable}"/>
+
+								<Label text="{i18n>incoterms}" design="Bold"/>
+								<ComboBox
+									items="{
+                                     path: 'ic>/items'
+                                 }"
+									selectedKey="{c>/sales/incoterms}">
+									<core:Item key="{ic>name}" text="{ic>name}"/>
+								</ComboBox>
+
+								<Label text="{i18n>notes}" design="Bold"/>
+								<Input value="{c>/sales/note}" editable="{en>/editable}"/>
+								
+								<Label text="{i18n>priceListType}" design="Bold"/>
+								<ComboBox items="{
+						                path: 'pl>/items'
+						            }" 
+						            selectedKey="{c>/sales/priceListType}"
+									>
+		
+									<core:Item key="{pl>key}" text="{pl>name}"/>
+								</ComboBox>
+								
+							</frm:content>
+						</frm:SimpleForm>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button press="onBackPress" icon="sap-icon://sys-back-2" tooltip="{i18n>backToCustomerDetail}">
+				</Button>
+				<Button icon="sap-icon://save" press="onSavePress" tooltip="{i18n>save}"/>
+				<Button press="onResetPress" icon="sap-icon://undo" tooltip="{i18n>undoChanges}">
+				</Button>
+
+			</Toolbar>
+		</footer>
+	</Page>
+
+
+</mvc:View>

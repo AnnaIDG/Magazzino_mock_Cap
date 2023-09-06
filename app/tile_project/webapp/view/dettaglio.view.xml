@@ -1,0 +1,161 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tileproject.tileproject.controller.dettaglio" xmlns:semantic="sap.m.semantic" displayBlock="true" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt">
+    <tnt:ToolHeader>
+        <Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" />
+        <Text text="Welcome Admin" wrapping="false" />
+        <Image src="test-resources/sap/tnt/images/SAP_Logo.png" />
+        <ToolbarSpacer />
+        <Button icon="sap-icon://home" type="Transparent" press="vaiHome" />
+    </tnt:ToolHeader>
+
+    <SplitContainer>
+        <masterPages>
+            <semantic:MasterPage id="master" title="Errori">
+                <!-- <Title id="listPageTitle" text="{listView>/title}" level="H2" /> -->
+                <List id="list" items="{
+                    path: '/Anagrafica_Errori',
+                    sorter: {
+                        path: 'ID_ERRORE',
+                        descending: true
+                    }
+                }" updateFinished=".onUpdateFinished">
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <content>
+                                <ToolbarSpacer />
+                                <SearchField id="searchField" width="auto" placeholder="searchfield" search=".onSearch" />
+                                <!-- <Button
+											id="refreshUsersButton"
+											icon="sap-icon://refresh"
+											tooltip="{i18n>refreshButtonText}"
+											press=".onRefresh"/>-->
+                                <Button id="sortUsersButton" icon="sap-icon://sort" tooltip="sort" press="onSort" />
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <items>
+                        <ObjectListItem id="ObjectListItem" type="Navigation" press="onSelectionChange" title="Errore {ID_ERRORE}" />
+                        <!-- highlight="{= ${ErroriModel>stato} ? 'Success' : 'Error'}"  -->
+                    </items>
+                </List>
+
+                <semantic:landmarkInfo>
+                    <PageAccessibleLandmarkInfo rootLabel="Root label" headerLabel="Header label" footerLabel="Footer label" />
+                </semantic:landmarkInfo>
+                <!-- <semantic:sort>
+                    <semantic:SortSelect change="onSemanticSelectChange" items="">
+                        <core:Item key="{type}" text="{type}" />
+                    </semantic:SortSelect>
+                </semantic:sort> -->
+                <semantic:filter>
+                    <semantic:FilterAction press="onSemanticButtonPress" />
+                </semantic:filter>
+                <semantic:group>
+                    <semantic:GroupAction press="onSemanticButtonPress" />
+                </semantic:group>
+
+                <!-- <semantic:multiSelectAction>
+                    <semantic:MultiSelectAction press="onMultiSelectPress" />
+                </semantic:multiSelectAction> -->
+            </semantic:MasterPage>
+        </masterPages>
+        <detailPages>
+            <semantic:DetailPage title="{flussiModel>nome}" id="detail">
+                <f:SimpleForm
+                    id="SimpleFormDisplay354wide"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    title="{ErroriModel>nome}"
+                    labelSpanXL="4"
+                    labelSpanL="3"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="0"
+                    emptySpanL="4"
+                    emptySpanM="0"
+                    emptySpanS="0"
+                    columnsXL="2"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false"
+                >
+                    <f:content>
+                        <Label text="{i18n>iderror}" />
+                        <Input id="id" value="{ID_ERRORE}" editable="false" />
+
+                        <Label text="{i18n>nomeFlusso}" />
+                        <Input id="nomeFlusso" value="{ID_FLUSSO}" editable="false" />
+
+                        <Label text="{i18n>idStatoErrore}" />
+                        <!-- <ObjectStatus text="{= ${ErroriModel>stato} ? 'Risolto' : 'Da Risolvere'}" inverted="true" state="{= ${ErroriModel>stato} ? 'Success' : 'Error'}" /> -->
+                        <Input id="STATO" value="{ID_STATO_ERRORE}" editable="false" />
+
+                        <Label text="{i18n>messError}" />
+                        <TextArea id="messaggio" value="{MESSAGGIO_ERRORE}" rows="2" editable="false" />
+
+                        <Label text="{i18n>dataErro}" />
+                        <Text id="data" text="{DATA_ERRORE}" width="500px" />
+                    </f:content>
+                </f:SimpleForm>
+
+                <!-- <semantic:addAction>
+                    <semantic:AddAction  />
+                </semantic:addAction> -->
+                <!-- <semantic:positiveAction>
+                    <semantic:PositiveAction />
+                </semantic:positiveAction> -->
+
+                <!-- <semantic:negativeAction>
+                    <semantic:NegativeAction id="refreshBtn" text="Refresh" press="refresh" visible="false" />
+                </semantic:negativeAction>
+                <semantic:forwardAction>
+					<semantic:ForwardAction press="modificaUtente"/>
+				</semantic:forwardAction>
+                <semantic:flagAction>
+					<semantic:FlagAction press="onSemanticButtonPress"/>
+				</semantic:flagAction>
+				<semantic:favoriteAction>
+					<semantic:FavoriteAction press="onSemanticButtonPress"/>
+				</semantic:favoriteAction>
+				<semantic:sendEmailAction>
+					<semantic:SendEmailAction press="onSemanticButtonPress"/>
+				</semantic:sendEmailAction>
+				<semantic:sendMessageAction>
+					<semantic:SendMessageAction press="onSemanticButtonPress"/>
+				</semantic:sendMessageAction>
+				<semantic:discussInJamAction>
+					<semantic:DiscussInJamAction press="onSemanticButtonPress"/>
+				</semantic:discussInJamAction>
+				<semantic:shareInJamAction>
+					<semantic:ShareInJamAction press="onSemanticButtonPress"/>
+				</semantic:shareInJamAction>
+				<semantic:printAction>
+					<semantic:PrintAction press="onSemanticButtonPress"/>
+				</semantic:printAction>
+				<semantic:messagesIndicator>
+					<semantic:MessagesIndicator press="onMessagesButtonPress"/>
+				</semantic:messagesIndicator>
+                <semantic:pagingAction>
+					<PagingButton count="5" positionChange="onPositionChange"/>
+				</semantic:pagingAction> -->
+
+                <semantic:customFooterContent>
+                    <!-- <OverflowToolbarButton icon="sap-icon://save" id="saveBtn"  press="save" visible="false"/>
+                
+                <OverflowToolbarButton icon="sap-icon://refresh" id="refreshBtn" press="refresh" visible="false"/>
+
+                <OverflowToolbarButton icon="sap-icon://edit" id="editBtn" press="edit" visible="true" />
+
+                <OverflowToolbarButton icon="sap-icon://add" id="aggiungiFlussoBtn" press="aggiungiFlusso"/> -->
+                    <!-- <OverflowToolbarButton icon="sap-icon://settings" text="Settings" press="onPress"/>
+					<OverflowToolbarButton icon="sap-icon://video" text="Video" press="onPress"/> -->
+                </semantic:customFooterContent>
+
+                <!-- <semantic:customShareMenuContent>
+					<Button text="CustomShareBtn1" icon="sap-icon://color-fill" press="onPress"/>
+					<Button text="CustomShareBtn2" icon="sap-icon://crop" press="onPress"/>
+				</semantic:customShareMenuContent> -->
+            </semantic:DetailPage>
+        </detailPages>
+    </SplitContainer>
+</mvc:View>

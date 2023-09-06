@@ -1,0 +1,70 @@
+{
+    "items": [
+        {
+            "idPlant": "DT01",
+            "id": "WoCe01",
+            "name": "Centro di Lavoro EST"
+    },
+        {
+            "idPlant": "DT01",
+            "id": "WoCe02",
+            "name": "Centro di Lavoro NORD - EST"
+    }, {
+            "idPlant": "DT01",
+            "id": "WoCe03",
+            "name": "Centro di Lavoro SUD - EST"
+    }, 
+        {
+            "idPlant": "DT02",
+            "id": "WoCe04",
+            "name": "Centro di Lavoro OVEST"
+    }, {
+            "idPlant": "DT02",
+            "id": "WoCe05",
+            "name": "Centro di Lavoro NORD - OVEST"
+    }, {
+            "idPlant": "DT02",
+            "id": "WoCe06",
+            "name": "Centro di Lavoro SUD - OVEST"
+    }, 
+        {
+            "idPlant": "DT03",
+            "id": "WoCe07",
+            "name": "Centro di Lavoro Prod 01"
+    },{
+            "idPlant": "DT03",
+            "id": "WoCe08",
+            "name": "Centro di Lavoro Prod 02"
+    },{
+            "idPlant": "DT03",
+            "id": "WoCe09",
+            "name": "Centro di Lavoro Prod 03"
+    },{
+            "idPlant": "DT03",
+            "id": "WoCe10",
+            "name": "Centro di Lavoro Prod 04"
+    },
+        {
+            "idPlant": "DT04",
+            "id": "WoCe11",
+            "name": "Centro di Lavoro Linea 1"
+    },
+        {
+            "idPlant": "DT04",
+            "id": "WoCe12",
+            "name": "Centro di Lavoro Linea 2"
+    },
+        {
+            "idPlant": "DT04",
+            "id": "WoCe13",
+            "name": "Centro di Lavoro Linea 4"
+    },
+        {
+            "idPlant": "DT04",
+            "id": "WoCe14",
+            "name": "Centro di Lavoro Linea 5"
+    }
+    
+
+  ]
+}

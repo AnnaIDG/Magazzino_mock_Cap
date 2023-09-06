@@ -1,0 +1,128 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.NoticeCreate" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" busyIndicatorDelay="1">
+    <Page id="noticeCreatePageId" showNavButton="false" showHeader="false">
+        <content>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+            <IconTabBar id="idIconTabBarMultiCreate" class="sapUiResponsiveContentPadding" >
+                <items>
+                    <IconTabFilter icon="sap-icon://hint" text="{i18n>detail}">
+                        <FlexBox direction="Column" alignItems="SpaceBetween" justifyContent="Center" alignContent="Center" >
+                            <frm:SimpleForm width="50em" class="noticeInfoForm" layout="ResponsiveGridLayout" title="{i18n>noticeInfoFormTitle_}">
+                                <frm:content>
+                                    <FlexBox direction="Column" justifyContent="Center">
+                                        <InputListItem label="{i18n>noticeTypeLabel_}">
+                                            <Text text="{mainModel>/noticeTypeId}" />
+                                        </InputListItem>
+                                        <InputListItem label="{i18n>descriptionLabel_}">
+                                            <TextArea value="{mainModel>/description}" width="20rem" rows="1" id="txtAreaId" liveChange="onChangeValueState"/>
+                                        </InputListItem>
+                                        <InputListItem>
+                                            <FlexBox justifyContent="Center">
+                                                <RadioButtonGroup columns="3" id="idRadioButton">
+                                                    <buttons>
+                                                        <RadioButton id="idTechPlaceRadioButton" select="onRadioButtonPress" text="{i18n>techPlaceLabel_}" />
+                                                        <RadioButton id="idEquipmentRadioButton" select="onRadioButtonPress" text="{i18n>equipmentLabel_}" />
+                                                        <!-- <RadioButton id="idRfidRadioButton" select="onRadioButtonPress" text="{i18n>rfidLabel}"/> -->
+                                                    </buttons>
+                                                </RadioButtonGroup>
+                                            </FlexBox>
+                                        </InputListItem>
+                                        <InputListItem label="{i18n>techPlaceLabel_}" visible="{enableModel>/techPlaceVisible}">
+                                            <Input value="{mainModel>/techPlaceDescr}" id="techPlaces" type="Text" placeholder="{i18n>techPlacePlaceholder_}" showSuggestion="true" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onPlacesValueHelpPress" suggestionItems="{techPlaces>/results}" change="onTechPlaceChange" width="20rem">
+                                                <suggestionItems>
+                                                    <core:Item text="{techPlaces>description}" key="{techPlaces>id}" />
+                                                </suggestionItems>
+                                            </Input>
+                                        </InputListItem>
+                                        
+                                        <InputListItem label="" visible="{enableModel>/techPlaceVisible}">
+                                            <Input value="{mainModel>/techPlaceId}" id="techPlacesId" type="Text" editable="false" width="20rem" />
+                                        </InputListItem>
+                                        
+                                        <InputListItem label="{i18n>equipmentLabel_}" visible="{enableModel>/equipmentVisible}">
+                                            <Input value="{mainModel>/equipmentDescr}" id="equipment" type="Text" placeholder="{i18n>equipmentPlaceholder}" showSuggestion="true" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="onPlacesValueHelpPress" suggestionItems="{equipments>/results}" change="onEquipmentChange" width="20rem">
+                                                <suggestionItems>
+                                                    <core:Item text="{equipments>description}" key="{equipments>id}" />
+                                                </suggestionItems>
+                                            </Input>
+                                        </InputListItem>
+                                        
+                                        <InputListItem label="" visible="{enableModel>/equipmentVisible}">
+                                            <Input value="{mainModel>/equipmentId}" id="equipmentId" type="Text" editable="false" width="20rem" />
+                                        </InputListItem>
+                                        
+                                        <InputListItem label="{i18n>rfidLabel}" visible="{enableModel>/rfidVisible}">
+                                            <Input id="rfidComboBox" value="{mainModel>/rfidValue}" width="20rem" placeholder="{i18n>rfidPlaceholder}" />
+                                        </InputListItem>
+                                        <InputListItem label="{i18n>priorityLabel_}" visible="{= (${user>/userLogged/isRtt} === 'X')}">
+                                            <ComboBox id="priorityComboBox" items="{priorities>/}" selectedKey="{mainModel>/priorityId}" selectionChange="onSelectPriority" width="20rem">
+                                                <core:Item key="{priorities>id}" text="{priorities>description}" />
+                                            </ComboBox>
+                                        </InputListItem>
+                                        
+                                        
+                                        <InputListItem label="{i18n>dataOraTel}" visible="{= (${user>/userLogged/isRtt} === 'X' &amp;&amp; (${mainModel>/priorityId} === '2' || ${mainModel>/priorityId} === '4'))}">
+                                            <DatePicker id="idDataTelNew" value="{path:'mainModel>/dataTel', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'dd-MM-yyyy'}}" change="onChangeDataTel" visible="{=${mainModel>/priorityId} === '2' || ${mainModel>/priorityId} === '4' }" width="20rem" />
+                                        </InputListItem>
+                                        <InputListItem label="" visible="{= (${user>/userLogged/isRtt} === 'X' &amp;&amp; (${mainModel>/priorityId} === '2' || ${mainModel>/priorityId} === '4'))}">
+                                            <TimePicker id="idOraTel" value="{path:'mainModel>/oraTel'}" valueFormat="HH:mm" displayFormat="HH:mm" change="onChangeHourTel" visible="{=${mainModel>/priorityId} === '2' || ${mainModel>/priorityId} === '4' }" width="20rem" />
+                                        </InputListItem>
+                                        
+                                        
+                                        
+                                        <InputListItem visible="{ui>/interventionDatesVisible}" class="interventionDates">
+                                            <FlexBox alignItems="Center" justifyContent="SpaceBetween" width="100%">
+                                                <HBox alignItems="Center" justifyContent="Center">
+                                                    <Title class="interventionDatesLabel" text="{i18n>requestStart}" textAlign="Center" labelFor="startDateId" />
+                                                    <DatePicker id="startDateId" valueFormat="dd-MM-yyyy" displayFormat="short" editable="false" value="{path:'inteventionDatesModel>/startInterventionDate', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}" />
+                                                </HBox>
+                                                <HBox alignItems="Center" justifyContent="Center">
+                                                    <Title text="{i18n>requestEnd}" class="interventionDatesLabel" textAlign="Center" labelFor="endDateId" />
+                                                    <DatePicker id="endDateId" valueFormat="dd-MM-yyyy" displayFormat="short" editable="false" value="{path:'inteventionDatesModel>/endInterventionDate', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}" />
+                                                </HBox>
+                                            </FlexBox>
+                                        </InputListItem>
+                                        <InputListItem label="{i18n>requestUserLabel}">
+                                            <Input value="{mainModel>/reqUser/requestUser}" id="requesters" type="Text" placeholder="{i18n>requesterPlaceholder_}" showSuggestion="true" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="handleValueHelpPress" suggestionItems="{reqUser>/results}" width="20rem">
+                                                <suggestionItems>
+                                                    <core:Item text="{reqUser>nameComplete}" key="{reqUser>user}" />
+                                                </suggestionItems>
+                                            </Input>
+                                        </InputListItem>
+                                        <InputListItem label="{i18n>enterNameLabel_}" visible="{ui>/enterEmailFieldVisible}">
+                                            <Input value="{mainModel>/reqUser/user}" width="20rem" editable="{ui>/enterEmailFieldVisible}" visible="{ui>/enterEmailFieldVisible}" />
+                                        </InputListItem>
+                                        <InputListItem label="{i18n>enterEmailLabel_}">
+                                            <Input value="{mainModel>/reqUser/mail}" width="20rem" editable="{ui>/enterEmailFieldVisible}" /> 
+                                        </InputListItem>
+                                        <InputListItem label="{i18n>enterPhoneLabel_}">
+                                            <Input value="{mainModel>/reqUser/phone}" width="20rem" editable="{ui>/enterEmailFieldVisible}" /> 
+                                        </InputListItem>
+                                    </FlexBox>
+                                </frm:content>
+                            </frm:SimpleForm>
+                        </FlexBox>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://message-warning" text="{i18n>problemList}" visible="{ui>/problemsListTabVisible}">
+                        <core:Fragment fragmentName="view.fragment.ProblemsList" type="XML" /> 
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://camera" text="{i18n>attachmentsTabText}" visible="{ui>/problemsListTabVisible}" >
+                        <List items="{mainModel>/attachments}" mode="Delete" delete="onDeleteAttachment" >
+                            <StandardListItem title="{mainModel>nomeFile}" type="Active" press="onPressAttachment" /> 
+                        </List>
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button icon="sap-icon://add" text="{i18n>addAttachmentButton}" press="onAddAttachmentPress" /> 
+                        </Toolbar>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://action" text="{i18n>createNotice}" press="onCreateNotice" iconFirst="false" /> 
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

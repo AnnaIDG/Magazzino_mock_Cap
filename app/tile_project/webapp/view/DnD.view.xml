@@ -1,0 +1,27 @@
+<mvc:View xmlns:f="sap.f" controllerName="tileproject.tileproject.controller.DnD" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:t="sap.m.Table" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+     
+            	<Page id = 'DnD' 
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<content>
+			<HBox renderType="Bare">
+				<mvc:XMLView id="Utenti" viewName="tileproject.tileproject.view.Utenti" async="true"/>
+				<VBox justifyContent="Center" class="sapUiTinyMarginBeginEnd">
+					<Button
+						class="sapUiTinyMarginBottom"
+						icon="sap-icon://navigation-right-arrow"
+						tooltip="Move to selected"
+						press="moveToSelectedProductsTable"/>
+					<Button
+						icon="sap-icon://navigation-left-arrow"
+						tooltip="Move to available"
+						press="moveToAvailableProductsTable"/>
+				</VBox>
+				<mvc:XMLView id="UtentiSelezionati" viewName="tileproject.tileproject.view.UtentiSelezionati" async="true"/>
+			</HBox>
+		</content>
+	</Page>
+        
+    
+</mvc:View>

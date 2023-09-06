@@ -1,0 +1,247 @@
+{
+    "sap.app": {
+        "id": "idgsaapprontamentoprod",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "isMock": true,
+        "bcube": "a;#4[-]E]/88k",
+        "i18n": "custom/i18n/i18n.properties",
+        "dataSources": {
+            "SERVER": {
+                "url": "http://192.168.254.140:8000/sap/opu/odata/sap/zfiori_srv"
+            },
+            "LOGOFF": {
+                "url": "http://192.168.254.140:8000/sap/public/bc/icf/logoff"
+            }
+        }
+    },
+    "sap.ui5": {
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/custom.css"
+                },
+                {
+                    "uri": "css/customTablet.css"
+                }
+            ],
+            "js": [
+                {
+                    "uri": "libs/lodash.min.js"
+                },
+                {
+                    "uri": "libs/q.js"
+                },
+                {
+                    "uri": "libs/notify.js"
+                }
+            ]
+        },
+        "dependencies": {
+            "minUI5Version": "1.50.0",
+            "libs": {
+                "sap.m": {
+                    "minVersion": "1.50.0"
+                },
+                "sap.ui.layout": {
+                    "minVersion": "1.50.0"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "view"
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "login",
+                    "target": "login"
+                },
+                {
+                    "pattern": "auth/{token}",
+                    "name": "loginAuth",
+                    "target": "auth"
+                },
+                {
+                    "pattern": "launchpad",
+                    "name": "launchpad",
+                    "target": "launchpad"
+                },
+                {
+                    "pattern": "workingOrders",
+                    "name": "workingOrders",
+                    "target": "workingOrders"
+                },
+                {
+                    "pattern": "packingList",
+                    "name": "packingList",
+                    "target": "packingList"
+                },
+                {
+                    "pattern": "moveOrderNotYetWorked",
+                    "name": "moveOrderNotYetWorked",
+                    "target": "moveOrderList"
+                },
+                {
+                    "pattern": "workingOrdersDetail/{orderId}",
+                    "name": "workingOrdersDetail",
+                    "target": "workingOrdersDetail"
+                },
+                {
+                    "pattern": "split",
+                    "name": "split",
+                    "target": "split",
+                    "subroutes": [
+                        {
+                            "pattern": "moveOrderManagement",
+                            "name": "moveOrderManagement",
+                            "target": [
+                                "moveOrderManagementDetail",
+                                "moveOrderManagementMaster"
+                            ]
+                        },
+                        {
+                            "pattern": "moveOrderManagementDetail/{moveOrderId}",
+                            "name": "moveOrderManagementDetail",
+                            "target": [
+                                "moveOrderManagementMaster",
+                                "moveOrderManagementDetail"
+                            ]
+                        },
+                        {
+                            "pattern": "moveOrderManagementEdit/{moveOrderId}",
+                            "name": "moveOrderManagementEdit",
+                            "target": [
+                                "moveOrderManagementMaster",
+                                "moveOrderManagementEdit"
+                            ]
+                        },
+                        {
+                            "pattern": "packingListOm",
+                            "name": "packingListOm",
+                            "target": [
+                                "packingListOmDetail",
+                                "packingListOmMaster"
+                            ]
+                        },
+                        {
+                            "pattern": "packingListOmDetail/{packingListId}",
+                            "name": "packingListOmDetail",
+                            "target": [
+                                "packingListOmMaster",
+                                "packingListOmDetail"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "targets": {
+                "login": {
+                    "viewName": "Login",
+                    "viewId": "loginViewId",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "transition": "flip"
+                },
+                "auth": {
+                    "viewName": "Auth",
+                    "viewId": "authViewId",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "transition": "flip"
+                },
+                "launchpad": {
+                    "viewName": "Launchpad",
+                    "viewId": "launchpadViewId",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
+                },
+                "workingOrders": {
+                    "viewName": "WorkingOrders",
+                    "viewId": "workingOrdersViewId",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
+                },
+                "packingList": {
+                    "viewName": "PackingList",
+                    "viewId": "packingListViewId",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
+                },
+                "moveOrderList": {
+                    "viewName": "MoveOrderList",
+                    "viewId": "moveOrderListViewId",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
+                },
+                "workingOrdersDetail": {
+                    "viewName": "WorkingOrdersDetail",
+                    "viewId": "workingOrdersDetailViewId",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
+                },
+                "split": {
+                    "viewName": "SplitApp",
+                    "viewId": "splitApp",
+                    "controlId": "app",
+                    "viewType": "JS",
+                    "controlAggregation": "pages"
+                },
+                "moveOrderManagementMaster": {
+                    "viewName": "MoveOrderManagementMaster",
+                    "viewLevel": 1,
+                    "viewId": "moveOrderManagementMasterId",
+                    "controlId": "splitApp",
+                    "controlAggregation": "masterPages"
+                },
+                "moveOrderManagementDetail": {
+                    "viewName": "MoveOrderManagementDetail",
+                    "viewLevel": 2,
+                    "viewId": "moveOrderManagementDetailId",
+                    "controlId": "splitApp",
+                    "controlAggregation": "detailPages"
+                },
+                "packingListOmMaster": {
+                    "viewName": "PackingListOmMaster",
+                    "viewLevel": 1,
+                    "viewId": "packingListOmId",
+                    "controlId": "splitApp",
+                    "controlAggregation": "masterPages"
+                },
+                "packingListOmDetail": {
+                    "viewName": "PackingListOmDetail",
+                    "viewLevel": 2,
+                    "viewId": "packingListOmDetailId",
+                    "controlId": "splitApp",
+                    "controlAggregation": "detailPages"
+                },
+                "moveOrderManagementEdit": {
+                    "viewName": "MoveOrderManagementEdit",
+                    "viewLevel": 2,
+                    "viewId": "moveOrderManagementEditId",
+                    "controlId": "splitApp",
+                    "controlAggregation": "detailPages"
+                },
+                "moveOrderManagementDetailFromLaunchpad": {
+                    "_comment": "aggiunta pagina per visulaizzare dettaglio cliente a pagina intera",
+                    "viewName": "MoveOrderManagementDetail",
+                    "viewLevel": 1,
+                    "viewId": "moveOrderManagementDetailId",
+                    "controlId": "app",
+                    "controlAggregation": "pages"
+                }
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        }
+    }
+}

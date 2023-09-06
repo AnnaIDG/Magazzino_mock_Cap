@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MFIS</title>
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+        }
+    </style>
+    <script
+        id="sap-ui-bootstrap"
+        src="https://sapui5.hana.ondemand.com/1.108.0/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-resourceroots='{
+            "tileproject.tileproject": "./"
+        }'
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frameOptions="trusted"
+        data-sap-ui-bindingSyntax="complex"
+    ></script>
+    <script id="locate-reuse-libs" src="./utils/locate-reuse-libs.js"
+        data-sap-ui-manifest-uri="./manifest.json"
+        data-sap-ui-componentName="tileproject.tileproject">
+    </script> 
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+    <div
+        data-sap-ui-component
+        data-name="tileproject.tileproject"
+        data-id="container"
+        data-settings='{"id" : "tileproject.tileproject"}'
+        data-handle-validation="true"
+    ></div>
+</body>
+</html>

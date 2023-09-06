@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Anagrafica_Utenti" EntityType="CatalogService.Anagrafica_Utenti">
+                    <NavigationPropertyBinding Path="ID_RUOLO" Target="Anagrafica_Ruoli"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Ruoli" EntityType="CatalogService.Anagrafica_Ruoli"/>
+                <EntitySet Name="Anagrafica_Flussi" EntityType="CatalogService.Anagrafica_Flussi">
+                    <NavigationPropertyBinding Path="ID_MODULO" Target="Anagrafica_Moduli"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Moduli" EntityType="CatalogService.Anagrafica_Moduli"/>
+                <EntitySet Name="Anagrafica_Errori" EntityType="CatalogService.Anagrafica_Errori">
+                    <NavigationPropertyBinding Path="ID_FLUSSO" Target="Anagrafica_Flussi"/>
+                    <NavigationPropertyBinding Path="ID_STATO_ERRORE" Target="Anagrafica_Stato_Errori"/>
+                    <NavigationPropertyBinding Path="ID_UTENTE" Target="Anagrafica_Utenti"/>
+                    <NavigationPropertyBinding Path="ID_UTENTE_TECHNICAL" Target="Anagrafica_Utenti"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Stato_Errori" EntityType="CatalogService.Anagrafica_Stato_Errori"/>
+                <EntitySet Name="Anagrafica_Utente_Flusso" EntityType="CatalogService.Anagrafica_Utente_Flusso">
+                    <NavigationPropertyBinding Path="ID_UTENTE" Target="Anagrafica_Utenti"/>
+                    <NavigationPropertyBinding Path="ID_FLUSSO" Target="Anagrafica_Flussi"/>
+                </EntitySet>
+                <EntitySet Name="TipoSpesaSet" EntityType="CatalogService.TipoSpesaSet">
+                    <NavigationPropertyBinding Path="RIMBORSO" Target="RimborsoSet"/>
+                </EntitySet>
+                <EntitySet Name="RimborsoSet" EntityType="CatalogService.RimborsoSet"/>
+                <EntitySet Name="ActivitySet" EntityType="CatalogService.ActivitySet">
+                    <NavigationPropertyBinding Path="RIMBORSO" Target="RimborsoSet"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Materiale" EntityType="CatalogService.Anagrafica_Materiale">
+                    <NavigationPropertyBinding Path="Ubicazione" Target="Anagrafica_Magazzino"/>
+                </EntitySet>
+                <EntitySet Name="Anagrafica_Magazzino" EntityType="CatalogService.Anagrafica_Magazzino"/>
+                <EntitySet Name="V_Mfc" EntityType="CatalogService.V_Mfc"/>
+            </EntityContainer>
+            <EntityType Name="Anagrafica_Utenti">
+                <Key>
+                    <PropertyRef Name="ID_UTENTE"/>
+                </Key>
+                <Property Name="ID_UTENTE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="COGNOME_UTENTE" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="NOME_UTENTE" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="EMAIL_UTENTE" Type="Edm.String" MaxLength="40" Nullable="false"/>
+                <NavigationProperty Name="ID_RUOLO" Type="CatalogService.Anagrafica_Ruoli" Nullable="false">
+                    <ReferentialConstraint Property="ID_RUOLO_ID_RUOLO" ReferencedProperty="ID_RUOLO"/>
+                </NavigationProperty>
+                <Property Name="ID_RUOLO_ID_RUOLO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="TELEFONO_UTENTE" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="CID" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Ruoli">
+                <Key>
+                    <PropertyRef Name="ID_RUOLO"/>
+                </Key>
+                <Property Name="ID_RUOLO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="RUOLO" Type="Edm.String" MaxLength="20" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Flussi">
+                <Key>
+                    <PropertyRef Name="ID_FLUSSO"/>
+                </Key>
+                <Property Name="ID_FLUSSO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="NOME_FLUSSO" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="DESCRIZIONE_FLUSSO" Type="Edm.String" MaxLength="50"/>
+                <NavigationProperty Name="ID_MODULO" Type="CatalogService.Anagrafica_Moduli" Nullable="false">
+                    <ReferentialConstraint Property="ID_MODULO_ID_MODULO" ReferencedProperty="ID_MODULO"/>
+                </NavigationProperty>
+                <Property Name="ID_MODULO_ID_MODULO" Type="Edm.Int32" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Moduli">
+                <Key>
+                    <PropertyRef Name="ID_MODULO"/>
+                </Key>
+                <Property Name="ID_MODULO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="MODULO" Type="Edm.String" MaxLength="20" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Errori">
+                <Key>
+                    <PropertyRef Name="ID_ERRORE"/>
+                </Key>
+                <Property Name="ID_ERRORE" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="ID_FLUSSO" Type="CatalogService.Anagrafica_Flussi" Nullable="false">
+                    <ReferentialConstraint Property="ID_FLUSSO_ID_FLUSSO" ReferencedProperty="ID_FLUSSO"/>
+                </NavigationProperty>
+                <Property Name="ID_FLUSSO_ID_FLUSSO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="NOME_FLUSSO" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="MESSAGGIO_ERRORE" Type="Edm.String" MaxLength="1000" Nullable="false"/>
+                <Property Name="DATA_ERRORE" Type="Edm.DateTimeOffset" Nullable="false"/>
+                <NavigationProperty Name="ID_STATO_ERRORE" Type="CatalogService.Anagrafica_Stato_Errori" Nullable="false">
+                    <ReferentialConstraint Property="ID_STATO_ERRORE_ID_STATO_ERRORE" ReferencedProperty="ID_STATO_ERRORE"/>
+                </NavigationProperty>
+                <Property Name="ID_STATO_ERRORE_ID_STATO_ERRORE" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="ID_UTENTE" Type="CatalogService.Anagrafica_Utenti">
+                    <ReferentialConstraint Property="ID_UTENTE_ID_UTENTE" ReferencedProperty="ID_UTENTE"/>
+                </NavigationProperty>
+                <Property Name="ID_UTENTE_ID_UTENTE" Type="Edm.Int32"/>
+                <NavigationProperty Name="ID_UTENTE_TECHNICAL" Type="CatalogService.Anagrafica_Utenti">
+                    <ReferentialConstraint Property="ID_UTENTE_TECHNICAL_ID_UTENTE" ReferencedProperty="ID_UTENTE"/>
+                </NavigationProperty>
+                <Property Name="ID_UTENTE_TECHNICAL_ID_UTENTE" Type="Edm.Int32"/>
+                <Property Name="STATO_BOTTONE" Type="Edm.Boolean" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Stato_Errori">
+                <Key>
+                    <PropertyRef Name="ID_STATO_ERRORE"/>
+                </Key>
+                <Property Name="ID_STATO_ERRORE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Stato_Errore" Type="Edm.String" MaxLength="30" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Utente_Flusso">
+                <Key>
+                    <PropertyRef Name="ID_UTENTE_FLUSSO"/>
+                </Key>
+                <Property Name="ID_UTENTE_FLUSSO" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="ID_UTENTE" Type="CatalogService.Anagrafica_Utenti" Nullable="false">
+                    <ReferentialConstraint Property="ID_UTENTE_ID_UTENTE" ReferencedProperty="ID_UTENTE"/>
+                </NavigationProperty>
+                <Property Name="ID_UTENTE_ID_UTENTE" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="ID_FLUSSO" Type="CatalogService.Anagrafica_Flussi" Nullable="false">
+                    <ReferentialConstraint Property="ID_FLUSSO_ID_FLUSSO" ReferencedProperty="ID_FLUSSO"/>
+                </NavigationProperty>
+                <Property Name="ID_FLUSSO_ID_FLUSSO" Type="Edm.Int32" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="TipoSpesaSet">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="TIPO_SPESA" Type="Edm.String" MaxLength="1000" Nullable="false"/>
+                <NavigationProperty Name="RIMBORSO" Type="CatalogService.RimborsoSet">
+                    <ReferentialConstraint Property="RIMBORSO_ID_RIMBORSO" ReferencedProperty="ID_RIMBORSO"/>
+                </NavigationProperty>
+                <Property Name="RIMBORSO_ID_RIMBORSO" Type="Edm.Int32"/>
+                <Property Name="VISIBILITA" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="PAGATO_AZIENDA" Type="Edm.Binary" MaxLength="1"/>
+                <Property Name="LIMITE_MAX" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="CHIAVE_TRASFERTA" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="FATTURABILITA_SPESA" Type="Edm.String" MaxLength="30"/>
+            </EntityType>
+            <EntityType Name="RimborsoSet">
+                <Key>
+                    <PropertyRef Name="ID_RIMBORSO"/>
+                </Key>
+                <Property Name="ID_RIMBORSO" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="TIPO_VEICOLO" Type="Edm.String" MaxLength="1000" Nullable="false"/>
+                <Property Name="KM" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="IMPORTO" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="CHIAVE_TRASFERTA" Type="Edm.String" MaxLength="30" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="ActivitySet">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="CODICE_ATTIVITA" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="DESCRIZIONE" Type="Edm.String" MaxLength="1000"/>
+                <Property Name="DATA_ATTIVITA" Type="Edm.DateTimeOffset" Nullable="false"/>
+                <Property Name="NUMERO_ORE" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="RIMBORSO" Type="CatalogService.RimborsoSet">
+                    <ReferentialConstraint Property="RIMBORSO_ID_RIMBORSO" ReferencedProperty="ID_RIMBORSO"/>
+                </NavigationProperty>
+                <Property Name="RIMBORSO_ID_RIMBORSO" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Materiale">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="Ubicazione" Type="CatalogService.Anagrafica_Magazzino">
+                    <ReferentialConstraint Property="Ubicazione_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Ubicazione_ID" Type="Edm.Int32"/>
+                <Property Name="Pallet" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="Materiale" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="Descrizione" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="Stock_Libero" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="Stock_CQ" Type="Edm.String" MaxLength="30" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Anagrafica_Magazzino">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="Magazzino" Type="Edm.String" MaxLength="30" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="V_Mfc">
+                <Key>
+                    <PropertyRef Name="ID_UTENTE"/>
+                </Key>
+                <Property Name="ID_UTENTE" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="COGNOME_UTENTE" Type="Edm.String" MaxLength="30"/>
+                <Property Name="NOME_UTENTE" Type="Edm.String" MaxLength="30"/>
+                <Property Name="EMAIL_UTENTE" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ID_FLUSSO_ID_FLUSSO" Type="Edm.Int32"/>
+                <Property Name="NOME_FLUSSO" Type="Edm.String" MaxLength="30"/>
+                <Property Name="DESCRIZIONE_FLUSSO" Type="Edm.String" MaxLength="50"/>
+            </EntityType>
+            <Annotations Target="CatalogService.EntityContainer/V_Mfc">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="CatalogService.V_Mfc/ID_UTENTE">
+                <Annotation Term="Common.Label" String="ID_UTENTE: ID_UTENTE"/>
+            </Annotations>
+            <Annotations Target="CatalogService.V_Mfc/COGNOME_UTENTE">
+                <Annotation Term="Common.Label" String="COGNOME_UTENTE: COGNOME_UTENTE"/>
+            </Annotations>
+            <Annotations Target="CatalogService.V_Mfc/NOME_UTENTE">
+                <Annotation Term="Common.Label" String="NOME_UTENTE: NOME_UTENTE"/>
+            </Annotations>
+            <Annotations Target="CatalogService.V_Mfc/EMAIL_UTENTE">
+                <Annotation Term="Common.Label" String="EMAIL_UTENTE: EMAIL_UTENTE"/>
+            </Annotations>
+            <Annotations Target="CatalogService.V_Mfc/ID_FLUSSO_ID_FLUSSO">
+                <Annotation Term="Common.Label" String="ID_FLUSSO_ID_FLUSSO: ID_FLUSSO_ID_FLUSSO"/>
+            </Annotations>
+            <Annotations Target="CatalogService.V_Mfc/NOME_FLUSSO">
+                <Annotation Term="Common.Label" String="NOME_FLUSSO: NOME_FLUSSO"/>
+            </Annotations>
+            <Annotations Target="CatalogService.V_Mfc/DESCRIZIONE_FLUSSO">
+                <Annotation Term="Common.Label" String="DESCRIZIONE_FLUSSO: DESCRIZIONE_FLUSSO"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

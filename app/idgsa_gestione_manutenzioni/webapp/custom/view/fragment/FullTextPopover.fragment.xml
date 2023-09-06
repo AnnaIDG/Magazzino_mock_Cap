@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover showHeader="false" class="sapUiContentPadding" placement="PreferredBottomOrFlip">
+		<Text text="{fullTextModel>/property}"></Text>
+	</Popover>
+</core:FragmentDefinition>

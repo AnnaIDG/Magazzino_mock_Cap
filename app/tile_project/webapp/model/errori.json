@@ -1,0 +1,55 @@
+{
+    "errori": [
+        {
+            "id": "0",
+            "nome": "errore_0",
+            "stato": false,
+            "flusso":"Produzione",
+            "messaggio": "Refused to execute",
+            "data":"28/12/2022"
+           
+        },
+        {
+            "id": "1",
+            "nome": "errore_1",
+            "stato": true,
+            "flusso":"Produzione",
+            "messaggio": "Refused to execute script from 'https://port8080-workspaces-ws-rxwp9.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.Refused to execute script from 'https://port8080-workspaces-ws-rxwp9.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.",
+            "data":"28/12/2022"
+  
+        },
+        {
+            "id": "2",
+            "nome": "errore_2",
+            "stato": true,
+            "flusso":"Produzione",
+            "messaggio": "Refused to execute script from 'https://port8080-workspaces-ws-rxwp9.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.",
+            "data":"28/12/2022"
+        },
+        {
+            "id": "3",
+            "nome": "errore_3",
+            "stato": true,
+            "flusso":"Produzione",
+            "messaggio": "Refused to execute script from 'https://port8080-workspaces-ws-rxwp9.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.",
+            "data":"28/12/2022"
+        },
+        {
+            "id": "4",
+            "nome": "errore_4",
+            "stato": true,
+            "flusso":"Produzione",
+            "messaggio": "Refused to execute script from 'https://port8080-workspaces-ws-rxwp9.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.",
+            "data":"28/12/2022"
+ 
+        },
+        {
+            "id": "5",
+            "nome": "errore_5",
+            "stato": true,
+            "flusso":"Produzione",
+            "messaggio": "Refused to execute script from 'https://port8080-workspaces-ws-rxwp9.us10.trial.applicationstudio.cloud.sap/Component-preload.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.",
+            "data":"28/12/2022"
+        }
+    ]
+}

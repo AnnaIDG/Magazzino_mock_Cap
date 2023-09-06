@@ -1,0 +1,46 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.NoticeDetail" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" busyIndicatorDelay="1">
+    <Page id="noticeDetailPageId" showNavButton="false" showHeader="true" >
+        <customHeader>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" />
+        </customHeader>
+        <content>
+<!--            <core:Fragment fragmentName="view.fragment.Header" type="XML" />-->
+            <IconTabBar id="iconTabBarNoticeDetailId" class="sapUiResponsiveContentPadding" visible="{ui>/noticeDetailVisible}" select="handleIconTabBarSelect">
+                <items>
+                    <IconTabFilter icon="sap-icon://hint" text="{i18n>detail}" key="headNotice" expanded="true">
+                        <core:Fragment fragmentName="view.fragment.noticeDetail.NoticeDetail" type="XML" /> 
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://message-warning" text="{i18n>problemList}">
+                        <core:Fragment fragmentName="view.fragment.ProblemsList" type="XML" /> 
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://sys-enter" text="{i18n>correctiveMeasures}">
+                        <core:Fragment fragmentName="view.fragment.TasksList" type="XML" /> 
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://attachment" text="{i18n>documentationTabText}">
+                        <Title text="Documenti relativi alla sede" level="H2" />
+                        <List items="{mainModel>/documentation}" >
+                            <StandardListItem title="{mainModel>nomeFile}" type="Active" press="onPressAttachments" />
+                        </List>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://camera" text="{i18n>attachmentsTabText}" >
+                        <List items="{mainModel>/attachments}" >
+                            <StandardListItem title="{mainModel>nomeFile}" type="Active" press="onPressAttachments" />
+                        </List>
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button icon="sap-icon://add" text="{i18n>addAttachmentButton}" press="onAddAttachmentPress" visible="{=(${mainModel>/noticeState} !== 'TOCP' &amp;&amp; ${mainModel>/noticeState} !== 'TOCL')}"/> 
+                        </Toolbar>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="{i18n>editNoticeLabel}" press="onPressEditNotice" type="Accept" width="150px" visible="{= (${ui>/noticeDetailVisible} &amp;&amp; ${ui>/modifyButtonVisible} &amp;&amp; (${mainModel>/noticeState} !== 'TOCP' &amp;&amp; ${mainModel>/noticeState} !== 'TOCL')) || ${ui>/chargePhoto}}" />
+                <Button text="{i18n>openStatusButtonLabel}" press="onOpenStatusSheet" type="Emphasized" width="150px" visible="{= (${ui>/noticeDetailVisible} &amp;&amp; ${ui>/modifyButtonVisible})}" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

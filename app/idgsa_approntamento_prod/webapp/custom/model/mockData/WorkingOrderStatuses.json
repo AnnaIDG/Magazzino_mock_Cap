@@ -1,0 +1,30 @@
+[
+  {
+    "id": "01",
+    "status": "Preparazione"
+  },
+  {
+    "id": "02",
+    "status": "Allestimento"
+  },
+  {
+    "id": "05",
+    "status": "Stivaggio"
+  },
+  {
+    "id": "06",
+    "status": "Chiusura imballo"
+  },
+  {
+    "id": "03",
+    "status": "In verifica"
+  },
+  {
+    "id": "04",
+    "status": "Verificato"
+  },
+  {
+    "id": "07",
+    "status": "Pronto alla spedizione"
+  }
+]

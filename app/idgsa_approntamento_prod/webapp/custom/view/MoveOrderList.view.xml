@@ -1,0 +1,73 @@
+<!DOCTYPE xml>
+<mvc:View controllerName="controller.MoveOrderList" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.commons" xmlns:lay="sap.ui.layout" xmlns:frm="sap.ui.layout.form" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" busyIndicatorDelay="0">
+    <Page id="orderListModelPageId">
+        <headerContent>
+            <core:Fragment fragmentName="view.fragment.Header" type="XML" /> </headerContent>
+        <subHeader class="sapUiSizeCompact">
+            <Toolbar>
+                <Button icon="sap-icon://filter" press="onFilterPress" id="filterButton" />
+                <SearchField liveChange="onFilterOrderList" value="{ui>/searchValue}" class="sapUiMediumMarginEnd" width="100%" search="onFilterByVbeln" />
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table id="orderListModelTable" class="sapUiSizeCompact" width="100%" items="{path:'orderListModel>/results'}" busyIndicatorDelay="0">
+                <columns>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="9%">
+                        <Text text="{i18n>listOrderId}" /> </Column>
+
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>supplierId}" />
+                    </Column>
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="20%">
+                        <Text text="{i18n>supplier}" />
+                    </Column>
+
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>documentDate}" />
+                    </Column>
+
+                    <Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle">
+                        <Text text="{i18n>orderStatus}" />
+                    </Column>
+                    <Column hAlign="Begin" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="4%">
+                        <Text text=" " /> </Column>
+                    <!--
+					<Column hAlign="Center" demandPopin="true" minScreenWidth="800px" vAlign="Middle" width="40px">
+						<Text text=" "/>
+					</Column>
+-->
+                </columns>
+                <items>
+                    <ColumnListItem press="onOrderPress" type="Inactive" vAlign="Middle" selected="{orderListModel>selected}">
+                        <cells>
+                            <Label text="{orderListModel>moveOrderId}" design="Bold" />
+                            <Text text="{orderListModel>supplierId}" />
+                            <Text text="{orderListModel>supplier}" />
+                            <Text text="{path:'orderListModel>documentDate'}" />
+                            <!--                            <Label text="{orderListModel>orderStatusDescr}" design="Bold" />-->
+                            <ObjectNumber number="{orderListModel>orderStatusDescr}">
+                                <customData>
+                                    <core:CustomData key="packingStatusColor" value="{orderListModel>orderStatus}" writeToDom="true" /> </customData>
+                            </ObjectNumber>
+
+                            <core:Icon src="sap-icon://menu" size="1.3rem" useIconTooltip="false" tooltip="{i18n>orderInfoButtonTitle}" color="#0F3D7B" press="" />
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Bar>
+                <contentLeft>
+                    <ToggleButton icon="sap-icon://history" text="{i18n>filterOnDate}" press="onFilterOnDatePress" id="orderListToggleButton" pressed="{ui>/rangeVisible}" />
+                    <Text text="{i18n>fromDate}: {ui>/fromDate} - {i18n>toDate}: {ui>/toDate}" visible="{ui>/rangeVisible}" /> </contentLeft>
+                <contentMiddle>
+                <Label text="{user>/userLogged/orgData/distributionChannel}" design="Bold" class="sapUiMediumMarginEnd" /> </contentMiddle>
+                <contentRight>
+                    <Button text="{i18n>refresh}" press="handleRefresh" icon="sap-icon://synchronize" iconFirst="false" />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

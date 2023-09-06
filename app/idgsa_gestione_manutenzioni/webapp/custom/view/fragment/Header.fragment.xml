@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:frm="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:control="control">
+	<Bar>
+		<contentLeft>
+			<Button icon="sap-icon://nav-back" press="onNavBackPress" tooltip="{i18n>backTooltip}"
+				visible="{ui>/backButtonVisible}"/>
+		</contentLeft>
+		<contentMiddle>
+<!--			<Text text="{user>/userLogged/userName}" class="headerUserText" visible="{=${ui>/linkToUserDetail} ? false : true}" />-->
+<!--			<Link text="{user>/userLogged/userName}" tooltip="{i18n>userDetail}" class="headerUserText" press="onPressUserDetail" emphasized="true" subtle="true" visible="{ui>/linkToUserDetail}" />-->
+			<Link text="{user>/userLogged/userName}" tooltip="{i18n>userDetail}" class="headerUserText" press="onPressUserDetail" emphasized="true" subtle="true" />
+		</contentMiddle>
+		<contentRight>
+			<Button icon="sap-icon://log" press="onLogoutPress" tooltip="{i18n>logoutTooltip}"/>
+		</contentRight>
+	</Bar>
+</core:FragmentDefinition>
