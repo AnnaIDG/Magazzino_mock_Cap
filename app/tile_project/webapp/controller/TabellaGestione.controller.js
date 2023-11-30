@@ -128,6 +128,7 @@ sap.ui.define([
                 var obj;
 
                 jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function () {
+                    var sUrl = this.getOwnerComponent().getModel().sServiceUrl;
 
                     /*oModel.read("/Anagrafica_Utente_Flusso", {
                       //  filters: aFilters,
@@ -160,7 +161,8 @@ sap.ui.define([
                     // $.get({
                     // jQuery.get({
                     jQuery.ajax({
-                        url: "/CatalogService/Anagrafica_Utente_Flusso",
+                        url: sUrl + "Anagrafica_Utente_Flusso",
+                        dataType: 'json',
                         success: function (oData, oResponse) {
                             // var myData = oData.value;
                             var myData = [];
@@ -168,7 +170,8 @@ sap.ui.define([
                                 obj = oData.value[i];
 
                                 jQuery.ajax({
-                                    url: "/CatalogService/Anagrafica_Flussi(" + obj.ID_FLUSSO_ID_FLUSSO + ")",
+                                    url: sUrl + "Anagrafica_Flussi(" + obj.ID_FLUSSO_ID_FLUSSO + ")",
+                                    dataType: 'json',
                                     success: function (oData, oResponse) {
                                         obj.descrFlusso = oData.NOME_FLUSSO; // "prova descrizione flusso";
                                     },
@@ -179,7 +182,8 @@ sap.ui.define([
                                 });
 
                                 jQuery.ajax({
-                                    url: "/CatalogService/Anagrafica_Utenti(" + obj.ID_UTENTE_ID_UTENTE + ")",
+                                    url: sUrl + "Anagrafica_Utenti(" + obj.ID_UTENTE_ID_UTENTE + ")",
+                                    dataType: 'json',
                                     success: function (oData, oResponse) {
                                         obj.descrUtente = oData.COGNOME_UTENTE + " " + oData.NOME_UTENTE; // "utente utente";
                                         obj.emailUtente = oData.EMAIL_UTENTE;

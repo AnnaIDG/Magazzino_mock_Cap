@@ -84,18 +84,6 @@ modules:
       name: tileprojecttileproject
       target-path: resources/
     - artifacts:
-      - idgsagestionetravelidgsagestionetravel.zip
-      name: idgsagestionetravelidgsagestionetravel
-      target-path: resources/
-    - artifacts:
-      - idgsawizardofferteidgsawizardofferte.zip
-      name: idgsawizardofferteidgsawizardofferte
-      target-path: resources/
-    - artifacts:
-      - idgsavenditaagenti.zip
-      name: idgsavenditaagenti
-      target-path: resources/
-    - artifacts:
       - idgsagestionemanutenzioni.zip
       name: idgsagestionemanutenzioni
       target-path: resources/
@@ -126,36 +114,6 @@ modules:
 - name: tileprojecttileproject
   type: html5
   path: app/tile_project
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: idgsagestionetravelidgsagestionetravel
-  type: html5
-  path: app/idgsa_gestione_travel
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: idgsawizardofferteidgsawizardofferte
-  type: html5
-  path: app/idgsa_wizardofferte
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: idgsavenditaagenti
-  type: html5
-  path: app/idgsa_venditaagenti
   build-parameters:
     build-result: dist
     builder: custom

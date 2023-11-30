@@ -2,7 +2,7 @@
     {
         "packingId": "00001231",
         "supplierId": "12000",
-        "supplier": "Francesco Cardellini",
+        "supplier": "Mario Rossi",
         "packingStatus": "In Lavorazione",
         "packingStatusId": "C",
         "hasBox":"X",
@@ -15,7 +15,7 @@
     {
         "packingId": "00001232",
         "supplierId": "12000",
-        "supplier": "Francesco Cardellini",
+        "supplier": "Mario Rossi",
         "packingStatus": "Da confermare",
         "packingStatusId": "A",
         "hasBox":"",

@@ -3,12 +3,12 @@
 	[
 		{
 			"userId": "1",
-			"userAlias": "CRSAVE",
-			"name": "Francesco",
-			"surname": "Cardellini",
+			"userAlias": "MROSSI",
+			"name": "Mario",
+			"surname": "Rossi",
 			"roleId": "1",
 			"roleDesc": "Control Room SAVE",
-			"password": "c",
+			"password": "m",
 			"techPlace": ""
 		},
 
